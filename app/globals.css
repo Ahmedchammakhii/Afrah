@@ -1,0 +1,8 @@
+html {
+    overflow-y: overlay;
+    overflow-x: overlay;
+}
+
+* {
+    margin: 0;
+}
