@@ -1,4 +1,4 @@
-import Hero from "./landing/hero"
+import Hero from "./landing/hero/hero"
 export default function Home() {
   return (
     <main >
