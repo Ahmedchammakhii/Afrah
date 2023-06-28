@@ -1,14 +1,20 @@
+import admin from '../../db/firebaseAdmin'
 export default async function handler(req, res) {
-    if (req.method === 'POST') {
-    //   const db = await connectToDatabase();
+    // Use Firebase Admin SDK here
+    const firestore = admin.firestore();
+      if (req.method === 'POST') {
+      const data = req.body;
   
-      // Perform MongoDB operations or any other logic for the POST request
-      // Example: Save data to MongoDB and send the response
-    //   const collection = db.collection('mycollection');
-    //   await collection.insertOne(req.body); // Assuming the data is passed in the request body
-    const data = req.body
-    // console.log(data)
-      res.status(200).json({ message: 'Data saved to MongoDB' });
+      try {
+        // Create a new user document in Firestore
+        const userRef = firestore.collection('users').doc();
+        await userRef.set(data);
+  
+        res.status(200).json({ message: 'User record added to Firestore' });
+      } catch (error) {
+        console.error('Error adding user record:', error);
+        res.status(500).json({ message: 'Internal server error' });
+      }
     } else {
       res.status(405).json({ message: 'Method not allowed' });
     }
