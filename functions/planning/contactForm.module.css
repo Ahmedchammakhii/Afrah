@@ -1,0 +1,55 @@
+.formContainer{
+  background-color: #d7e3e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  margin:0;
+  font-family: "Poppins", sans-serif;
+  width: 100vw;;
+  position: absolute;
+  padding-bottom:50vh;
+}
+.form{
+    position:relative;
+max-width: 700px;
+justify-content: center;
+align-items: center;
+display: contents;
+font-size: smaller;
+/* background-color: red; */
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.form button{
+  margin: 20px;
+  padding: 10px;
+    
+}
+.form .intro{
+ text-align: center;
+ font-weight: 600;
+ font-size: 30px;
+  margin-top: 200px;
+}
+.policy{
+    text-align: center;
+    max-width: 500px;
+    margin-top: 20px;
+   }
+
+.form input{
+    width: 700px;
+}
+.form select{
+    width: 710px;
+    height:25px
+}
+.form textarea{
+    width: 700px;
+    height: 50px;
+}

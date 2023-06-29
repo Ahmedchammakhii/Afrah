@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import ContactForm from '../functions/planning/ContactForm';
 
-export default function Home() {
+export default function Form() {
   const [message, setMessage] = useState('');
   const [form,setForm]=useState({})
 
@@ -35,9 +35,9 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Welcome to my Next.js app</h1>
+      {/* <h1>Welcome to my Next.js app</h1>
       <button onClick={fetchData}>Fetch from Backend</button>
-      {message && <p>{message}</p>}
+      {message && <p>{message}</p>} */}
       <ContactForm saveData={saveData} />
     </div>
   );
