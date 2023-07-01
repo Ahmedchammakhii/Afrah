@@ -1,5 +1,5 @@
 .formContainer{
-  background-color: #d7e3e2;
+  background-color: #d0e6e4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,14 +8,15 @@
   left:0;
   font-family: "Poppins", sans-serif;
   width: 100vw;;
-  position: absolute;
+  position: relative;
   padding-bottom:50vh;
   top: 0;
- 
+  height:100%;
+ z-index:1
 }
 .form{
-position:relative;
-max-width: 700px;
+/* position:relative; */
+max-width: 650px;
 justify-content: center;
 align-items: center;
 display: contents;
@@ -35,8 +36,18 @@ font-size: smaller;
 .form .intro{
  text-align: center;
  font-weight: 600;
- font-size: 30px;
+ font-size: 35px;
   margin-top: 200px;
+  letter-spacing: 3px;
+  line-height: 50px;
+  width: 700px;
+}
+.co{
+  text-align: center;
+  font-weight: 300;
+  font-size: 15px;
+  max-width: 400px;
+  margin: 20px;
 }
 .policy{
     text-align: center;
@@ -45,13 +56,16 @@ font-size: smaller;
    }
 
 .form input{
-    width: 700px;
+    width: 650px;
+    padding: 5px;
 }
 .form select{
-    width: 710px;
-    height:25px
+    width: 660px;
+    height:25px;
+    /* padding: 5px; */
 }
 .form textarea{
-    width: 700px;
+    width: 650px;
     height: 50px;
+    padding: 5px;
 }
