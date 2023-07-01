@@ -1,6 +1,6 @@
-let counter = 1
+export let counter = 1
 
-export function iteration(container) {
+export function iteration(container, record) {
     container.current.children[1].style.background = "transparent";
     container.current.children[1].style.boxShadow = "none";
 
@@ -9,17 +9,18 @@ export function iteration(container) {
 
     container.current.children[0].style.boxShadow = "10px 10px 40px 0px rgba(0,0,0,0.7)";
     container.current.children[0].style.display = "block";
-    container.current.children[0].style.animation = "scaler 0.8s";
-    container.current.children[0].style.animationTimingFunction = "cubic-bezier(1,-0.01,.47,.99)";
+    container.current.children[0].style.animation = "scaler 1s";
+    container.current.children[0].style.animationTimingFunction = "cubic-bezier(.99,.33,.21,.97)";
 
 
     for (let i = 1; container.current.children.length > i; i++) {
         container.current.children[i].style.transition = `transform 0.5s`
         setTimeout(() => {
-            container.current.children[i].style.transform = "translatex(-116.6%)"
+            container.current.children[i].style.transform = "translatex(-119.3%)"
         }, Number((i - 1) + "00"));
     }
-
+    // console.log(counter + 1);
+    console.log(record.current.style.transform = "translateX(-50%)");
 }
 
 export function animEnd(wrapper, container, data) {
@@ -49,7 +50,6 @@ export function animEnd(wrapper, container, data) {
                 container.current.children[i + 1].style.background = data[i].background;
                 container.current.children[i + 1].style.backgroundPosition = "center"
                 container.current.children[i + 1].style.backgroundSize = "cover"
-
             }
             ; i++
         };
