@@ -1,0 +1,11 @@
+.buttonsContainer{
+  
+    margin-top: -300px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+}
+
