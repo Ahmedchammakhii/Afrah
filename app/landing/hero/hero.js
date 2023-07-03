@@ -17,6 +17,7 @@ export default function Hero() {
     const subtitle = useRef(null);
     const titles = useRef(null);
     const record = useRef(null);
+    const matta = useRef(null);
 
 
 
@@ -49,7 +50,7 @@ export default function Hero() {
                 ref={loader} className="loading" />
 
             <div className='left-wrapper' style={{ display: "flex", flexDirection: "column", justifyContent: "center", zIndex: 2, textShadow: "0px 0px 15px rgba(0,0,0,0.5)", marginTop: "2vw" }}>
-                <div style={{ overflow: "hidden" }} >
+                <div ref={matta} className="line-container" style={{ overflow: "hidden" }} >
                     <div className='line' style={{ width: "6%", height: "9px", marginLeft: "10%", background: "white" }} />
                 </div>
                 <h2 ref={subtitle} className={'subtitle ' + font2.className} style={{ marginLeft: "10%", marginTop: "2%", overflow: "hidden" }}>
@@ -74,7 +75,7 @@ export default function Hero() {
 
                 <div className='right-container' >
 
-                    <Slides container={container} wrapper={wrapper} record={record} titles={titles} subtitle={subtitle} />
+                    <Slides container={container} wrapper={wrapper} record={record} titles={titles} subtitle={subtitle} matta={matta} />
 
                     <div style={{ width: "100%", height: "25%", position: "relative", bottom: "25%", marginLeft: "2.2%", display: "flex", justifyContent: "center", flexDirection: "column" }}>
                         <div style={{ display: "flex", gap: "1.5%" }}>

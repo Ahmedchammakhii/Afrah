@@ -32,12 +32,25 @@ export function iteration(container, record) {
     record.current.style.transform = "translateX(-50%)"
 }
 
-export function animEnd(wrapper, container, data, record, titles, subtitle) {
+export function animEnd(wrapper, container, data, record, titles, subtitle, matta) {
     subtitle.current.children[0].style.transition = "none";
     subtitle.current.children[0].style.transform = "translateY(100%)";
+    matta.current.children[0].style.transition = "none";
+    matta.current.children[0].style.transform = "translateY(100%)";
     setTimeout(() => {
         subtitle.current.children[0].style.transition = "transform 0.6s cubic-bezier(.69,.26,0,1)"
         subtitle.current.children[0].style.transform = "none";
+        matta.current.children[0].style.transition = "transform 0.6s cubic-bezier(.69,.26,0,1)"
+        matta.current.children[0].style.transform = "none";
+    }, 0);
+
+
+
+    titles.current.children[0].children[0].style.transition = "none";
+    titles.current.children[0].children[0].style.transform = "translateY(100%)";
+    setTimeout(() => {
+        titles.current.children[0].children[0].style.transition = "transform 0.6s cubic-bezier(.69,.26,0,1)"
+        titles.current.children[0].children[0].style.transform = "none";
     }, 0);
 
 
