@@ -35,20 +35,23 @@ export default function Hero() {
 
     return (
         <div ref={wrapper} className={'content-wrapper ' + font.className}>
-            <div style={{ background: "black", width: "100vw", height: "100vh", position: "absolute", opacity: "0.2", zIndex: 0 }} />
+            <div style={{ background: "black", width: "100vw", height: "100vh", position: "absolute", opacity: "0.1", zIndex: 0 }} />
             <div onTransitionEnd={() =>
                 //  loader.current.style.animation = "loading 5s linear infinite"
                 ""
             } ref={veil} className='veil'
                 style={{ transition: "1s cubic-bezier(.69,.26,0,1)", position: "absolute", background: "white", width: "0", height: "100vh", zIndex: 9999999999, right: 0 }} />
             <div onAnimationIteration={() => {
-                iteration(container, record);
+                iteration(container, record, subtitle, titles, veil);
+                // ""
                 // animation: loading 5s linear infinite;
             }}
                 ref={loader} className="loading" />
 
             <div className='left-wrapper' style={{ display: "flex", flexDirection: "column", justifyContent: "center", zIndex: 2, textShadow: "0px 0px 15px rgba(0,0,0,0.5)", marginTop: "2vw" }}>
-                <div className='line' style={{ width: "6%", height: "9px", marginLeft: "10%", background: "white" }} />
+                <div style={{ overflow: "hidden" }} >
+                    <div className='line' style={{ width: "6%", height: "9px", marginLeft: "10%", background: "white" }} />
+                </div>
                 <h2 ref={subtitle} className={'subtitle ' + font2.className} style={{ marginLeft: "10%", marginTop: "2%", overflow: "hidden" }}>
                     <div style={{ transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)" }} >
                         Sahara Desert - Morocco
@@ -71,7 +74,7 @@ export default function Hero() {
 
                 <div className='right-container' >
 
-                    <Slides container={container} wrapper={wrapper} record={record} />
+                    <Slides container={container} wrapper={wrapper} record={record} titles={titles} subtitle={subtitle} />
 
                     <div style={{ width: "100%", height: "25%", position: "relative", bottom: "25%", marginLeft: "2.2%", display: "flex", justifyContent: "center", flexDirection: "column" }}>
                         <div style={{ display: "flex", gap: "1.5%" }}>
@@ -98,7 +101,7 @@ export default function Hero() {
                                     <div>
                                         02
                                     </div>
-                                    <div>
+                                    <div style={{ transform: "translateX()" }}>
                                         03
                                     </div>
                                 </div>

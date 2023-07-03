@@ -2,7 +2,7 @@
 import data from '@/data/hero';
 import { useRef, useState, useEffect } from 'react';
 import { iteration, animEnd } from '@/functions/landing/hero_functions';
-export default function slides({ wrapper, container, record }) {
+export default function slides({ wrapper, container, record, titles, subtitle }) {
 
     let items = []
 
@@ -20,7 +20,7 @@ export default function slides({ wrapper, container, record }) {
                 height: "100%",
             }}
         >
-            <div onAnimationEnd={() => animEnd(wrapper, container, data, record)}
+            <div onAnimationEnd={() => animEnd(wrapper, container, data, record, titles, subtitle)}
                 style={{
                     width: "13vw",
                     height: "19vw",
@@ -37,7 +37,9 @@ export default function slides({ wrapper, container, record }) {
                     backgroundPosition: "center",
                     backgroundSize: "cover"
                 }}
-            />
+            >
+                <div style={{ width: "100%", height: "100%", background: "black", opacity: 0.1 }} />
+            </div>
 
             {data.map((e, i) => (
                 <div

@@ -4,6 +4,9 @@ export function iteration(container, record) {
     container.current.children[1].style.background = "transparent";
     container.current.children[1].style.boxShadow = "none";
 
+    // url('path/to/your-image.jpg'), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))
+    container.current.children[0].style.background = container.current.children[0].style.background + ", linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))"
+    container.current.children[0].style.zIndex = "3"
     container.current.children[0].style.backgroundPosition = "center"
     container.current.children[0].style.backgroundSize = "cover"
 
@@ -13,6 +16,12 @@ export function iteration(container, record) {
     container.current.children[0].style.animationTimingFunction = "cubic-bezier(.99,.33,.21,.97)";
 
 
+    container.current.children[0].children[0].style.transition = "none"
+    container.current.children[0].children[0].style.opacity = "0"
+    container.current.children[0].children[0].style.transition = "opacity 1s cubic-bezier(.69, 0.26, 0, 1)"
+    container.current.children[0].children[0].style.opacity = "0.1"
+
+
     for (let i = 1; container.current.children.length > i; i++) {
         container.current.children[i].style.transition = `transform 0.5s`
         setTimeout(() => {
@@ -20,10 +29,18 @@ export function iteration(container, record) {
         }, Number((i - 1) + "00"));
     }
     // console.log(counter + 1);
-    console.log(record.current.style.transform = "translateX(-50%)");
+    record.current.style.transform = "translateX(-50%)"
 }
 
-export function animEnd(wrapper, container, data) {
+export function animEnd(wrapper, container, data, record, titles, subtitle) {
+    subtitle.current.children[0].style.transition = "none";
+    subtitle.current.children[0].style.transform = "translateY(100%)";
+    setTimeout(() => {
+        subtitle.current.children[0].style.transition = "transform 0.6s cubic-bezier(.69,.26,0,1)"
+        subtitle.current.children[0].style.transform = "none";
+    }, 0);
+
+
     wrapper.current.style.background = data[counter ? counter - 1 : data.length - 1].background
     wrapper.current.style.backgroundPosition = "center"
     wrapper.current.style.backgroundSize = "cover"
@@ -81,9 +98,8 @@ export function animEnd(wrapper, container, data) {
         container.current.children[index + 1].style.transition = "none";
         container.current.children[index + 1].style.transform = "none";
         container.current.children[index + 1].style.background = element;
-        container.current.children[index + 1].style.backgroundPosition = "center"
-        container.current.children[index + 1].style.backgroundSize = "cover"
-
+        container.current.children[index + 1].style.backgroundPosition = "center";
+        container.current.children[index + 1].style.backgroundSize = "cover";
     });
 
 
