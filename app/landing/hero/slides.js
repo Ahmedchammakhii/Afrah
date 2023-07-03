@@ -37,10 +37,7 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                     backgroundPosition: "center",
                     backgroundSize: "cover"
                 }}
-            >
-                <div style={{ width: "100%", height: "100%", background: "black", opacity: 0.1 }} />
-            </div>
-
+            />
             {data.map((e, i) => (
                 <div
                     key={i}

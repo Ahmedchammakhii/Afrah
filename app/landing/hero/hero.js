@@ -35,15 +35,15 @@ export default function Hero() {
     }, [])
 
     return (
-        <div ref={wrapper} className={'content-wrapper ' + font.className}>
-            <div style={{ background: "black", width: "100vw", height: "100vh", position: "absolute", opacity: "0.1", zIndex: 0 }} />
+        <div className={'content-wrapper ' + font.className}>
+            <div ref={wrapper} style={{ transition: "scale 1s cubic-bezier(.69,.26,0,1), filter 1s", width: "100vw", height: "100vh", position: "absolute", zIndex: 0, background: data[data.length - 1].background, backgroundRepeat: "no-repeat" }} />
             <div onTransitionEnd={() =>
                 //  loader.current.style.animation = "loading 5s linear infinite"
                 ""
             } ref={veil} className='veil'
                 style={{ transition: "1s cubic-bezier(.69,.26,0,1)", position: "absolute", background: "white", width: "0", height: "100vh", zIndex: 9999999999, right: 0 }} />
             <div onAnimationIteration={() => {
-                iteration(container, record, subtitle, titles, veil);
+                iteration(container, record, wrapper);
                 // ""
                 // animation: loading 5s linear infinite;
             }}
@@ -77,7 +77,7 @@ export default function Hero() {
 
                     <Slides container={container} wrapper={wrapper} record={record} titles={titles} subtitle={subtitle} matta={matta} />
 
-                    <div style={{ width: "100%", height: "25%", position: "relative", bottom: "25%", marginLeft: "2.2%", display: "flex", justifyContent: "center", flexDirection: "column" }}>
+                    <div style={{ width: "100%", height: "25%", position: "relative", bottom: "25%", marginLeft: "2.2%", display: "flex", justifyContent: "center", flexDirection: "column", zIndex: 99 }}>
                         <div style={{ display: "flex", gap: "1.5%" }}>
                             <div style={{ width: "8vh", height: "8vh", borderRadius: "100%", border: "1px solid white", position: "relative", cursor: "pointer" }} >
                                 <img style={{ width: "20%", position: "absolute", left: "45%", top: "50%", transform: "translate(-50%, -50%)" }} src='https://cdn.discordapp.com/attachments/1073737355896299542/1124656168434946048/Daco_752371.png' />
@@ -96,13 +96,13 @@ export default function Hero() {
                             <div style={{
                                 color: "white", height: "100%", display: "flex",
                                 alignItems: "center", fontSize: "3vw", marginTop: "-0.25vw",
-                                fontWeight: "bold", overflow: "hidden", background: "red", width: "3vw"
+                                fontWeight: "bold", overflow: "hidden", width: "3vw"
                             }}>
                                 <div ref={record} style={{ display: "flex", transition: "1s cubic-bezier(.69,.26,0,1)" }}>
                                     <div>
                                         02
                                     </div>
-                                    <div style={{ transform: "translateX()" }}>
+                                    <div style={{ transform: "translateX(100%)", transition: "1s cubic-bezier(.69,.26,0,1)" }}>
                                         03
                                     </div>
                                 </div>
@@ -117,7 +117,7 @@ export default function Hero() {
 
             <style>{`
 
-                .content-wrapper { width: 100vw; height: 100vh; overflow: hidden; position: relative; display: flex; background-position: center; background-size: cover;  background : ${data[data.length - 1].background} }
+                .content-wrapper {width: 100vw; height: 100vh; overflow: hidden; position: relative; display: flex; background-position: center; background-size: cover;  background : black }
                 .loading { height: 1%; width: 0; background: red; position: absolute; border-radius: 50px; margin-left: -50px;  }
                 .left-wrapper { width: 45%; color: white }
                 .right-wrapper { width: 55%; }
