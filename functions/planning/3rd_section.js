@@ -7,9 +7,10 @@ export default function Fix() {
     
           if (parallaxElement) {
             const scrollPosition = window.scrollY;
-            const distance = scrollPosition * 0.0005; // Adjust the parallax speed as needed
+            const elementTopPosition=parallaxElement.offsetTop
+            const distance = elementTopPosition-scrollPosition * 0.5; // Adjust the parallax speed as needed
     
-            parallaxElement.style.transform = `translateY(${distance}px)`;
+            parallaxElement.style.backgroundPositionY = `${distance}px`;
           }
         };
     
@@ -29,9 +30,10 @@ export default function Fix() {
             padding: 0,
             left: 0,
             top:0,  
-            zIndex:-4  
+            overflow:'hidden',
+            position:'sticky'
         }}>
-            <div  style={{
+            <div id="parallax1" style={{
                 
                 backgroundAttachment:"fixed",
                 height: "100%",
@@ -41,7 +43,9 @@ export default function Fix() {
                 backgroundPosition: "center",
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no repeat',
-               filter:'sepia(0.2) brightness(90%)'
+               filter:'sepia(0.2) brightness(90%)',
+               overflow:'hidden',
+               position:'relative'
             }}
             >
 

@@ -75,7 +75,7 @@ export default function Form() {
 
       }}
       >
-        <h2 style={{fontSize:"larger" ,paddingBottom:"50px"}}>THE BLOG</h2>
+        <h2 style={{ fontSize: "larger", paddingBottom: "50px",marginTop:0 }}>THE BLOG</h2>
         <div style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr 1fr',
@@ -83,15 +83,21 @@ export default function Form() {
           gap: '100px',
           marginTop: '16px',
           textAlign: "center",
-
+'@media (maxWidth: 1400px)': {
+  gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+  gridTemplateRows: 'auto auto',
+  margin: '0 auto',
+  padding: '0 20px',
+}
         }}>
-          <div style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat",  height: '500px', width: "400px" ,display:"flex",justifyContent:"center",alignItems:"center"}}> <div style={{marginTop:650,maxWidth:"350px"}}><h2 style={{fontWeight:"500"}}>top five tips for budgeting your wedding</h2><button style={{width:"150px",height:"50px",background:"black",color:"#fff"}}>read more</button></div></div>
-          <div style={{ backgroundImage: "url('/2b.jpg')", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: '500px', width: "400px",display:"flex",justifyContent:"center",alignItems:"center"}}><div style={{marginTop:650,maxWidth:"350px"}}><h2 style={{fontWeight:"500",text:"lowercase"
-        }}>
- pro wedding day timeline MADE BY PLANNERS  </h2><button style={{width:"150px",height:"50px",background:"black",color:"#fff"}}>read more</button ></div></div>
+          <div style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: '500px', width: "400px", display: "flex", justifyContent: "center", alignItems: "center" }}> <div style={{ marginTop: 650, maxWidth: "350px" }}><h2 style={{ fontWeight: "500" }}>top five tips for budgeting your wedding</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" }}>read more</button></div></div>
+          <div style={{ backgroundImage: "url('/2b.jpg')", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: '500px', width: "400px", display: "flex", justifyContent: "center", alignItems: "center" }}><div style={{ marginTop: 650, maxWidth: "350px" }}><h2 style={{
+            fontWeight: "500", text: "lowercase"
+          }}>
+            pro wedding day timeline MADE BY PLANNERS  </h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" }}>read more</button ></div></div>
 
-          <div style={{ backgroundImage: "url('/3b.jpg')", height: '500px', width: "400px",  backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" ,display:"flex",justifyContent:"center",alignItems:"center"}}><div style={{marginTop:650,maxWidth:"350px",maxWidth:"400px"}}><h2 style={{fontWeight:"400",fontSize:"20px"}}>
-WEDDING PLANNER VS. VENUE MANAGER and what the differences are</h2><button style={{width:"150px",height:"50px",background:"black",color:"#fff"}}>read more</button></div></div>
+          <div style={{ backgroundImage: "url('/3b.jpg')", height: '500px', width: "400px", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center" }}><div style={{ marginTop: 650, maxWidth: "350px", maxWidth: "400px" }}><h2 style={{ fontWeight: "400", fontSize: "20px" }}>
+            WEDDING PLANNER VS. VENUE MANAGER and what the differences are</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" }}>read more</button></div></div>
         </div>
 
       </div>
@@ -112,11 +118,11 @@ WEDDING PLANNER VS. VENUE MANAGER and what the differences are</h2><button style
         alignItems: 'center',
 
       }}>
-        <CustomButton 
-               label="YOU'RE FOLLOWING ON INSTAGRAM, RIGHT?"
-              isActive={false}
-              // onClick={() => fileInputRef.current.click()}
-              />
+        <CustomButton
+          label="YOU'RE FOLLOWING ON INSTAGRAM, RIGHT?"
+          isActive={false}
+        // onClick={() => fileInputRef.current.click()}
+        />
         {/* <button type="button" style={{ height: "60px", width: "300px", marginTop: "-300px", backgroundColor: "grey", borderRadius: "5rem" }}>Are you following us on instagram?</button> */}
       </div>
     </div>
