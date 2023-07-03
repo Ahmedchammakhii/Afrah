@@ -41,7 +41,7 @@ const CustomButton = ({ label, value, isActive, onClick }) => {
           fontSize: "1rem",
           width: "500px",
           height: "70px",
-          borderRadius: "20% 20% 20% 20%/60% 60% 60% 60%" ,
+          // borderRadius: "20% 20% 20% 20%/60% 60% 60% 60%" ,
           border: "1px solid black",
          background: isActive ? "black" : "transparent",
       }}
@@ -61,9 +61,10 @@ const CustomButton = ({ label, value, isActive, onClick }) => {
             top: "-50%",
             left: "50%",
             transition: "0.6s",
-            borderRadius: "100%",
+            // borderRadius: "100%",
             pointerEvents: "none",
             zIndex: -1,
+            
           }}
         />
         <div
@@ -76,6 +77,7 @@ const CustomButton = ({ label, value, isActive, onClick }) => {
             transform: "translate(-50%, -50%)",
             width: "100%",
             pointerEvents: "none",
+            fontWeight:'bold'
           }}
         >
           {label}
