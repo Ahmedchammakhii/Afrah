@@ -2,8 +2,11 @@ import Image from "next/image";
 import { Jost } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 import { useEffect, useState } from "react";
+import localFont from "next/font/local";
 const jost = Jost({ subsets: ["latin"], weight: "600" });
 const play = Playfair_Display({ subsets: ["latin"], weight: "400" });
+const myFont = localFont({ src: "./BonVivant-Regular.otf" });
+
 export default function Parallaxe() {
   useEffect(() => {
     const parallaxEffect = () => {
@@ -15,7 +18,7 @@ export default function Parallaxe() {
         const distance = elementTopPosition - scrollPosition;
         const parallaxSpeed = 0.5;
 
-        element.style.transform = `translateY(${distance * parallaxSpeed}px)`;
+        element.style.backgroundPositionY = `${distance * parallaxSpeed}px`;
       });
     };
 
@@ -30,7 +33,7 @@ export default function Parallaxe() {
     <main
       style={{
         width: "100vw",
-        height: "100vh",
+        height: "150vh",
         display: "flex",
         alignItems: "center",
         position: "relative",
@@ -40,10 +43,9 @@ export default function Parallaxe() {
         className="wholeshow"
         style={{
           width: "100%",
-          height: "90%",
-          overflow: "hidden",
-          position: "sticky",
+          height: "70%",
           zIndex: 3,
+          position: "relative",
         }}
       >
         <div
@@ -55,25 +57,95 @@ export default function Parallaxe() {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             overflow: "hidden",
-            position: "relative",
           }}
         ></div>
-      </div>
-      <div
-        className="text_wrapper"
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          zIndex: 4,
-        }}
-      >
-        <p className={jost.className} style={{ fontSize: 50, color: "#fff" }}>
-          BROWSE OUR
-        </p>
+        <div
+          className="text_wrapper"
+          style={{
+            position: "absolute",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            zIndex: 4,
+            top: "10%",
+          }}
+        >
+          <p className={jost.className} style={{ fontSize: 25, color: "#fff" }}>
+            INTRODUCING{" "}
+          </p>
+          <p
+            style={{ fontSize: 75, color: "#fff" }}
+            className={myFont.className}
+          >
+            Your Wedding planning Team
+          </p>
+        </div>
+        <div
+          className="laptop"
+          style={{
+            width: "70%",
+            height: "100%",
+            background: 'url("/assets/laptop.png") no-repeat ',
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            position: "absolute",
+            zIndex: 5,
+            top: "30%",
+            left: "50%",
+            transform: "translate(-55%)",
+          }}
+        >
+          {" "}
+          <video
+            id="myVideo"
+            autoPlay
+            loop
+            muted
+            autoCorrect="true"
+            src={"/assets/Afrah.mp4"}
+            style={{
+              width: "65%",
+              height: "68%",
+              marginLeft: 250,
+            }}
+          />
+        </div>
+        <div
+          className="bottomText"
+          style={{
+            position: "absolute",
+            bottom: "-20%",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <p
+            className={jost.className}
+            style={{ letterSpacing: "0.1em", fontSize: "35px" }}
+          >
+            #TEAMAFRAHPRODUCTION
+          </p>
+          <p
+            className={play.className}
+            style={{
+              letterSpacing: "0.1em",
+              width: "50%",
+              textAlign: "center",
+            }}
+          >
+            {" "}
+            Notre équipe est vraiment pointue et centrée sur le style, mettant
+            en œuvre des idées de concept éclectiques et très stylées
+            personnalisées pour chaque événement : vous serez sûr de vous faire
+            bloguer, épingler, reprogrammer et tendance. En tant qu'individus,
+            nous sommes connus pour notre style unique, notre authenticité,
+            notre passion, notre éthique de travail et notre expérience.
+          </p>
+        </div>
       </div>
     </main>
   );
