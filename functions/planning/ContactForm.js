@@ -236,7 +236,9 @@ DIDO@Afrah.com</p></div>
                         name="message"
                         value={formValues.message}
                         onChange={handleChange}
-                    ></textarea>
+                    >
+                        
+                    </textarea>
                 </div>
                 <div className={styles.policy}>We use Aisle Planner to manage inquiries. By submitting this contact form, Aisle Planner will share your information with us. We may use your information to correspond with you and send you email marketing communications. For more information, please refer to the Aisle Planner Privacy Policy. This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</div>
                 <button type="submit" >SEND</button>
