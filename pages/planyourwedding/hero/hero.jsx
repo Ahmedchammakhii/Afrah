@@ -91,8 +91,6 @@ export default function Hero() {
                 width: "35%",
                 height: "max-content",
                 paddingBottom: "1px",
-                borderBottom: "3px solid",
-                borderBottomColor: "rgba(242,135,201,.2)",
               }}
             >
               {" "}
@@ -118,7 +116,10 @@ export default function Hero() {
           src={"/assets/3orsa.png"}
           width={100}
           height={150}
-          style={{ position: "absolute", right: 100 }}
+          style={{
+            position: "absolute",
+            right: 100,
+          }}
         ></Image>
         <div
           className="cards a"

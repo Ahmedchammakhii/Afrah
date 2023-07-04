@@ -29,7 +29,7 @@ export default function Planyourwedding() {
             transform: "rotate(-1deg)",
           }}
         >
-          Vous êtes à la recherche de l'excellence , non ?
+          Vous êtes à la recherche de l'excellence , par hasard ?
         </p>
       </div>
       <Parallaxe></Parallaxe>
