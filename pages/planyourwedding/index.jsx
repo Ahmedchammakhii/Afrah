@@ -12,26 +12,7 @@ export default function Planyourwedding() {
       <Hero></Hero>
       <Slider></Slider>
       <Deposit></Deposit>
-      <div
-        className="questionPart"
-        style={{
-          width: "100vw",
-          height: "10vh",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <p
-          className={myFont.className}
-          style={{
-            fontSize: 36,
-            letterSpacing: ".4rem",
-            transform: "rotate(-1deg)",
-          }}
-        >
-          Vous êtes à la recherche de l'excellence , par hasard ?
-        </p>
-      </div>
+
       <Parallaxe></Parallaxe>
     </main>
   );

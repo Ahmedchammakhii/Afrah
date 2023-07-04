@@ -37,8 +37,21 @@ export default function Parallaxe() {
         display: "flex",
         alignItems: "center",
         position: "relative",
+        marginBottom: "100px",
+        flexDirection: "column",
       }}
     >
+      <p
+        className={myFont.className}
+        style={{
+          fontSize: 36,
+          letterSpacing: ".4rem",
+          transform: "rotate(-1deg)",
+          marginBottom: 10,
+        }}
+      >
+        Vous êtes à la recherche de l'excellence , par hasard ?
+      </p>
       <div
         className="wholeshow"
         style={{
@@ -117,7 +130,7 @@ export default function Parallaxe() {
           className="bottomText"
           style={{
             position: "absolute",
-            bottom: "-20%",
+            bottom: "-25%",
             width: "100%",
             display: "flex",
             alignItems: "center",
