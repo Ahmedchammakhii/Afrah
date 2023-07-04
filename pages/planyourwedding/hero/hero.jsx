@@ -1,13 +1,27 @@
 "use client";
 import { Dancing_Script, Poppins } from "next/font/google";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 const play = Dancing_Script({ subsets: ["latin"], weight: "700" });
 const playa = Poppins({ subsets: ["latin"], weight: "300" });
 
 export default function Hero() {
   const refce = useRef(null);
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <main
@@ -69,12 +83,13 @@ export default function Hero() {
           >
             <h1
               className={playa.className}
-              id="id"
+              id="id1"
               style={{
                 color: "black",
                 zIndex: 400,
-                fontSize: 15,
+                fontSize: "clamp(0.5rem, 1rem, 2rem)",
                 width: "20%",
+                textAlign: "center",
               }}
             >
               Vous avez mille et une choses à faire 🤔 mais vous vous trouvez
@@ -83,14 +98,15 @@ export default function Hero() {
 
             <h1
               className={playa.className}
-              id="id"
+              id="id2"
               style={{
                 color: "black",
                 zIndex: 400,
-                fontSize: 20,
+                fontSize: "1.25rem",
                 width: "35%",
                 height: "max-content",
                 paddingBottom: "1px",
+                textAlign: "center",
               }}
             >
               {" "}
@@ -98,7 +114,8 @@ export default function Hero() {
             </h1>
           </div>
           <h1
-            style={{ width: "60%", textAlign: "center", fontSize: 20 }}
+            id="id3"
+            style={{ width: "60%", textAlign: "center", fontSize: "1.3rem" }}
             className={playa.className}
           >
             Afrah Group dispose des ressources logistiques et humaines
@@ -108,18 +125,27 @@ export default function Hero() {
         </div>
         <Image
           src={"/assets/3orsa.png"}
-          width={100}
-          height={150}
-          style={{ position: "absolute", left: 100 }}
+          width={windowWidth < 1200 ? 70 : 100}
+          height={windowWidth < 1200 ? 100 : 150}
+          style={{
+            position: "absolute",
+            left: 90,
+            transform:
+              windowWidth < 1200 ? "translateY(60px)" : "translateY(50px)",
+          }}
+          className="3orssa1"
         ></Image>
         <Image
           src={"/assets/3orsa.png"}
-          width={100}
-          height={150}
+          width={windowWidth < 1200 ? 70 : 100}
+          height={windowWidth < 1200 ? 100 : 150}
           style={{
             position: "absolute",
-            right: 100,
+            right: 90,
+            transform:
+              windowWidth < 1200 ? "translateY(60px)" : "translateY(50px)",
           }}
+          id="3orssa2"
         ></Image>
         <div
           className="cards a"
@@ -153,55 +179,6 @@ export default function Hero() {
               flexDirection: "column",
               alignItems: "center",
               gap: 10,
-              rotate: "10deg",
-            }}
-          >
-            <div
-              className="texts"
-              style={{
-                width: "100%",
-                display: "flex",
-                gap: 20,
-              }}
-            >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
-                Réussir un mariage demande beaucoup d’organisation Notre équipe
-                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
-                toutes les étapes de la préparation de votre mariage. Du
-                faire-part à la décoration de l'entrée et de la salle, passant
-                par la sonorisation, l'animation et le traiteur, et évidemment
-                jusqu'au podium!
-              </p>
-              <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
-                Afrah vous offre une gamme complète de prestations clé en main
-                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
-                place du podium, passant par la décoration des lieux, le buffet
-                et le service traiteur ainsi que la sonorisation et la lumière
-              </p>
-            </div>
-            <div
-              className="imagething"
-              style={{
-                width: "100%",
-                height: "90%",
-                background: "url('/assets/1.jpg') no-repeat center ",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          </div>{" "}
-          <div
-            className="card"
-            style={{
-              background: "#efefef",
-              height: "40vh",
-              width: "14vw",
-              zIndex: 20,
-              padding: 10,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 10,
               rotate: "-10deg",
             }}
           >
@@ -213,7 +190,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -222,7 +199,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -263,7 +240,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -272,7 +249,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -313,7 +290,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -322,7 +299,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -363,7 +340,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -372,7 +349,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -413,7 +390,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -422,7 +399,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -456,7 +433,7 @@ export default function Hero() {
             animationDelay: "1s",
           }}
           onAnimationEnd={(e) =>
-            (e.currentTarget.style.transform = "translateY(-200px)")
+            (e.currentTarget.style.transform = "translateY(-150px)")
           }
         >
           <div
@@ -482,7 +459,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -491,7 +468,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Votre mariage clé en main de A jusqu'à Z.
               </p>
             </div>
@@ -531,7 +508,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -540,7 +517,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -585,7 +562,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -594,7 +571,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -638,7 +615,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -647,7 +624,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -680,60 +657,6 @@ export default function Hero() {
               flexDirection: "column",
               alignItems: "center",
               gap: 10,
-              rotate: "15deg",
-              transform: "translateX(10px)",
-            }}
-          >
-            <div
-              className="texts"
-              style={{
-                width: "100%",
-                display: "flex",
-                gap: 20,
-              }}
-            >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
-                Réussir un mariage demande beaucoup d’organisation Notre équipe
-                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
-                toutes les étapes de la préparation de votre mariage. Du
-                faire-part à la décoration de l'entrée et de la salle, passant
-                par la sonorisation, l'animation et le traiteur, et évidemment
-                jusqu'au podium!
-              </p>
-              <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
-                Afrah vous offre une gamme complète de prestations clé en main
-                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
-                place du podium, passant par la décoration des lieux, le buffet
-                et le service traiteur ainsi que la sonorisation et la lumière
-              </p>
-            </div>
-            <div
-              className="imagething"
-              style={{
-                width: "100%",
-                height: "90%",
-                background: "url('/assets/5.jpg') no-repeat center ",
-                backgroundSize: "cover",
-              }}
-            ></div>
-            <p style={{ fontSize: 8 }}>
-              Confier vos événements a des mains de confiance est
-              l'incontournable choix pour une cérémonie réussie!{" "}
-            </p>
-          </div>
-          <div
-            className="card"
-            style={{
-              background: "#efefef",
-              height: "40vh",
-              width: "14vw",
-              zIndex: 20,
-              padding: 10,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 10,
               rotate: "-10deg",
               translate: "translateX(-50px)",
             }}
@@ -746,7 +669,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -755,7 +678,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: ".2rem", width: "40%" }}>
+              <p className="parag" style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -805,7 +728,7 @@ export default function Hero() {
             transform:translateY(0px)
           }
           100%{
-            transform:translateY(-200px)
+            transform:translateY(-150px)
 
           }
         }
@@ -816,6 +739,69 @@ opacity:0          }
 opacity:1
           }
         }
+
+        @media screen and (max-width:1247px) {
+         
+          #id1{
+            font-size:.8rem !important
+          }
+           #id2 {
+            font-size:1rem !important
+
+           }
+           #id3{
+            font-size:1rem !important
+
+           }  
+           .parag{
+            font-size:.12rem !important
+
+           }
+           .card {
+            height : 35vh !important
+           }
+           .a {
+            transform : translateY(150px) !important
+           }
+           .b {
+            transform : translateY(-150px) !important
+           }
+           
+          
+          }
+          @media screen and (max-width:1140px) {
+            .a {
+              transform : translateY(180px) !important
+             }
+             .b {
+              transform : translateY(-150px) !important
+             }
+             #id1{
+              font-size:.7rem !important
+            }
+             #id2 {
+              font-size:.8rem !important
+  
+             }
+             #id3{
+              font-size:.8rem !important
+  
+             }  
+             #id{
+              font-size:1.5rem !important
+  
+             }  
+
+             .card {
+              width:15vw !important
+             }
+          }
+          @media screen and (max-width:909px) {
+            .card {
+              width:25vw !important
+            }
+
+          }
         `}
       </style>
     </main>
