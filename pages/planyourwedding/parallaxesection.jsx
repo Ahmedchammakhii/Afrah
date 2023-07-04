@@ -85,8 +85,8 @@ export default function Parallaxe() {
         <div
           className="laptop"
           style={{
-            width: "70%",
-            height: "100%",
+            width: "max-content",
+            height: "max-content",
             background: 'url("/assets/laptop.png") no-repeat ',
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
@@ -94,7 +94,7 @@ export default function Parallaxe() {
             zIndex: 5,
             top: "30%",
             left: "50%",
-            transform: "translate(-55%)",
+            transform: "translate(-45%)",
           }}
         >
           {" "}
@@ -106,9 +106,10 @@ export default function Parallaxe() {
             autoCorrect="true"
             src={"/assets/Afrah.mp4"}
             style={{
-              width: "65%",
-              height: "68%",
-              marginLeft: 250,
+              width: "80%",
+              height: "80%",
+              transform: "scale(.68) translateX(-14px) translateY(-20px)",
+              paddingLeft: 100,
             }}
           />
         </div>

@@ -163,7 +163,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -172,7 +172,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -212,7 +212,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -221,7 +221,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -262,7 +262,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -271,7 +271,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -312,7 +312,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -321,7 +321,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -362,7 +362,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -371,7 +371,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -412,7 +412,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -421,7 +421,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -481,7 +481,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -490,7 +490,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Votre mariage clé en main de A jusqu'à Z.
               </p>
             </div>
@@ -530,7 +530,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -539,7 +539,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -584,7 +584,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -593,7 +593,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -637,7 +637,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -646,7 +646,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -691,7 +691,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -700,7 +700,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet
@@ -745,7 +745,7 @@ export default function Hero() {
                 gap: 20,
               }}
             >
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Réussir un mariage demande beaucoup d’organisation Notre équipe
                 professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
                 toutes les étapes de la préparation de votre mariage. Du
@@ -754,7 +754,7 @@ export default function Hero() {
                 jusqu'au podium!
               </p>
               <p>AFRAH</p>
-              <p style={{ fontSize: 4, width: "40%" }}>
+              <p style={{ fontSize: ".2rem", width: "40%" }}>
                 Afrah vous offre une gamme complète de prestations clé en main
                 pour votre cérémonie: de l’aménagement de l'espace, a la mise en
                 place du podium, passant par la décoration des lieux, le buffet

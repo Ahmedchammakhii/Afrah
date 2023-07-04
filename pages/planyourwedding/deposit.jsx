@@ -149,8 +149,8 @@ export default function Deposit() {
         <div
           className="iphone"
           style={{
-            width: "70%",
-            height: "80%",
+            width: "max-content",
+            height: "max-content",
             background: 'url("/assets/iphone.png") no-repeat ',
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
@@ -168,8 +168,7 @@ export default function Deposit() {
             style={{
               width: "50%",
               height: "100%",
-              marginLeft: 45,
-              borderRadius: "100px",
+              transform: "scale(.72) translateX(-15px)",
             }}
           />
         </div>
