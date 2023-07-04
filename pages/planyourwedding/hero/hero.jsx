@@ -1,732 +1,3 @@
-// "use client";
-// import { Dancing_Script, Poppins } from "next/font/google";
-// import Image from "next/image";
-// import { useEffect, useRef } from "react";
-// import { gsap } from "gsap";
-// const play = Dancing_Script({ subsets: ["latin"], weight: "700" });
-// const playa = Poppins({ subsets: ["latin"], weight: "200" });
-
-// export default function Hero() {
-//   const refce = useRef(null);
-//   useEffect(() => {
-//     const tl = gsap.timeline();
-
-//     const cards = document.querySelectorAll(".card");
-
-//     cards.forEach((card, index) => {
-//       gsap.set(card, { x: "-100vw" });
-
-//       tl.to(card, { x: "0", duration: 0.8 }, index * 0.5, 1)
-//         .to(
-//           ".a",
-//           { y: 200, delay: 5, transition: "linear .5s", zIndex: 4000 },
-//           2
-//         )
-//         .to(
-//           ".b",
-//           { y: -200, delay: 5, transition: "linear .5s", zIndex: 4000 },
-//           2
-//         )
-//         .to("#aha", { y: 200, delay: 4.5, rotate: "120deg" }, 2)
-//         .to("#ahaa", { y: 200, delay: 4.5 }, 2)
-//         .to("#id", { opacity: 1, delay: 5.8, duration: 1 }, 2)
-//         .to("#last", { y: -250, x: -150, delay: 5 }, 2);
-//     });
-//   });
-//   return (
-//     <main
-//       className="main"
-//       ref={refce}
-//       style={{
-//         width: "100vw",
-//         height: "100vh",
-//         zIndex: 3,
-//         display: "flex",
-//         justifyContent: "center",
-//         alignItems: "center",
-//         position: "relative",
-//       }}
-//     >
-//       <div
-//         className="text"
-//         style={{
-//           position: "relative",
-//           width: "100%",
-//           display: "flex",
-//           justifyContent: "center",
-//         }}
-//       >
-//         <h1
-//           id="id"
-//           className={playa.className}
-//           style={{
-//             fontSize: "19rem",
-//             color: "black",
-//             zIndex: 400,
-//             opacity: 0,
-//           }}
-//         >
-//           Afrah
-//         </h1>
-//         <div
-//           className="cards a"
-//           style={{
-//             position: "absolute",
-//             left: 0,
-//             top: 0,
-//             width: "100%",
-//             height: "100%",
-//             display: "flex",
-//             justifyContent: "center",
-//             alignItems: "center",
-//             gap: 5,
-//             marginTop: 150,
-//           }}
-//         >
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "10deg",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/1.jpg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>{" "}
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "-10deg",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/2.jpg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>{" "}
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "7deg",
-//               transform: "translateY(20px) translateX(15px)",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/7.jpg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>{" "}
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "10deg",
-//               transform: "translateY(-50px)",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/4.jpg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>{" "}
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "15deg",
-//               transform: "translateX(10px)",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/5.jpg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "-10deg",
-//               translate: "translateX(-50px)",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/thenya.jpeg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>
-//         </div>
-//         <div
-//           className="cards b"
-//           style={{
-//             position: "absolute",
-//             left: 0,
-//             top: -200,
-//             width: "100%",
-//             height: "100%",
-//             display: "flex",
-//             justifyContent: "center",
-//             alignItems: "center",
-//             gap: 5,
-//           }}
-//         >
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "10deg",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/bg.jpg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>{" "}
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "-10deg",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/bg1.jpg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>{" "}
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "7deg",
-//               transform: "translateY(20px) translateX(15px)",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/bg2.jpg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>{" "}
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "10deg",
-//               transform: "translateY(-50px)",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/bg4.jpg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>{" "}
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "15deg",
-//               transform: "translateX(10px)",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/5.jpg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>
-//           <div
-//             className="card"
-//             style={{
-//               background: "#efefef",
-//               height: "40vh",
-//               width: "14vw",
-//               zIndex: 20,
-//               padding: 10,
-//               display: "flex",
-//               flexDirection: "column",
-//               alignItems: "center",
-//               gap: 10,
-//               rotate: "-10deg",
-//               translate: "translateX(-50px)",
-//             }}
-//           >
-//             <div
-//               className="texts"
-//               style={{
-//                 width: "100%",
-//                 display: "flex",
-//                 gap: 20,
-//               }}
-//             >
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-//                 eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-//                 Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-//                 similique omnis voluptatem fugit illum!
-//               </p>
-//               <p>AFRAH</p>
-//               <p style={{ fontSize: 4, width: "40%" }}>
-//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-//                 Repellendus est perferendis aperiam cum distinctio corporis
-//                 ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-//                 Nobis eveniet beatae dicta quisquam architecto?
-//               </p>
-//             </div>
-//             <div
-//               className="imagething"
-//               style={{
-//                 width: "100%",
-//                 height: "90%",
-//                 background: "url('/assets/thenya.jpeg') no-repeat center ",
-//                 backgroundSize: "cover",
-//               }}
-//             ></div>
-//           </div>
-//         </div>
-//       </div>
-//       <Image
-//         id="aha"
-//         src={"/assets/arrow.jpg"}
-//         width={300}
-//         height={293}
-//         style={{
-//           position: "absolute",
-//           left: 50,
-//           transform: "scale(.8) rotate(180deg)",
-//           top: 40,
-//         }}
-//       ></Image>
-//       <h1
-//         className={playa.className}
-//         id="ahaa"
-//         style={{
-//           position: "absolute",
-//           left: 100,
-//           top: 30,
-//           fontSize: 20,
-//           weight: 200,
-//         }}
-//       >
-//         Votre mariage clé en main{" "}
-//       </h1>
-//       <h1
-//         className={playa.className}
-//         id="last"
-//         style={{
-//           position: "absolute",
-//           right: 30,
-//           bottom: 40,
-//           fontSize: 35,
-//           zIndex: 1000,
-//         }}
-//       >
-//         de A jusqu'à Z.{" "}
-//       </h1>
-
-//       {/* <Image
-//         src={"/assets/arrow.jpg"}
-//         width={300}
-//         height={293}
-//         style={{
-//           position: "absolute",
-//           right: 100,
-//           bottom: 30,
-//           fontSize: 20,
-//           transform: "scale(.8) rotate(180deg) 	scaleX(-1) ",
-//           zIndex: 3,
-//         }}
-//       ></Image> */}
-//     </main>
-//   );
-// }
 "use client";
 import { Dancing_Script, Poppins } from "next/font/google";
 import Image from "next/image";
@@ -737,20 +8,7 @@ const playa = Poppins({ subsets: ["latin"], weight: "300" });
 
 export default function Hero() {
   const refce = useRef(null);
-  useEffect(() => {
-    const tl = gsap.timeline();
 
-    const cards = document.querySelectorAll(".card");
-
-    cards.forEach((card, index) => {
-      gsap.set(".a", { y: 220 });
-      gsap.set(".b", { y: -200 });
-      gsap.set("#aha", { y: 200, rotate: "120deg" });
-      gsap.set("#ahaa", { y: 200 });
-      gsap.set("#id", { opacity: 1 });
-      gsap.set("#last", { y: -250, x: -150 });
-    });
-  });
   return (
     <main
       className="main"
@@ -774,18 +32,94 @@ export default function Hero() {
           justifyContent: "center",
         }}
       >
-        <h1
-          id="id"
-          className={playa.className}
+        <div
+          ref={refce}
+          className="herotext"
           style={{
-            fontSize: "19rem",
-            color: "black",
-            zIndex: 400,
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 15,
+            zIndex: -1,
             opacity: 0,
+            animation: "opaci 1s linear",
+            animationDelay: "1s",
           }}
+          onAnimationEnd={(e) => (e.currentTarget.style.opacity = 1)}
         >
-          Afrah
-        </h1>
+          <h1
+            className={playa.className}
+            id="id"
+            style={{
+              color: "black",
+              zIndex: 400,
+            }}
+          >
+            La date du jour tant attendu 👰🏻 🤵🏻 tant rêvé approche?
+          </h1>
+          <div
+            className="centertext"
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              gap: 10,
+            }}
+          >
+            <h1
+              className={playa.className}
+              id="id"
+              style={{
+                color: "black",
+                zIndex: 400,
+                fontSize: 15,
+                width: "20%",
+              }}
+            >
+              Vous avez mille et une choses à faire 🤔 mais vous vous trouvez
+              obstrué 😧 et le temps s'écoule?{" "}
+            </h1>
+
+            <h1
+              className={playa.className}
+              id="id"
+              style={{
+                color: "black",
+                zIndex: 400,
+                fontSize: 20,
+                width: "35%",
+                height: "max-content",
+                paddingBottom: "1px",
+                borderBottom: "3px solid",
+                borderBottomColor: "rgba(242,135,201,.2)",
+              }}
+            >
+              {" "}
+              Ne paniquez surtout pas ‼️ nous avons ce qu'il vous faut!{" "}
+            </h1>
+          </div>
+          <h1
+            style={{ width: "60%", textAlign: "center", fontSize: 20 }}
+            className={playa.className}
+          >
+            Afrah Group dispose des ressources logistiques et humaines
+            nécessaires pour parfaire votre événement, et éblouir vos esprit en
+            peu de temps ✨: un mariage clé en main!{" "}
+          </h1>
+        </div>
+        <Image
+          src={"/assets/3orsa.png"}
+          width={100}
+          height={150}
+          style={{ position: "absolute", left: 100 }}
+        ></Image>
+        <Image
+          src={"/assets/3orsa.png"}
+          width={100}
+          height={150}
+          style={{ position: "absolute", right: 100 }}
+        ></Image>
         <div
           className="cards a"
           style={{
@@ -799,6 +133,11 @@ export default function Hero() {
             alignItems: "center",
             gap: 5,
             marginTop: 150,
+            animation: "heroanim1 1s linear",
+            animationDelay: "1s",
+          }}
+          onAnimationEnd={(e) => {
+            e.currentTarget.style.transform = "translateY(200px)";
           }}
         >
           <div
@@ -825,17 +164,19 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Afrah vous offre une gamme complète de prestations clé en main
+                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
+                place du podium, passant par la décoration des lieux, le buffet
+                et le service traiteur ainsi que la sonorisation et la lumière
               </p>
             </div>
             <div
@@ -872,17 +213,19 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Afrah vous offre une gamme complète de prestations clé en main
+                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
+                place du podium, passant par la décoration des lieux, le buffet
+                et le service traiteur ainsi que la sonorisation et la lumière
               </p>
             </div>
             <div
@@ -920,17 +263,19 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Afrah vous offre une gamme complète de prestations clé en main
+                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
+                place du podium, passant par la décoration des lieux, le buffet
+                et le service traiteur ainsi que la sonorisation et la lumière
               </p>
             </div>
             <div
@@ -968,17 +313,19 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Afrah vous offre une gamme complète de prestations clé en main
+                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
+                place du podium, passant par la décoration des lieux, le buffet
+                et le service traiteur ainsi que la sonorisation et la lumière
               </p>
             </div>
             <div
@@ -1016,17 +363,19 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Afrah vous offre une gamme complète de prestations clé en main
+                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
+                place du podium, passant par la décoration des lieux, le buffet
+                et le service traiteur ainsi que la sonorisation et la lumière
               </p>
             </div>
             <div
@@ -1064,17 +413,19 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Afrah vous offre une gamme complète de prestations clé en main
+                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
+                place du podium, passant par la décoration des lieux, le buffet
+                et le service traiteur ainsi que la sonorisation et la lumière
               </p>
             </div>
             <div
@@ -1100,7 +451,12 @@ export default function Hero() {
             justifyContent: "center",
             alignItems: "center",
             gap: 5,
+            animation: "heroanim2 1s linear",
+            animationDelay: "1s",
           }}
+          onAnimationEnd={(e) =>
+            (e.currentTarget.style.transform = "translateY(-200px)")
+          }
         >
           <div
             className="card"
@@ -1126,28 +482,30 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Votre mariage clé en main de A jusqu'à Z.
               </p>
             </div>
             <div
               className="imagething"
               style={{
                 width: "100%",
-                height: "90%",
+                height: "80%",
                 background: "url('/assets/bg.jpg') no-repeat center ",
                 backgroundSize: "cover",
               }}
             ></div>
+            <p style={{ fontSize: 10 }}>
+              Votre mariage clé en main de A jusqu'à Z.
+            </p>
           </div>{" "}
           <div
             className="card"
@@ -1173,28 +531,34 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Afrah vous offre une gamme complète de prestations clé en main
+                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
+                place du podium, passant par la décoration des lieux, le buffet
+                et le service traiteur ainsi que la sonorisation et la lumière
               </p>
             </div>
             <div
               className="imagething"
               style={{
                 width: "100%",
-                height: "90%",
+                height: "80%",
                 background: "url('/assets/bg1.jpg') no-repeat center ",
                 backgroundSize: "cover",
               }}
             ></div>
+            <p style={{ fontSize: 8 }}>
+              Tout un matériel desonorisation et de lumière sont à votre
+              disposition pour rendre votre événement convivial.{" "}
+            </p>
           </div>{" "}
           <div
             className="card"
@@ -1221,28 +585,33 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Afrah vous offre une gamme complète de prestations clé en main
+                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
+                place du podium, passant par la décoration des lieux, le buffet
+                et le service traiteur ainsi que la sonorisation et la lumière
               </p>
             </div>
             <div
               className="imagething"
               style={{
                 width: "100%",
-                height: "90%",
+                height: "85%",
                 background: "url('/assets/bg2.jpg') no-repeat center ",
                 backgroundSize: "cover",
               }}
             ></div>
+            <p style={{ fontSize: 8 }}>
+              Toutes les occasions sont bonnes pour faire appel à nos services.{" "}
+            </p>
           </div>{" "}
           <div
             className="card"
@@ -1269,28 +638,34 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Afrah vous offre une gamme complète de prestations clé en main
+                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
+                place du podium, passant par la décoration des lieux, le buffet
+                et le service traiteur ainsi que la sonorisation et la lumière
               </p>
             </div>
             <div
               className="imagething"
               style={{
                 width: "100%",
-                height: "90%",
+                height: "80%",
                 background: "url('/assets/bg4.jpg') no-repeat center ",
                 backgroundSize: "cover",
               }}
             ></div>
+            <p style={{ fontSize: 8 }}>
+              Afrah Group vous accompagnera à chaque étape afin de garantir une
+              grandiose réussite.
+            </p>
           </div>{" "}
           <div
             className="card"
@@ -1317,17 +692,19 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Afrah vous offre une gamme complète de prestations clé en main
+                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
+                place du podium, passant par la décoration des lieux, le buffet
+                et le service traiteur ainsi que la sonorisation et la lumière
               </p>
             </div>
             <div
@@ -1339,6 +716,10 @@ export default function Hero() {
                 backgroundSize: "cover",
               }}
             ></div>
+            <p style={{ fontSize: 8 }}>
+              Confier vos événements a des mains de confiance est
+              l'incontournable choix pour une cérémonie réussie!{" "}
+            </p>
           </div>
           <div
             className="card"
@@ -1365,17 +746,19 @@ export default function Hero() {
               }}
             >
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-                eveniet velit voluptatibus at! Perspiciatis nihil nisi repellat.
-                Rerum quis, blanditiis nemo aliquam harum laudantium, debitis
-                similique omnis voluptatem fugit illum!
+                Réussir un mariage demande beaucoup d’organisation Notre équipe
+                professionnelle vous accompagne de A jusqu’à Z, couvrant ainsi
+                toutes les étapes de la préparation de votre mariage. Du
+                faire-part à la décoration de l'entrée et de la salle, passant
+                par la sonorisation, l'animation et le traiteur, et évidemment
+                jusqu'au podium!
               </p>
               <p>AFRAH</p>
               <p style={{ fontSize: 4, width: "40%" }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus est perferendis aperiam cum distinctio corporis
-                ducimus ab, inventore assumenda dolores nobis, amet maxime quo?
-                Nobis eveniet beatae dicta quisquam architecto?
+                Afrah vous offre une gamme complète de prestations clé en main
+                pour votre cérémonie: de l’aménagement de l'espace, a la mise en
+                place du podium, passant par la décoration des lieux, le buffet
+                et le service traiteur ainsi que la sonorisation et la lumière
               </p>
             </div>
             <div
@@ -1387,47 +770,10 @@ export default function Hero() {
                 backgroundSize: "cover",
               }}
             ></div>
+            <p style={{ fontSize: 10 }}>📞 23 120 121</p>
           </div>
         </div>
       </div>
-      <Image
-        id="aha"
-        src={"/assets/arrow.jpg"}
-        width={300}
-        height={293}
-        style={{
-          position: "absolute",
-          left: 50,
-          transform: "scale(.8) rotate(180deg)",
-          top: 40,
-        }}
-      ></Image>
-      <h1
-        className={playa.className}
-        id="ahaa"
-        style={{
-          position: "absolute",
-          left: 100,
-          top: 30,
-          fontSize: 20,
-          weight: 200,
-        }}
-      >
-        Votre mariage clé en main{" "}
-      </h1>
-      <h1
-        className={playa.className}
-        id="last"
-        style={{
-          position: "absolute",
-          right: 30,
-          bottom: 40,
-          fontSize: 25,
-          zIndex: 1000,
-        }}
-      >
-        de A jusqu'à Z.{" "}
-      </h1>
 
       {/* <Image
         src={"/assets/arrow.jpg"}
@@ -1442,6 +788,35 @@ export default function Hero() {
           zIndex: 3,
         }}
       ></Image> */}
+      <style>
+        {`
+        @keyframes heroanim1 {
+          0%{
+            transform:translateY(0px)
+          }
+          100%{
+            transform:translateY(200px)
+
+          }
+        }
+        @keyframes heroanim2 {
+          0%{
+            transform:translateY(0px)
+          }
+          100%{
+            transform:translateY(-200px)
+
+          }
+        }
+        @keyframes opaci {
+          0%{
+opacity:0          }
+          100%{
+opacity:1
+          }
+        }
+        `}
+      </style>
     </main>
   );
 }
