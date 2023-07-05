@@ -37,9 +37,10 @@ export default function Parallaxe() {
         display: "flex",
         alignItems: "center",
         position: "relative",
-        marginBottom: "100px",
         flexDirection: "column",
+        background: "rgb(230,237,237)",
       }}
+      className="mainparallax"
     >
       <p
         className={myFont.className}
@@ -49,6 +50,7 @@ export default function Parallaxe() {
           transform: "rotate(-1deg)",
           marginBottom: 10,
         }}
+        id="myfont"
       >
         Vous êtes à la recherche de l'excellence , par hasard ?
       </p>
@@ -112,7 +114,7 @@ export default function Parallaxe() {
         >
           {" "}
           <video
-            id="myVideo"
+            id="myVideo1"
             autoPlay
             loop
             muted
@@ -161,6 +163,52 @@ export default function Parallaxe() {
           </p>
         </div>
       </div>
+      <style>
+        {`
+          #myfont {
+            font-size: clamp(14px, 4vw, 35px) !important ;
+            text-align:center !important;
+
+          }
+          @media screen and (max-width: 1000px) {
+#myVideo1{
+  width:60% !important ;
+  transform : translateX(-25px) scale(.68) !important ;
+
+
+
+}
+.laptop {
+  transform : translateX(-30%) !important ;
+}
+
+.text_wrapper p {
+  
+  font-size: clamp(14px, 5vw, 45px) !important ;
+}         
+
+}
+@media screen and (max-width: 710px) {
+  .laptop {
+    transform : translateX(-15%) !important ;
+    
+  }
+
+  #myVideo1{
+    width:50% !important ;
+  
+  
+  
+  }
+  .mainparallax {
+    height : 160vh !important ;
+  }
+  
+}
+
+
+          `}
+      </style>
     </main>
   );
 }

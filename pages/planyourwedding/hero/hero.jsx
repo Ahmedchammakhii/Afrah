@@ -35,6 +35,7 @@ export default function Hero() {
         justifyContent: "center",
         alignItems: "center",
         position: "relative",
+        background: "rgb(230,237,237)",
       }}
     >
       <div
@@ -132,6 +133,7 @@ export default function Hero() {
             left: 90,
             transform:
               windowWidth < 1200 ? "translateY(60px)" : "translateY(50px)",
+            display: windowWidth <= 780 ? "none" : "inline-block",
           }}
           className="3orssa1"
         ></Image>
@@ -144,8 +146,9 @@ export default function Hero() {
             right: 90,
             transform:
               windowWidth < 1200 ? "translateY(60px)" : "translateY(50px)",
+            display: windowWidth <= 780 ? "none" : "inline-block",
           }}
-          id="3orssa2"
+          className="3orssa1"
         ></Image>
         <div
           className="cards a"
@@ -417,6 +420,7 @@ export default function Hero() {
             ></div>
           </div>
         </div>
+
         <div
           className="cards b"
           style={{
@@ -712,95 +716,103 @@ export default function Hero() {
           zIndex: 3,
         }}
       ></Image> */}
-      <style>
+      <style jsx>
         {`
-        @keyframes heroanim1 {
-          0%{
-            transform:translateY(0px)
-          }
-          100%{
-            transform:translateY(200px)
-
-          }
-        }
-        @keyframes heroanim2 {
-          0%{
-            transform:translateY(0px)
-          }
-          100%{
-            transform:translateY(-150px)
-
-          }
-        }
-        @keyframes opaci {
-          0%{
-opacity:0          }
-          100%{
-opacity:1
-          }
-        }
-
-        @media screen and (max-width:1247px) {
-         
-          #id1{
-            font-size:.8rem !important
-          }
-           #id2 {
-            font-size:1rem !important
-
-           }
-           #id3{
-            font-size:1rem !important
-
-           }  
-           .parag{
-            font-size:.12rem !important
-
-           }
-           .card {
-            height : 35vh !important
-           }
-           .a {
-            transform : translateY(150px) !important
-           }
-           .b {
-            transform : translateY(-150px) !important
-           }
-           
-          
-          }
-          @media screen and (max-width:1140px) {
-            .a {
-              transform : translateY(180px) !important
-             }
-             .b {
-              transform : translateY(-150px) !important
-             }
-             #id1{
-              font-size:.7rem !important
+          @keyframes heroanim1 {
+            0% {
+              transform: translateY(0px);
             }
-             #id2 {
-              font-size:.8rem !important
-  
-             }
-             #id3{
-              font-size:.8rem !important
-  
-             }  
-             #id{
-              font-size:1.5rem !important
-  
-             }  
-
-             .card {
-              width:15vw !important
-             }
+            100% {
+              transform: translateY(200px);
+            }
           }
-          @media screen and (max-width:909px) {
+          @keyframes heroanim2 {
+            0% {
+              transform: translateY(0px);
+            }
+            100% {
+              transform: translateY(-150px);
+            }
+          }
+          @keyframes opaci {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+
+          @media screen and (max-width: 1247px) {
+            #id1 {
+              font-size: 0.8rem !important;
+            }
+            #id2 {
+              font-size: 1rem !important;
+            }
+            #id3 {
+              font-size: 1rem !important;
+            }
+            .parag {
+              font-size: 0.12rem !important;
+            }
             .card {
-              width:25vw !important
+              height: 35vh !important;
+            }
+            .a {
+              transform: translateY(150px) !important;
+            }
+            .b {
+              transform: translateY(-150px) !important;
+            }
+          }
+          @media screen and (max-width: 1140px) {
+            .a {
+              transform: translateY(180px) !important;
+            }
+            .b {
+              transform: translateY(-150px) !important;
+            }
+            #id1 {
+              font-size: 0.7rem !important;
+            }
+            #id2 {
+              font-size: 0.8rem !important;
+            }
+            #id3 {
+              font-size: 0.8rem !important;
+            }
+            #id {
+              font-size: 1.5rem !important;
             }
 
+            .card {
+              width: 15vw !important;
+            }
+          }
+          @media screen and (max-width: 909px) {
+            .card {
+              width: 35vw !important;
+            }
+            .centertext {
+              align-items: center;
+            }
+          }
+          @media screen and (max-width: 750px) {
+            #id1 {
+              width: 35% !important;
+            }
+            #id {
+              font-size: 1.4rem !important;
+            }
+            .card {
+              width: 120vw !important;
+              height: 30vh !important;
+              .parag {
+                font-size: 0.1rem !important;
+                width: 50% !important;
+              }
+            }
           }
         `}
       </style>

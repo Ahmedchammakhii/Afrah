@@ -1,7 +1,10 @@
 import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-const jost = Playfair_Display({ subsets: ["latin"], weight: "400" });
+const jost = Playfair_Display({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["italic", "normal"],
+});
 export default function Deposit() {
   return (
     <main
@@ -9,9 +12,11 @@ export default function Deposit() {
         width: "100vw",
         height: "110vh",
         display: "flex",
-
+        gridTemplateAreas: '"first" "sec"',
+        backgroundColor: "rgb(230,237,237)",
         overflow: "hidden",
       }}
+      className="maindepoist"
     >
       <div
         className="leftcontainer"
@@ -32,6 +37,7 @@ export default function Deposit() {
             letterSpacing: "0.1em",
             fontWeight: "600",
           }}
+          id="firsttext"
         >
           Créateur d'instants magiques, un mariage à votre image{" "}
         </p>{" "}
@@ -42,6 +48,7 @@ export default function Deposit() {
             width: "50%",
           }}
           className={jost.className}
+          id="middle"
         >
           Placez votre dépôt MAINTENANT & économisez !
         </p>
@@ -67,6 +74,7 @@ export default function Deposit() {
               borderBottom: "1px solid #000",
               fontSize: "16px",
               color: "rgba(0,0,0,1)",
+              fontStyle: "italic",
             }}
             className={jost.className}
           >
@@ -97,6 +105,7 @@ export default function Deposit() {
               borderBottom: "1px solid #000",
               fontSize: "16px",
               color: "rgba(0,0,0,1)",
+              fontStyle: "italic",
             }}
             className={jost.className}
           >
@@ -107,7 +116,12 @@ export default function Deposit() {
         </div>
         <div
           className="article"
-          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            fontStyle: "italic",
+          }}
         >
           <div className="svg" style={{ height: "40%", width: "10%" }}>
             <svg
@@ -127,6 +141,7 @@ export default function Deposit() {
               borderBottom: "1px solid #000",
               fontSize: "16px",
               color: "rgba(0,0,0,1)",
+              fontStyle: "italic",
             }}
             className={jost.className}
           >
@@ -149,13 +164,16 @@ export default function Deposit() {
         <div
           className="iphone"
           style={{
-            width: "max-content",
-            height: "max-content",
+            maxWidth: "max-content",
+            maxHeight: "max-content",
+            minHeight: "600px",
+            minWidth: "400px",
             background: 'url("/assets/iphone.png") no-repeat ',
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
             overflow: "hidden",
             zIndex: 3,
+            marginTop: 100,
           }}
         >
           <video
@@ -166,9 +184,9 @@ export default function Deposit() {
             autoCorrect="true"
             src={"/assets/Revisit AFRAH.mp4"}
             style={{
-              width: "50%",
+              width: "100%",
               height: "100%",
-              transform: "scale(.72) translateX(-15px)",
+              transform: "scale(.72) translateX(-17px)",
             }}
           />
         </div>
@@ -181,24 +199,124 @@ export default function Deposit() {
             position: "absolute",
             zIndex: 2,
             marginTop: 100,
-            marginLeft: 50,
+            marginLeft: 28,
+            overflow: "hidden",
           }}
         ></div>
       </div>
       <style>{`
        
-        #myVideo::-webkit-media-controls-panel {
+        #myVideo::-webkit-media-controls-panel , myVideo1::-webkit-media-controls-panel {
             display: none !important;
           }
           
-          #myVideo::-webkit-media-controls {
+          #myVideo::-webkit-media-controls,#myVideo1::-webkit-media-controls  {
             display: none !important;
           }
           
-          #myVideo::-webkit-media-controls-overlay-play-button {
+          #myVideo::-webkit-media-controls-overlay-play-button ,  #myVideo1::-webkit-media-controls-overlay-play-button {
             display: none !important;
           }
-        `}</style>
+          @media screen and (max-width: 1241px) {
+            .maindepoist {
+              height:115vh !important ;
+            }
+            #middle  {
+              font-size:clamp(15px, 4vw, 45px) !important;
+              width: 70% !important
+
+            }
+            #firsttext {
+              font-size:clamp(10px, 1.5vw, 15px) !important;
+
+            }
+            .article {
+              font-size: clamp(8px, 1vw, 15px) !important
+
+            }
+            .article p {
+              font-size: clamp(10px, 1vw, 15px) !important;
+
+              width:80% !important
+            }
+            #iphone {
+              min-height:100% !important
+            }
+            #myVideo {
+            width:80% !important;
+            height:50% !important;
+              transform:scale(1.45) translate(18px,100px) !important
+              
+            }
+          }
+          @media screen and (max-width: 860px) {
+            #myVideo {
+              width:40% !important;
+              height:60% !important;
+                transform:scale(1.5) translate(53px,70px) !important ;
+                
+              }
+              .iphone {
+                height:200px !important
+              }
+              .theimage{
+                height:90% !important; 
+
+              }
+          }
+          @media screen and (max-width: 710px) {
+.maindepoist {
+  display: grid !important; 
+  grid-template-columns: 1fr !important; 
+  grid-template-rows: 1fr 1fr !important; 
+  gap: 0px 0px !important; 
+
+}
+.leftcontainer {
+  grid-area:sec !important;
+width:100% !important ; 
+height:50% !important ; 
+margin-top:100px !important ;
+}
+.rightcontainer{
+  grid-area:first !important;
+  height:50% !important ; 
+  width:100% !important ; 
+  overflow:visible !important ;
+
+}
+.theimage {
+  width:100% !important ; 
+margin : 0 !important ;
+margin-top:50px !important;
+height: 50% !important; }
+
+
+.iphone {
+left:50% !important;
+position:relative !important ;
+transform:translateX(-40%) !important
+}
+.maindepoist {
+  height:170vh !important ;
+}
+#middle  {
+  font-size:clamp(15px, 4vw, 45px) !important;
+  width: 70% !important
+
+}
+#firsttext {
+  font-size:clamp(10px, 3vw, 25px) !important;
+  color:#000 !important
+}
+.article p {
+  font-size: clamp(15px, 2vw, 25px) !important
+
+}
+}
+
+          }
+          `}</style>
     </main>
   );
 }
