@@ -314,8 +314,9 @@ transform:translateX(-40%) !important
 
 }
 }
+          
 
-          }
+          
           `}</style>
     </main>
   );

@@ -1,13 +1,14 @@
 "use client";
+
 import { Dancing_Script, Poppins } from "next/font/google";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
 const play = Dancing_Script({ subsets: ["latin"], weight: "700" });
 const playa = Poppins({ subsets: ["latin"], weight: "300" });
 
 export default function Hero() {
   const refce = useRef(null);
+
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
@@ -15,8 +16,6 @@ export default function Hero() {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-
-    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -35,9 +34,24 @@ export default function Hero() {
         justifyContent: "center",
         alignItems: "center",
         position: "relative",
-        background: "rgb(230,237,237)",
+        background:
+          "url('https://images.unsplash.com/photo-1519227052808-f41f4e405df0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c0e20b086d58d7fe54db413716b29510&auto=format&fit=crop&w=1350&q=80')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
     >
+      <div
+        className="layer"
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          background: "#000",
+
+          opacity: 0.9,
+          zIndex: -1,
+        }}
+      ></div>
       <div
         className="text"
         style={{
@@ -67,7 +81,7 @@ export default function Hero() {
             className={playa.className}
             id="id"
             style={{
-              color: "black",
+              color: "white",
               zIndex: 400,
             }}
           >
@@ -86,7 +100,7 @@ export default function Hero() {
               className={playa.className}
               id="id1"
               style={{
-                color: "black",
+                color: "white",
                 zIndex: 400,
                 fontSize: "clamp(0.5rem, 1rem, 2rem)",
                 width: "20%",
@@ -101,7 +115,7 @@ export default function Hero() {
               className={playa.className}
               id="id2"
               style={{
-                color: "black",
+                color: "white",
                 zIndex: 400,
                 fontSize: "1.25rem",
                 width: "35%",
@@ -116,7 +130,12 @@ export default function Hero() {
           </div>
           <h1
             id="id3"
-            style={{ width: "60%", textAlign: "center", fontSize: "1.3rem" }}
+            style={{
+              width: "60%",
+              textAlign: "center",
+              fontSize: "1.3rem",
+              color: "white",
+            }}
             className={playa.className}
           >
             Afrah Group dispose des ressources logistiques et humaines
@@ -124,33 +143,8 @@ export default function Hero() {
             peu de temps ✨: un mariage clé en main!{" "}
           </h1>
         </div>
-        <Image
-          src={"/assets/3orsa.png"}
-          width={windowWidth < 1200 ? 70 : 100}
-          height={windowWidth < 1200 ? 100 : 150}
-          style={{
-            position: "absolute",
-            left: 90,
-            transform:
-              windowWidth < 1200 ? "translateY(60px)" : "translateY(50px)",
-            display: windowWidth <= 780 ? "none" : "inline-block",
-          }}
-          className="3orssa1"
-        ></Image>
-        <Image
-          src={"/assets/3orsa.png"}
-          width={windowWidth < 1200 ? 70 : 100}
-          height={windowWidth < 1200 ? 100 : 150}
-          style={{
-            position: "absolute",
-            right: 90,
-            transform:
-              windowWidth < 1200 ? "translateY(60px)" : "translateY(50px)",
-            display: windowWidth <= 780 ? "none" : "inline-block",
-          }}
-          className="3orssa1"
-        ></Image>
-        <div
+
+        {/* <div
           className="cards a"
           style={{
             position: "absolute",
@@ -419,25 +413,24 @@ export default function Hero() {
               }}
             ></div>
           </div>
-        </div>
-
-        <div
+        </div>   <div
           className="cards b"
           style={{
             position: "absolute",
             left: 0,
-            top: -200,
+            top: 0,
             width: "100%",
             height: "100%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             gap: 5,
+            opacity: 0.5,
             animation: "heroanim2 1s linear",
             animationDelay: "1s",
           }}
           onAnimationEnd={(e) =>
-            (e.currentTarget.style.transform = "translateY(-150px)")
+            (e.currentTarget.style.transform = "translateY(-350px)")
           }
         >
           <div
@@ -700,7 +693,7 @@ export default function Hero() {
             ></div>
             <p style={{ fontSize: 10 }}>📞 23 120 121</p>
           </div>
-        </div>
+        </div>*/}
       </div>
 
       {/* <Image
@@ -731,7 +724,7 @@ export default function Hero() {
               transform: translateY(0px);
             }
             100% {
-              transform: translateY(-150px);
+              transform: translateY(-350px);
             }
           }
           @keyframes opaci {
@@ -812,6 +805,23 @@ export default function Hero() {
                 font-size: 0.1rem !important;
                 width: 50% !important;
               }
+            }
+          }
+
+          @media screen and (max-width: 630px) {
+            #id {
+              font-size: clamp(15px, 3vw, 25px) !important;
+            }
+            .cards {
+              justify-content: unset !important;
+            }
+          }
+          @media screen and (max-width: 432px) {
+            #id {
+              font-size: clamp(10px, 3vw, 15px) !important;
+            }
+            .card {
+              height: 25vh !important ;
             }
           }
         `}

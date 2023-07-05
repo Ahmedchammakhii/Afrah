@@ -39,6 +39,7 @@ export default function Slider() {
         transition: "background 1s linear",
         position: "relative",
       }}
+      className="slider"
     >
       <div
         className="blacklayer"
@@ -92,6 +93,11 @@ export default function Slider() {
           @media screen and (max-width: 950px) {
             #middletext {
               width: 85% !important;
+            }
+          }
+          @media screen and (max-width: 636px) {
+            .slider {
+              height: 100vh !important ;
             }
           }
         `}

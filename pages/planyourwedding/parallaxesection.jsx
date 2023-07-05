@@ -142,6 +142,7 @@ export default function Parallaxe() {
           <p
             className={jost.className}
             style={{ letterSpacing: "0.1em", fontSize: "35px" }}
+            id="team"
           >
             #TEAMAFRAHPRODUCTION
           </p>
@@ -152,6 +153,7 @@ export default function Parallaxe() {
               width: "50%",
               textAlign: "center",
             }}
+            id="whatheheck"
           >
             {" "}
             Notre équipe est vraiment pointue et centrée sur le style, mettant
@@ -186,6 +188,15 @@ export default function Parallaxe() {
   
   font-size: clamp(14px, 5vw, 45px) !important ;
 }         
+.laptop {
+  top:40% !important ;
+}
+#whatheheck {
+  width:90% !important;
+  }
+  .bottomText {
+    bottom : -15% !important ;
+  }
 
 }
 @media screen and (max-width: 710px) {
@@ -200,13 +211,30 @@ export default function Parallaxe() {
   
   
   }
-  .mainparallax {
-    height : 160vh !important ;
-  }
+ #team {
+  font-size: clamp(15px, 6.2vw, 45px) !important ;
+
+ }
+
   
 }
 
+@media screen and (max-width: 450px) {
+  
+  .bottomText {
+    bottom : -25% !important ;
+  }
 
+  
+}
+@media screen and (max-width: 320px) {
+  
+  .bottomText {
+    bottom : -30% !important ;
+  }
+
+  
+}
           `}
       </style>
     </main>
