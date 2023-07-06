@@ -22,7 +22,7 @@ export function iteration(container, record, wrapper) {
     for (let i = 1; container.current.children.length > i; i++) {
         container.current.children[i].style.transition = `transform 0.5s`
         setTimeout(() => {
-            container.current.children[i].style.transform = "translatex(-119.3%)"
+            container.current.children[i].style.transform = "translatex(-119%)"
         }, Number((i - 1) + "00"));
     }
 
@@ -42,22 +42,32 @@ export function iteration(container, record, wrapper) {
     record.current.children[1].style.transform = "none";
 
 
-
+    for (let i = 0; document.querySelector('#tracker').children.length > i; i++) {
+        if (counter >= i) {
+            document.querySelector('#tracker').children[i].children[0].style.width = "100%"
+        } else if (counter < i && document.querySelector('#tracker').children[i].children[0].style.width === "100%") {
+            setTimeout(() => {
+                document.querySelector('#tracker').children[i].children[0].style.width = "0"
+            }, Number((((container.current.children.length - 1) - i) - 1) + "50"));
+        }
+    }
 
 }
 
 export function animEnd(wrapper, container, data, record, titles, subtitle, matta) {
 
     record.current.children[0].textContent = "0" + (counter + 1) + ""
-    if (counter === 4) {
+    if (counter === container.current.children.length - 2) {
         record.current.children[1].textContent = "01"
     } else {
         record.current.children[1].textContent = "0" + (counter + 2) + ""
-    }
+    };
+
     record.current.style.transition = "none"
     record.current.style.transform = "none"
     record.current.children[1].style.transition = "none"
     record.current.children[1].style.transform = "translateX(100%)"
+
 
     document.querySelector('.left-wrapper').style.transition = "none";
     document.querySelector('.left-wrapper').style.textShadow = "0px 0px 15px rgba(0,0,0,0.5)";
@@ -81,12 +91,32 @@ export function animEnd(wrapper, container, data, record, titles, subtitle, matt
 
 
     for (let i = 0; titles.current.children.length > i; i++) {
-        titles.current.children[i].children[0].style.transition = "none";
-        titles.current.children[i].children[0].style.transform = "translateY(100%)";
 
+        if (titles.current.children.length - 1 > i) {
+            titles.current.children[i].children[0].style.transition = "none";
+            titles.current.children[i].children[0].style.transform = "translateY(100%)";
+        } else if (titles.current.children.length - 1 === i) {
+            titles.current.children[i].children[0].style.transition = "none";
+            titles.current.children[i].children[0].style.transform = "translateY(300%)";
+            titles.current.children[i].children[0].style.opacity = "0";
+        }
+
+        if (titles.current.children.length - 2 === i) {
+            titles.current.children[i].children[0].style.opacity = "0";
+        }
         setTimeout(() => {
-            titles.current.children[i].children[0].style.transition = "transform 0.6s cubic-bezier(.69,.26,0,1)"
-            titles.current.children[i].children[0].style.transform = "none"
+            if (titles.current.children.length - 1 > i) {
+                titles.current.children[i].children[0].style.transition = "transform 0.6s cubic-bezier(.69,.26,0,1), opacity 1s "
+                titles.current.children[i].children[0].style.transform = "none"
+            } else if (titles.current.children.length - 1 === i) {
+                titles.current.children[i].children[0].style.transition = "transform 1s cubic-bezier(.69,.26,0,1), opacity 1.5s "
+                titles.current.children[i].children[0].style.transform = "none"
+                titles.current.children[i].children[0].style.opacity = "1";
+            }
+
+            if (titles.current.children.length - 2 === i) {
+                titles.current.children[i].children[0].style.opacity = "1";
+            }
         }, Number(i + 1 + "00"));
     }
 
@@ -98,6 +128,9 @@ export function animEnd(wrapper, container, data, record, titles, subtitle, matt
     wrapper.current.style.transition = "none";
     wrapper.current.style.scale = 1
     wrapper.current.style.filter = "none"
+    wrapper.current.style.backgroundRepeat = "no-repeat"
+    // wrapper.current.style.transform = "scaleX(-1)"
+    
 
 
     container.current.children[0].style.background = data[counter].background;

@@ -18,6 +18,7 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                 display: "flex",
                 overflow: "hidden",
                 height: "100%",
+                // marginLeft:"20vw"
             }}
         >
             <div onAnimationEnd={() => animEnd(wrapper, container, data, record, titles, subtitle, matta)}
@@ -25,7 +26,6 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                     width: "13vw",
                     height: "19vw",
                     overflow: "hidden",
-                    borderRadius: "5%",
                     cursor: "pointer",
                     marginTop: "50px",
                     transition: `1s`,
@@ -35,7 +35,8 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                     display: "none",
                     background: data[0].background,
                     backgroundPosition: "center",
-                    backgroundSize: "cover"
+                    backgroundSize: "cover",
+                    // border: "1px solid black"
                 }}
             />
             {data.map((e, i) => (
@@ -46,7 +47,6 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                         height: "19vw",
                         background: e.background,
                         overflow: "hidden",
-                        borderRadius: "5%",
                         boxShadow: "10px 10px 40px 0px rgba(0,0,0,0.7)",
                         cursor: "pointer",
                         marginTop: "50px",
@@ -55,7 +55,8 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                         pointerEvents: "none",
                         zIndex: i + 5,
                         backgroundPosition: "center",
-                        backgroundSize: "cover"
+                        backgroundSize: "cover",
+                        // border: "1px solid black"
                     }}
                 />
             ))}

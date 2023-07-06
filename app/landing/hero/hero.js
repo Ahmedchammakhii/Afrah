@@ -3,11 +3,11 @@ import data from '@/data/hero';
 import { useEffect, useRef } from 'react';
 import Slides from './slides';
 import { iteration, counter } from '@/functions/landing/hero_functions';
-import { Roboto_Condensed } from 'next/font/google';
-import { Playfair_Display } from 'next/font/google';
+import { Expletus_Sans } from 'next/font/google';
+import { Kalam } from 'next/font/google';
 
-const font = Roboto_Condensed({ subsets: ['latin'], weight: '400' })
-const font2 = Playfair_Display({ subsets: ['latin'], weight: '600' })
+const font = Expletus_Sans({ subsets: ['latin'], weight: '400' })
+const font2 = Kalam({ subsets: ['latin'], weight: '300' })
 
 export default function Hero() {
     const container = useRef(null);
@@ -34,9 +34,16 @@ export default function Hero() {
         // veil.current.style.width = 0
     }, [])
 
+
     return (
         <div className={'content-wrapper ' + font.className}>
-            <div ref={wrapper} style={{ transition: "scale 1s cubic-bezier(.69,.26,0,1), filter 1s", width: "100vw", height: "100vh", position: "absolute", zIndex: 0, background: data[data.length - 1].background, backgroundRepeat: "no-repeat" }} />
+            <div ref={wrapper} style={{
+                transition: "scale 1s cubic-bezier(.69,.26,0,1), filter 1s",
+                width: "100vw", height: "100vh", position: "absolute", zIndex: 0,
+                background: data[data.length - 1].background,
+                backgroundRepeat: "no-repeat", backgroundSize: "cover"
+            }} />
+
             <div onTransitionEnd={() =>
                 //  loader.current.style.animation = "loading 5s linear infinite"
                 ""
@@ -44,7 +51,7 @@ export default function Hero() {
                 style={{ transition: "1s cubic-bezier(.69,.26,0,1)", position: "absolute", background: "white", width: "0", height: "100vh", zIndex: 9999999999, right: 0 }} />
             <div onAnimationIteration={() => {
                 iteration(container, record, wrapper);
-                // ""
+                //""
                 // animation: loading 5s linear infinite;
             }}
                 ref={loader} className="loading" />
@@ -58,17 +65,51 @@ export default function Hero() {
                         Sahara Desert - Morocco
                     </div>
                 </h2>
-                <div ref={titles} style={{ transform: "translateX(-80%)", marginLeft: "50%", letterSpacing: "-.3vw" }} >
-                    <h1 className='bigTitle' style={{ fontSize: "7vw", overflow: "hidden", width: "40vw" }}>
-                        <div style={{ transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)" }} >
+                <div ref={titles} style={{ transform: "translateX(-80%)", marginLeft: "50%" }} >
+                    <div className='bigTitle' style={{ overflow: "hidden", width: "40vw" }}>
+                        <h1 style={{ fontSize: "5vw", transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)" }} >
                             MARRAKECH
-                        </div>
-                    </h1>
-                    <h1 className='bigTitle' style={{ fontSize: "7vw", overflow: "hidden", width: "40vw" }}>
-                        <div style={{ transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)" }} >
+                        </h1>
+                    </div>
+                    <div className='bigTitle' style={{ overflow: "hidden", width: "40vw" }}>
+                        <h1 style={{ fontSize: "5vw", transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)" }} >
                             MERZOUGA
+                        </h1>
+                    </div>
+                    <div className='bigTitle' style={{ fontSize: "0.8vw", overflow: "hidden", width: "30vw" }}>
+                        <p style={{ transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)" }} >
+                            Hello, my name is Ahmed and im gay, my name is Ahmed and im gay, my name is Ahmed and im gay, my name is Ahmed and im gay,
+                        </p>
+                    </div>
+                    <div className='bigTitle' style={{ fontSize: "0.8vw", width: "30vw", marginTop: "10%" }}>
+                        <div style={{ transition: "transform 0.6s cubic-bezier(.69,.26,0,1)", display: "flex" }}>
+                            <div
+                                style={{
+                                    width: "3vw",
+                                    height: "3vw",
+                                    background: "white",
+                                    borderRadius: "100%",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center", boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.4)", cursor: "pointer"
+                                }}
+                            >
+                                <img style={{ width: "40%", marginLeft: "10%" }} src="https://cdn.discordapp.com/attachments/1073737355896299542/1125802685027856454/play-button-svgrepo-com.png" />
+                            </div>
+
+                            <div style={{ cursor: "pointer", width: "50%", marginLeft: "2vw", height: "3vw", borderRadius: "20px", border: "1px solid white", boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.4)", position: "relative" }} >
+                                <div style={{ width: "100%", height: "100%", background: "white", borderRadius: "20px", opacity: "0.3", filter: "blur(5px)", position: "absolute" }} />
+                                <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                                    <div style={{ fontSize: "1vw", color: "white", textShadow: "0px 0px 4px rgba(255, 239, 0, 0.75)", zIndex: 2 }}>
+                                        Contactez nous
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                    </h1>
+                    </div>
+
+
                 </div>
             </div>
             <div className='right-wrapper' >
@@ -87,16 +128,18 @@ export default function Hero() {
                             </div>
 
                             <div style={{ height: "8vh", width: "35%", display: "flex", position: "relative", display: "flex", alignItems: "center" }} >
-                                <div style={{ width: "100%", height: "0.26vh", position: "relative", display: "flex", background: "rgba(256,256,256,0.4)", boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.4)" }}>
+                                <div id="tracker" style={{ width: "100%", height: "0.26vh", position: "relative", display: "flex", background: "rgba(256,256,256,0.4)", boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.4)" }}>
                                     {data.map((e, i) => {
-                                        return <div key={i} style={{ height: "100%", width: `${100 / data.length}%`, borderRadius: "1vh", background: "transparent" }} />
+                                        return <div key={i} style={{ height: "100%", width: `${100 / data.length}%`, borderRadius: "1vh", background: "transparent" }} >
+                                            <div style={{ width: "0%", height: "100%", background: "#e4ad32", transition: "width 1s cubic-bezier(.69,.26,0,1)" }} />
+                                        </div>
                                     })}
                                 </div>
                             </div>
                             <div style={{
                                 color: "white", height: "100%", display: "flex",
                                 alignItems: "center", fontSize: "3vw", marginTop: "-0.25vw",
-                                fontWeight: "bold", overflow: "hidden", width: "3vw"
+                                fontWeight: "bold", overflow: "hidden", width: "4vw"
                             }}>
                                 <div ref={record} style={{ display: "flex", transition: "1s cubic-bezier(.69,.26,0,1)" }}>
                                     <div>
@@ -118,7 +161,7 @@ export default function Hero() {
             <style>{`
 
                 .content-wrapper {width: 100vw; height: 100vh; overflow: hidden; position: relative; display: flex; background-position: center; background-size: cover;  background : black }
-                .loading { height: 1%; width: 0; background: red; position: absolute; border-radius: 50px; margin-left: -50px;  }
+                .loading { height: 1%; width: 0; background: transparent; position: absolute; border-radius: 50px; margin-left: -50px;  }
                 .left-wrapper { width: 45%; color: white }
                 .right-wrapper { width: 55%; }
                 .right-container { width: 100%; height: 32vw; position: absolute; bottom: 0;  }
