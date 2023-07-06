@@ -22,7 +22,7 @@ export function iteration(container, record, wrapper) {
     for (let i = 1; container.current.children.length > i; i++) {
         container.current.children[i].style.transition = `transform 0.5s`
         setTimeout(() => {
-            container.current.children[i].style.transform = "translatex(-119%)"
+            container.current.children[i].style.transform = "translatex(-12.5vw)"
         }, Number((i - 1) + "00"));
     }
 
