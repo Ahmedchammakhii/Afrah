@@ -60,7 +60,7 @@ export default function Parallaxe() {
         style={{
           width: "100%",
           height: "50%",
-          backgroundImage: "url('./assets/bg3.jpg')",
+          backgroundImage: "url('./assets/1.jpg')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           position: "relative",
@@ -79,11 +79,22 @@ export default function Parallaxe() {
             top: "10%",
           }}
         >
-          <p className={jost.className} style={{ fontSize: 25, color: "#fff" }}>
+          <p
+            className={jost.className}
+            style={{
+              fontSize: 25,
+              color: "#fff",
+              textShadow: "2px 2px 2px #000000 ",
+            }}
+          >
             INTRODUCING{" "}
           </p>
           <p
-            style={{ fontSize: 75, color: "#fff" }}
+            style={{
+              fontSize: 75,
+              color: "#fff",
+              textShadow: "2px 2px 2px #000000 ",
+            }}
             className={myFont.className}
           >
             Your Wedding planning Team
