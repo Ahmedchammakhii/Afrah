@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import "@/app/globals.css";
 gsap.registerPlugin(ScrollTrigger);
 
 const play = Jost({ subsets: ["latin"], weight: "700" });
@@ -30,52 +29,111 @@ export default function Hero() {
         pin: true,
       },
     });
+    const minScale = 0.4;
+    const maxScale = 1.2;
 
-    timeline
-      .fromTo(
-        ".main",
-        {
-          transform: "scale(1)",
-          transformOrigin: "center center",
-          duration: 5,
-        },
-        {
-          transform: "scale(0.5)",
-          transformOrigin: "center center",
-          duration: 5,
-        }
-      )
-      .fromTo(".herotext", { opacity: 1 }, { opacity: 0 })
-      .fromTo(
-        "#map",
-        { opacity: 0, y: 0, x: -50 },
-        { opacity: 1, y: 10, x: 10 },
-        "-=1"
-      )
-      .fromTo(
-        "#card",
-        { opacity: 0, y: 200, x: -50 },
-        { opacity: 1, y: 100, x: 10, duration: 1 },
-        "-=1"
-      )
-      .fromTo(
-        "#carda",
-        { opacity: 0, y: 0 },
-        { opacity: 1, y: -400, duration: 1 }
-      )
-      .fromTo(
-        "#bottomtexta",
-        { opacity: 0, y: 0 },
-        { opacity: 1, y: 50, x: -50, duration: 5 }
-      )
-      .fromTo(
-        "#colors",
-        { opacity: 0, y: 0, x: 100 },
-        { opacity: 1, y: -200, x: 200, duration: 5 }
-      );
+    const calculateScale = () => {
+      const viewportWidth = window.innerWidth;
+      return Math.max(minScale, Math.min(maxScale, viewportWidth / 1100));
+    };
+    window.innerWidth >
+      timeline
+        .fromTo(
+          ".main",
+          {
+            transform: "scale(1)",
+            transformOrigin: "center center",
+            duration: 5,
+          },
+          {
+            transform: "scale(0.4)",
+            transformOrigin: "center center",
+            duration: 5,
+          },
+          0
+        )
+        .fromTo(
+          "#myVideo2",
+          { height: "100%", duration: 4, width: "100%" },
+          { height: "87%", width: "95%", duration: 4 }
+        )
+        .fromTo(
+          ".herotext",
+          { opacity: 1, duration: 5 },
+          { opacity: 0, duration: 5 }
+        )
+        .fromTo(
+          "#map",
+          { opacity: 0, y: 0, x: -50 },
+          {
+            opacity: 1,
+            y: -10,
+            x: 10,
+            scaleX: calculateScale,
+            scaleY: calculateScale,
+          },
+          0
+        )
+        .fromTo(
+          ".card",
+          { opacity: 0, y: 200, x: -50 },
+          {
+            opacity: 1,
+            y: 100,
+            x: 10,
+            duration: 1,
+            scaleX: calculateScale,
+            scaleY: calculateScale,
+          },
+          0
+        )
+        .fromTo(
+          "#carda",
+          { opacity: 0, y: 0 },
+          {
+            opacity: 1,
+            y: -400,
+            duration: 1,
+            scaleX: calculateScale,
+            scaleY: calculateScale,
+          },
+          0
+        )
+        .fromTo(
+          "#bottomtexta",
+          { opacity: 0, y: 0 },
+          { opacity: 1, y: 50, x: -50, duration: 5 },
+          0
+        )
+        .fromTo(
+          "#bottomtextaa",
+          { opacity: 0, y: 0, duration: 5 },
+          { opacity: 1, y: 500, duration: 5 },
+          0
+        )
+        .fromTo(
+          "#colors",
+          { opacity: 0, y: 0 },
+          { opacity: 1, y: -200, right: "10%", duration: 5 },
+          0
+        )
+        .fromTo(
+          "#card",
+          { opacity: 0, y: 0, x: 0 },
+          { opacity: 1, x: 10, duration: 5 },
+          0
+        );
+    // .fromTo(
+    //   "#hmema",
+    //   { opacity: 0, y: 0 },
+    //   { opacity: 1, y: 320, x: 250, duration: 5 },
+    //   0
+    // );
+
     window.addEventListener("resize", handleResize);
 
     return () => {
+      timeline.kill();
       window.removeEventListener("resize", handleResize);
     };
   }, []);
@@ -98,7 +156,7 @@ export default function Hero() {
         }}
       >
         <video
-          id="myVideo"
+          id="myVideo2"
           autoPlay
           loop
           muted
@@ -843,6 +901,9 @@ export default function Hero() {
               .card {
                 width: 15vw !important;
               }
+              #card {
+                transform: scale(0.2);
+              }
             }
             @media screen and (max-width: 909px) {
               .card {
@@ -871,7 +932,7 @@ export default function Hero() {
           `}
         </style>
       </main>
-      <section>
+      <section style={{ overflow: "hidden", width: "95vw" }}>
         <Image
           id="map"
           src={"/assets/map.webp"}
@@ -886,23 +947,23 @@ export default function Hero() {
         ></Image>
         <Image
           id="card"
-          src={"/assets/card.png"}
+          src={"/assets/cardA.png"}
           style={{
             position: "absolute",
             right: 20,
             zIndex: 50000,
-            bottom: "-600px",
+            bottom: "-700px",
             transform: "scale(.4)",
           }}
           width={742}
           height={782}
         ></Image>
         <Image
-          id="card"
+          className="card"
           src={"/assets/dinner.png"}
           style={{
             position: "absolute",
-            right: 20,
+            right: 30,
             zIndex: 50000,
             bottom: "-600px",
             transform: "scale(1.2)",
@@ -911,7 +972,7 @@ export default function Hero() {
           height={152}
         ></Image>
         <Image
-          id="card"
+          className="card"
           src={"/assets/std.png"}
           style={{
             position: "absolute",
@@ -924,7 +985,7 @@ export default function Hero() {
           height={211}
         ></Image>
         <Image
-          id="card"
+          className="card"
           src={"/assets/song.png"}
           style={{
             position: "absolute",
@@ -950,11 +1011,11 @@ export default function Hero() {
           height={94}
         ></Image>
         <Image
-          id="card"
+          className="card"
           src={"/assets/types.png"}
           style={{
             position: "absolute",
-            left: "20%",
+            left: "24%",
             zIndex: 50000,
             bottom: "-600px",
             transform: "scale(1.2)",
@@ -970,15 +1031,43 @@ export default function Hero() {
             left: "10%",
             zIndex: 50000,
             bottom: "-600px",
-            transform: "scale(1.2)",
+            transform: "scale(1.5)",
             width: 150,
-
             color: "rgb(188, 129, 41)",
           }}
         >
           Un mariage à votre image, un souvenir éternel
         </p>
-
+        <p
+          className={playa.className}
+          id="bottomtextaa"
+          style={{
+            position: "absolute",
+            left: "10%",
+            zIndex: 50000,
+            top: "30%",
+            transform: "scale(1.5)",
+            width: 150,
+            color: "rgb(188, 129, 41)",
+          }}
+        >
+          Créez des souvenirs précieux
+        </p>
+        <p
+          className={playa.className}
+          id="bottomtextaa"
+          style={{
+            position: "absolute",
+            right: "10%",
+            zIndex: 50000,
+            top: "30%",
+            transform: "scale(1.5)",
+            width: 150,
+            color: "rgb(188, 129, 41)",
+          }}
+        >
+          Célébrez l'amour
+        </p>
         <Image
           id="colors"
           src={"/assets/colors.png"}
@@ -986,12 +1075,34 @@ export default function Hero() {
             position: "absolute",
             right: "20%",
             zIndex: 50000,
-            bottom: "-500px",
+            bottom: "-600px",
             transform: "scale(1.2)",
           }}
           width={36}
           height={105}
-        ></Image>
+        ></Image>{" "}
+        {/* <Image
+          id="hmema"
+          src={"/assets/Wedding.png"}
+          style={{
+            position: "absolute",
+            right: "50%",
+            zIndex: 50000,
+            bottom: "-600px",
+            transform: "scale(.4)",
+          }}
+          width={500}
+          height={319}
+        ></Image> */}
+        <style>{`
+          @media screen and (max-width: 1140px) {
+            
+              #card {
+                transform: scale(0.3) !important;
+              }
+            }
+        
+        `}</style>
       </section>
     </>
   );

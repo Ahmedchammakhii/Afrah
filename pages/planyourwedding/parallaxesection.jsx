@@ -14,9 +14,9 @@ export default function Parallaxe() {
 
       parallaxElements.forEach((element) => {
         const scrollPosition = window.pageYOffset;
-        const elementTopPosition = element.offsetTop - 200;
+        const elementTopPosition = element.offsetTop;
         const distance = elementTopPosition - scrollPosition;
-        const parallaxSpeed = 0.5;
+        const parallaxSpeed = 0.1;
 
         element.style.backgroundPositionY = `${distance * parallaxSpeed}px`;
       });
@@ -54,26 +54,18 @@ export default function Parallaxe() {
       >
         Vous êtes à la recherche de l'excellence , par hasard ?
       </p>
+
       <div
-        className="wholeshow"
+        className="parallax"
         style={{
           width: "100%",
-          height: "70%",
-          zIndex: 3,
+          height: "50%",
+          backgroundImage: "url('./assets/bg3.jpg')",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           position: "relative",
         }}
       >
-        <div
-          className="parallax"
-          style={{
-            width: "100%",
-            height: "250%",
-            backgroundImage: "url('./assets/bg3.jpg')",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            overflow: "hidden",
-          }}
-        ></div>
         <div
           className="text_wrapper"
           style={{
@@ -128,42 +120,41 @@ export default function Parallaxe() {
             }}
           />
         </div>
-        <div
-          className="bottomText"
-          style={{
-            position: "absolute",
-            bottom: "-25%",
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
+      </div>
+      <div
+        className="bottomText"
+        style={{
+          marginTop: "250px",
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <p
+          className={jost.className}
+          style={{ letterSpacing: "0.1em", fontSize: "35px" }}
+          id="team"
         >
-          <p
-            className={jost.className}
-            style={{ letterSpacing: "0.1em", fontSize: "35px" }}
-            id="team"
-          >
-            #TEAMAFRAHPRODUCTION
-          </p>
-          <p
-            className={play.className}
-            style={{
-              letterSpacing: "0.1em",
-              width: "50%",
-              textAlign: "center",
-            }}
-            id="whatheheck"
-          >
-            {" "}
-            Notre équipe est vraiment pointue et centrée sur le style, mettant
-            en œuvre des idées de concept éclectiques et très stylées
-            personnalisées pour chaque événement : vous serez sûr de vous faire
-            bloguer, épingler, reprogrammer et tendance. En tant qu'individus,
-            nous sommes connus pour notre style unique, notre authenticité,
-            notre passion, notre éthique de travail et notre expérience.
-          </p>
-        </div>
+          #TEAMAFRAHPRODUCTION
+        </p>
+        <p
+          className={play.className}
+          style={{
+            letterSpacing: "0.1em",
+            width: "50%",
+            textAlign: "center",
+          }}
+          id="whatheheck"
+        >
+          {" "}
+          Notre équipe est vraiment pointue et centrée sur le style, mettant en
+          œuvre des idées de concept éclectiques et très stylées personnalisées
+          pour chaque événement : vous serez sûr de vous faire bloguer,
+          épingler, reprogrammer et tendance. En tant qu'individus, nous sommes
+          connus pour notre style unique, notre authenticité, notre passion,
+          notre éthique de travail et notre expérience.
+        </p>
       </div>
       <style>
         {`
@@ -181,21 +172,20 @@ export default function Parallaxe() {
 
 }
 .laptop {
-  transform : translateX(-30%) !important ;
+  transform : translateX(-35%) !important ;
 }
-
+.parallax {
+  height:100% !important
+}
 .text_wrapper p {
   
   font-size: clamp(14px, 5vw, 45px) !important ;
 }         
-.laptop {
-  top:40% !important ;
-}
 #whatheheck {
   width:90% !important;
   }
   .bottomText {
-    bottom : -15% !important ;
+    margin-top: 0px !important ;
   }
 
 }
@@ -204,7 +194,11 @@ export default function Parallaxe() {
     transform : translateX(-15%) !important ;
     
   }
-
+  .bottomText {
+  position : relative !important ;
+  top:-10% !important 
+  
+  }
   #myVideo1{
     width:50% !important ;
   
