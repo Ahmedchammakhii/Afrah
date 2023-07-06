@@ -70,7 +70,7 @@
     height:25px;
     padding: 5px;
 }
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 830px) {
   .form {
     max-width: 100%;
     padding: 10px;
@@ -79,7 +79,7 @@
   .form .intro {
     font-size: 25px;
     margin-top: 100px;
-    width: 100%;
+    width: 70%;
   }
 
   .co {
@@ -88,7 +88,7 @@
   }
 
   .policy {
-    max-width: 100%;
+    max-width:300px;
     margin-top: 10px;
   }
 
