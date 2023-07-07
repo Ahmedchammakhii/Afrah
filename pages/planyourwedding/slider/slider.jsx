@@ -39,6 +39,7 @@ export default function Slider() {
         transition: "background 1s linear",
         position: "relative",
       }}
+      className="slider"
     >
       <div
         className="blacklayer"
@@ -77,6 +78,7 @@ export default function Slider() {
           letterSpacing: "0.05em",
           zIndex: 3,
         }}
+        id="middletext"
       >
         Nous comprenons que votre mariage est un moment unique et précieux, et
         nous sommes là pour vous aider à le rendre absolument magique. Avec
@@ -86,6 +88,20 @@ export default function Slider() {
         avec des feux d'artifice et des décors somptueux, nous sommes là pour
         vous accompagner à chaque étape.
       </p>
+      <style jsx>
+        {`
+          @media screen and (max-width: 950px) {
+            #middletext {
+              width: 85% !important;
+            }
+          }
+          @media screen and (max-width: 636px) {
+            .slider {
+              height: 100vh !important ;
+            }
+          }
+        `}
+      </style>
     </main>
   );
 }
