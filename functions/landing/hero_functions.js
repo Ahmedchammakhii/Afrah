@@ -152,7 +152,7 @@ export function animEnd(wrapper, container, data, record, titles, subtitle, matt
                 container.current.children[i].style.transition = "none";
                 container.current.children[i].style.transform = "none";
                 container.current.children[i + 1].style.background = data[i].background;
-                container.current.children[i + 1].style.backgroundPosition = "center"
+                container.current.children[i + 1].style.backgroundPosition = "30% center"
                 container.current.children[i + 1].style.backgroundSize = "cover"
             }
             ; i++
@@ -185,7 +185,7 @@ export function animEnd(wrapper, container, data, record, titles, subtitle, matt
         container.current.children[index + 1].style.transition = "none";
         container.current.children[index + 1].style.transform = "none";
         container.current.children[index + 1].style.background = element;
-        container.current.children[index + 1].style.backgroundPosition = "center";
+        container.current.children[index + 1].style.backgroundPosition = "30% center";
         container.current.children[index + 1].style.backgroundSize = "cover";
     });
 

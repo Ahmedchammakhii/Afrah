@@ -24,14 +24,14 @@ export default function Hero() {
 
 
     useEffect(() => {
-        console.log(loader.current.style.animation = "loading 5s linear infinite")
+        loader.current.style.animation = "loading 10s linear infinite"
         subtitle.current.children[0].style.transform = "none"
         for (let i = 0; titles.current.children.length > i; i++) {
             setTimeout(() => {
                 titles.current.children[i].children[0].style.transform = "none"
             }, Number(i + 1 + "00"));
         }
-        // veil.current.style.width = 0
+        // // veil.current.style.width = 0
     }, [])
 
 
@@ -82,18 +82,13 @@ export default function Hero() {
                     </div>
                     <div className='bigTitle' style={{ fontSize: "0.8vw", width: "30vw", marginTop: "10%" }}>
                         <div style={{ transition: "transform 0.6s cubic-bezier(.69,.26,0,1)", display: "flex" }}>
-                            <div
-                                style={{
-                                    width: "3vw",
-                                    height: "3vw",
-                                    background: "white",
-                                    borderRadius: "100%",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center", boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.4)", cursor: "pointer"
-                                }}
-                            >
-                                <img style={{ width: "40%", marginLeft: "10%" }} src="https://cdn.discordapp.com/attachments/1073737355896299542/1125802685027856454/play-button-svgrepo-com.png" />
+                            <div style={{ cursor: "pointer", width: "50%", height: "3vw", borderRadius: "20px", border: "1px solid white", boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.4)", position: "relative" }} >
+                                <div style={{ width: "100%", height: "100%", background: "white", borderRadius: "20px", opacity: "0.3", filter: "blur(5px)", position: "absolute" }} />
+                                <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                                    <div style={{ fontSize: "1vw", color: "white", textShadow: "0px 0px 4px rgba(255, 239, 0, 0.75)", zIndex: 2 }}>
+                                        Contactez nous
+                                    </div>
+                                </div>
                             </div>
                             <div
                                 style={{
@@ -111,28 +106,33 @@ export default function Hero() {
                                     <g>
                                         <g id="Fullscreen_1_">
                                             <path d="M372.939,216.545c-6.123,0-12.03,5.269-12.03,12.03v132.333H24.061V24.061h132.333c6.388,0,12.03-5.642,12.03-12.03
-              S162.409,0,156.394,0H24.061C10.767,0,0,10.767,0,24.061v336.848c0,13.293,10.767,24.061,24.061,24.061h336.848
-              c13.293,0,24.061-10.767,24.061-24.061V228.395C384.97,221.731,380.085,216.545,372.939,216.545z" />
+                                                S162.409,0,156.394,0H24.061C10.767,0,0,10.767,0,24.061v336.848c0,13.293,10.767,24.061,24.061,24.061h336.848
+                                                c13.293,0,24.061-10.767,24.061-24.061V228.395C384.97,221.731,380.085,216.545,372.939,216.545z" />
                                             <path d="M372.939,0H252.636c-6.641,0-12.03,5.39-12.03,12.03s5.39,12.03,12.03,12.03h91.382L99.635,268.432
-              c-4.668,4.668-4.668,12.235,0,16.903c4.668,4.668,12.235,4.668,16.891,0L360.909,40.951v91.382c0,6.641,5.39,12.03,12.03,12.03
-              s12.03-5.39,12.03-12.03V12.03l0,0C384.97,5.558,379.412,0,372.939,0z" />
+                                                c-4.668,4.668-4.668,12.235,0,16.903c4.668,4.668,12.235,4.668,16.891,0L360.909,40.951v91.382c0,6.641,5.39,12.03,12.03,12.03
+                                                s12.03-5.39,12.03-12.03V12.03l0,0C384.97,5.558,379.412,0,372.939,0z" />
                                         </g>
                                     </g>
-                                </svg>                            </div>
+                                </svg>
+                            </div>
 
-                            <div style={{ cursor: "pointer", width: "50%", marginLeft: "2vw", height: "3vw", borderRadius: "20px", border: "1px solid white", boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.4)", position: "relative" }} >
-                                <div style={{ width: "100%", height: "100%", background: "white", borderRadius: "20px", opacity: "0.3", filter: "blur(5px)", position: "absolute" }} />
-                                <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                                    <div style={{ fontSize: "1vw", color: "white", textShadow: "0px 0px 4px rgba(255, 239, 0, 0.75)", zIndex: 2 }}>
-                                        Contactez nous
-                                    </div>
-                                </div>
+                            <div
+                                style={{
+                                    marginLeft: "2vw",
+                                    width: "3vw",
+                                    height: "3vw",
+                                    background: "white",
+                                    borderRadius: "100%",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center", boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.4)", cursor: "pointer"
+                                }}
+                            >
+                                <img style={{ width: "40%", marginLeft: "10%" }} src="https://cdn.discordapp.com/attachments/1073737355896299542/1125802685027856454/play-button-svgrepo-com.png" />
                             </div>
 
                         </div>
                     </div>
-
-
                 </div>
             </div>
             <div className='right-wrapper' >
@@ -141,7 +141,7 @@ export default function Hero() {
 
                     <Slides container={container} wrapper={wrapper} record={record} titles={titles} subtitle={subtitle} matta={matta} />
 
-                    <div style={{ width: "100%", height: "25%", position: "relative", bottom: "25%", marginLeft: "2.2%", display: "flex", justifyContent: "center", flexDirection: "column", zIndex: 99 }}>
+                    <div style={{ width: "calc(100% - 18.8%)", height: "25%", position: "relative", bottom: "25%", marginLeft: "18.8%", display: "flex", justifyContent: "center", flexDirection: "column", zIndex: 99, position: "absolute", bottom: 0 }}>
                         <div style={{ display: "flex", gap: "1.5%" }}>
                             <div style={{ width: "8vh", height: "8vh", borderRadius: "100%", border: "1px solid white", position: "relative", cursor: "pointer" }} >
                                 <img style={{ width: "20%", position: "absolute", left: "45%", top: "50%", transform: "translate(-50%, -50%)" }} src='https://cdn.discordapp.com/attachments/1073737355896299542/1124656168434946048/Daco_752371.png' />
@@ -189,24 +189,7 @@ export default function Hero() {
                 .right-wrapper { width: 55%; }
                 .right-container { width: 100%; height: 32vw; position: absolute; bottom: 0;  }
                             
-                @keyframes scaler {
-                    0% {
-                       transform: none;
-                       top: 0;
-                      }
-                   
-                     100% {
-                     transform: none;
-                     width : 100vw;
-                     height: 100vh;
-                     left : -45%;
-                     margin-top : 0;
-                     top: calc(-100vh + 32vw);
-                     border-radius: 0;
-                     
-                             }
-                     
-                  }
+                
 
 
 

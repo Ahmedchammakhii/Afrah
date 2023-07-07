@@ -54,12 +54,36 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                         transition: `transform 0.5s`,
                         pointerEvents: "none",
                         zIndex: i + 5,
-                        backgroundPosition: "center",
+                        backgroundPosition: "30% center",
                         backgroundSize: "cover",
                         // border: "1px solid black"
                     }}
                 />
             ))}
+
+
+
+
+
+            <style>{`
+            @keyframes scaler {
+                0% {
+                   transform: none;
+                   top: 0;
+                  }
+               
+                 100% {
+                 transform: none;
+                 width : 100vw;
+                 height: 100vh;
+                 left : -45%;
+                 margin-top : 0;
+                 top: calc(-100vh + 32vw);
+                 border-radius: 0;
+                 
+                         }
+                 
+              }`}</style>
         </div>
     )
 }
