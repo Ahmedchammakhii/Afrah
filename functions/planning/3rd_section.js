@@ -8,7 +8,7 @@ export default function Fix() {
           if (parallaxElement) {
             const scrollPosition = window.scrollY;
             const elementTopPosition=parallaxElement.offsetTop+ (innerHeight *  1.3)
-            const distance = elementTopPosition-scrollPosition * 0.5; // Adjust the parallax speed as needed
+            const distance = elementTopPosition-scrollPosition * 0.5; 
     
             parallaxElement.style.backgroundPositionY = `${distance}px`;
           }
@@ -34,7 +34,7 @@ export default function Fix() {
             position:"relative"
         }}>
             <div id ='parallax1' style={{
-            //backgroundAttachment: "fixed",
+          
             height: "100%",
             width: "100%",
             backgroundImage: "url(/fix.jpg)",

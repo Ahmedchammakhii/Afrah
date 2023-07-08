@@ -47,8 +47,6 @@ export default function Form() {
       Width: "100vw",
       left: 0,
       top: 0,
-      marginTop: 0
-      // position:"relative"
     }} >
       {/* <h1>Welcome to my Next.js app</h1>
       <button onClick={fetchData}>Fetch from Backend</button>
@@ -61,42 +59,45 @@ export default function Form() {
       <div style={{
         display: "flex",
         height: "100vh",
-        width: "100vw",
+        width: "100%",
         left: 0,
         bottom: 0,
         background: 'linear-gradient( to bottom,  #ffffff,#d0e6e4)',
-        backgroundPosition: "center 0",
+        backgroundRepeat: "no-repeat",
         backgroundSize: 'cover',
+
         zIndex: "2",
-        marginTop: -500,
+        marginTop: -400,
         flexDirection: "column",
         justifyContent: 'center',
         alignItems: 'center',
 
       }}
       >
-        <h2 style={{ fontSize: "larger", marginTop: "50px" }}>THE BLOG</h2>
+        {/* <h2 style={{ fontSize: "larger" }}>THE BLOG</h2> */}
         <div style={{
           height: '100%',
           width: "100%",
           display: 'flex',
-          flexDirection: 'row',
+        
           gap: '100px',
-          marginTop: '16px',
           textAlign: "center",
           justifyContent: 'center',
           alignItems: 'center',
-          marginBottom: '100px',
-          '@media screen and (max-width: 1400px)': {
-
+          // marginBottom: '300px',
+         
+          '@media (maxWidth: 1300px)': {
+            // height:"200vh",
             display: 'flex',
             flexDirection: "column",
-        
+            justifyContent: 'center',
+            alignItems: 'center',
+            width:'100%'
           }
         }}>
-          <div style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "calc(100vh / 2)", width: "canlc(100vw / 3)", display: "flex", justifyContent: "center", alignItems: "center" }}><div style={{ marginTop: 650, maxWidth: "350px" }}><h2 style={{ fontWeight: "500" }}>top five tips for budgeting your wedding</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" }}>read more</button></div></div>
-          <div style={{ backgroundImage: "url('/2b.jpg')", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "calc(100vh / 2)", width: "canlc(100vw / 3)", display: "flex", justifyContent: "center", alignItems: "center" }}><div style={{ marginTop: 650, maxWidth: "350px" }}><h2 style={{ fontWeight: "500", text: "lowercase" }}> pro wedding day timeline MADE BY PLANNERS  </h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" }}>read more</button ></div></div>
-          <div style={{ backgroundImage: "url('/3b.jpg')", height: "calc(100vh / 2)", width: "canlc(100vw / 3)", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center" }}><div style={{ marginTop: 650, maxWidth: "350px" }}><h2 style={{ fontWeight: "400", fontSize: "20px" }}> WEDDING PLANNER VS. VENUE MANAGER and what the differences are</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" }}>read more</button></div></div>
+          <div style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center" }}><div style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px"}}><h2 style={{ fontWeight: "500" }}>top five tips for budgeting your wedding</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button></div></div>
+          <div style={{ backgroundImage: "url('/2b.jpg')", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center" }}><div style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px" }}><h2 style={{ fontWeight: "500", text: "lowercase" }}> pro wedding day timeline MADE BY PLANNERS  </h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button ></div></div>
+          <div style={{ backgroundImage: "url('/3b.jpg')", height: "500px", width: "calc(100vw- 250px / 3)", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center" }}><div style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px" }}><h2 style={{ fontWeight: "400", fontSize: "20px" }}> WEDDING PLANNER VS. VENUE MANAGER and what the differences are</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button></div></div>
         </div>
 
       </div>
@@ -116,13 +117,12 @@ export default function Form() {
         justifyContent: 'center',
         alignItems: 'center',
 
-      }}>
-        <CustomButton
+      }}> 
+         <CustomButton
           label="YOU'RE FOLLOWING ON INSTAGRAM, RIGHT?"
           isActive={false}
         // onClick={() => fileInputRef.current.click()}
         />
-        {/* <button type="button" style={{ height: "60px", width: "300px", marginTop: "-300px", backgroundColor: "grey", borderRadius: "5rem" }}>Are you following us on instagram?</button> */}
       </div>
     </div>
   );
