@@ -80,6 +80,7 @@ export default function ContactForm({ saveData }) {
               <input type="tel" id="phone" name="phone" value={formValues.phone} onChange={handleChange} />
             </div>
             <br />
+
           </div>
         );
       case 2:
@@ -229,24 +230,7 @@ export default function ContactForm({ saveData }) {
 FOR CAREER INQURIES + GENERAL INQUIRY CONTACT, AFRAH CEO, AKA DIDO, DIRECTLY. 
 DO NOT USE CONTACT FORM BELOW
 DIDO@Afrah.com</p></div>
-        <div> <style>{`
-        input{
-          background:transparent ;
-          border:none;
-          border-bottom:2px solid black
-        }
-        select {
-          color: black;
-          background-color: transparent;
-          border: 1px solid black;
-          height:25px;
-        }
-        
-        select option {
-          color: black;
-          background-color: transparent;
-          /* Add any additional styles as needed */
-        }`}</style>
+        <div>
           {renderFormItems()}
         </div>
 
