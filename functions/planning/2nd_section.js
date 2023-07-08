@@ -3,7 +3,7 @@ import styles from './2nd.module.css';
 
 const Gallery = () => {
     const [backgroundIndex, setBackgroundIndex] = useState(0);
-    const backgrounds = ['/image1.jpg','/image5.jpg','/GOPR2398.jpg','/image8.jpg','/Afrah.jpg']; // Replace with your image URLs
+    const backgrounds = ['/image5.jpg','/GOPR2398.jpg','/Afrah.jpg']; // Replace with your image URLs
 
     useEffect(() => {
         // Change the background every 10 seconds
