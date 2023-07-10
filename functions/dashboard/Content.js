@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -15,6 +16,10 @@ import Agenda from './Agenda';
 
 export default function Content(props) {
   const {  selectedChildId } = props;  
+  const [searchTerm, setSearchTerm] = useState('');
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
   return (
     <Paper sx={{ maxWidth: 1450, margin: 'auto', overflow: 'hidden' }}>
       <AppBar
@@ -31,12 +36,14 @@ export default function Content(props) {
             <Grid item xs>
               <TextField
                 fullWidth
+                onChange={handleSearch}
                 placeholder="Search by email address, phone number, or user UID"
                 InputProps={{
                   disableUnderline: true,
                   sx: { fontSize: 'default' },
                 }}
                 variant="standard"
+                
               />
             </Grid>
             <Grid item>
@@ -54,10 +61,14 @@ export default function Content(props) {
       </AppBar>
       <Typography sx={{ my: 5, mx: 2 }} color="text.secondary" align="center">
       </Typography>
-     {selectedChildId  ==="Clients" && <Table />}
-     {selectedChildId ==="Agenda" && <Agenda/>}
+     {selectedChildId  ==="Clients" && <Table searchTerm={searchTerm}/>}
+     {selectedChildId ==="Agenda" && <Agenda agendasearchTerm={searchTerm}/>}
      
       
     </Paper>
   );
+  Content.propTypes = {
+    searchTerm: PropTypes.string.isRequired,
+  };
+  
 }
