@@ -227,7 +227,7 @@ export default function Parallaxe() {
 @media screen and (max-width: 450px) {
   
   .bottomText {
-    bottom : -25% !important ;
+    top: -5% !important;
   }
 
   
@@ -240,6 +240,13 @@ export default function Parallaxe() {
 
   
 }
+
+@media screen and (max-height:601px) and (min-width:585px) {
+  .mainparallax{
+height:250vh !important ;
+  }
+}
+
           `}
       </style>
     </main>
