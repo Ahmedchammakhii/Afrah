@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,7 +9,7 @@ import Link from '@mui/material/Link';
 import Navigator from '../functions/dashboard/Navigator';
 import Content from '../functions/dashboard/Content';
 import Header from '../functions/dashboard/Header';
-import Table from "../functions/dashboard/Table"
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -169,14 +170,18 @@ const drawerWidth = 256;
 export default function Dashboard() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const isSmUp = useMediaQuery(theme.breakpoints.up('sm'));
+  const [selectedChildId, setSelectedChildId] = useState('');
 
+  const handleChildClick = (childId) => {
+    setSelectedChildId(childId);
+  };
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+    <ThemeProvider theme={theme} style={{filter:'sepia(0.5)'}}>
+      <Box sx={{ display: 'flex', minHeight: '100vh',filter:'sepia(0.5) brightness(90%)' }}>
         <CssBaseline />
         <Box
           component="nav"
@@ -195,13 +200,14 @@ export default function Dashboard() {
           <Navigator
             PaperProps={{ style: { width: drawerWidth } }}
             sx={{ display: { sm: 'flex', xs: 'none' } }}
+            onChildClick={handleChildClick}
           />
         </Box>
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <Header onDrawerToggle={handleDrawerToggle} />
+          <Header onDrawerToggle={handleDrawerToggle} selectedChildId={selectedChildId} />
           <Box component="main" sx={{ flex: 1, py: 6, px: 6, bgcolor: '#eaeff1' }}>
-            <Content />
-            <Table />
+            <Content selectedChildId={selectedChildId} />
+        
           </Box>
           <Box component="footer" sx={{ p: 2, bgcolor: '#eaeff1' }}>
             <Copyright />

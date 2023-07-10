@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
@@ -18,7 +18,7 @@ import Typography from '@mui/material/Typography';
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
 function Header(props) {
-  const { onDrawerToggle } = props;
+  const { onDrawerToggle, selectedChildId } = props;
 
   return (
     <React.Fragment>
@@ -79,7 +79,7 @@ function Header(props) {
           <Grid container alignItems="center" spacing={1}>
             <Grid item xs>
               <Typography color="inherit" variant="h5" component="h1">
-                Authentication
+                {selectedChildId ? selectedChildId : "DB management"}
               </Typography>
             </Grid>
             <Grid item>
@@ -116,6 +116,7 @@ function Header(props) {
 
 Header.propTypes = {
   onDrawerToggle: PropTypes.func.isRequired,
+  selectedChildId: PropTypes.string.isRequired,
 };
 
 export default Header;

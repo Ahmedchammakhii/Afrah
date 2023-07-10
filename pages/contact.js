@@ -48,6 +48,7 @@ export default function Form() {
       Width: "100vw",
       left: 0,
       top: 0,
+      filter:'sepia(0.3) brightness(90%)'
     }} >
       {/* <h1>Welcome to my Next.js app</h1>
       <button onClick={fetchData}>Fetch from Backend</button>
@@ -91,8 +92,10 @@ export default function Form() {
         }}><style>{`
         @media (max-width: 700px){
           #father{
+            top:0 !important;
             height:300vh !important;
             padding-bottom:20vh !important;
+            margin-top:-500 !important;
           }
           #gallery{
             display: flex !important;

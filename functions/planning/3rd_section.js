@@ -41,7 +41,7 @@ export default function Fix() {
             backgroundPosition: "center 0",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            filter: "sepia(0.2) brightness(90%)",
+            // filter: "sepia(0.2) brightness(90%)",
             
 }} />
         </div>

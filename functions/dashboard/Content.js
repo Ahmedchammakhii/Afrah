@@ -10,11 +10,13 @@ import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
-import Table from "./Table"
-export default function Content() {
-    
+import Table from "./Table";
+import Agenda from './Agenda';
+
+export default function Content(props) {
+  const {  selectedChildId } = props;  
   return (
-    <Paper sx={{ maxWidth: 936, margin: 'auto', overflow: 'hidden' }}>
+    <Paper sx={{ maxWidth: 1450, margin: 'auto', overflow: 'hidden' }}>
       <AppBar
         position="static"
         color="default"
@@ -52,7 +54,9 @@ export default function Content() {
       </AppBar>
       <Typography sx={{ my: 5, mx: 2 }} color="text.secondary" align="center">
       </Typography>
-     {/* <Table/> */}
+     {selectedChildId  ==="Clients" && <Table />}
+     {selectedChildId ==="Agenda" && <Agenda/>}
+     
       
     </Paper>
   );
