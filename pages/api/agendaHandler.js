@@ -4,7 +4,7 @@ export default async function agendaHandler(req, res) {
       try {
         const firestore = admin.firestore();
         const agendaRef = firestore.collection('agenda');
-        const snapshot = await agendaRef.orderBy('contact_Time', 'desc').get();
+        const snapshot = await agendaRef.orderBy('meeting_Time', 'desc').get();
 //   console.log("snapshot",snapshot)
         const agenda = [];
         snapshot.forEach((doc) => {

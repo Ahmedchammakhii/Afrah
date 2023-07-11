@@ -70,7 +70,7 @@ export default function Form() {
         backgroundSize: 'cover',
 
         zIndex: "2",
-        marginTop: -400,
+        marginTop: -500,
         justifyContent: 'center',
         alignItems: 'center',
 
@@ -93,9 +93,9 @@ export default function Form() {
         @media (max-width: 700px){
           #father{
             top:0 !important;
-            height:300vh !important;
-            padding-bottom:20vh !important;
-            margin-top:-500 !important;
+            height:270vh !important;
+             padding-bottom:20px !important;
+            
           }
           #gallery{
             display: flex !important;
@@ -105,8 +105,8 @@ export default function Form() {
             width:100% ;
           }
           .child{
-            height: 500px; 
-            width: calc(100vw- 500px / 3);
+            height: 500px !important; 
+            width: 80%;
             margin-top:100px;
           }
         }

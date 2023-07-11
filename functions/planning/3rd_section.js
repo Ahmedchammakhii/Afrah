@@ -7,8 +7,8 @@ export default function Fix() {
     
           if (parallaxElement) {
             const scrollPosition = window.scrollY;
-            const elementTopPosition=parallaxElement.offsetTop+ (innerHeight )
-            const distance = elementTopPosition-scrollPosition * 0.5; 
+            const elementTopPosition=parallaxElement.offsetTop+ (innerHeight*1.1 )
+            const distance = elementTopPosition-scrollPosition *0.5; 
     
             parallaxElement.style.backgroundPositionY = `${distance}px`;
           }
@@ -22,7 +22,7 @@ export default function Fix() {
       }, []);
     
     return (
-        <div  style={{
+        <div id='toto'  style={{
             height: '100vh', width: '100vw', display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -34,7 +34,7 @@ export default function Fix() {
             position:"relative"
         }}>
             <div id ='parallax1' style={{
-          
+              // backgroundAttachment:"fixed",
             height: "100%",
             width: "100%",
             backgroundImage: "url(/fix.jpg)",
@@ -43,7 +43,12 @@ export default function Fix() {
             backgroundRepeat: "no-repeat",
             // filter: "sepia(0.2) brightness(90%)",
             
-}} />
+}} /><style>{`
+@media (max-width:850px){
+  #parallax1{
+     height: 120% !important;
+  }
+}`}</style>
         </div>
     )
 }

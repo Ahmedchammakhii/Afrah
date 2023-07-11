@@ -36,14 +36,16 @@ const CustomButton = ({ label, value, isActive, onClick }) => {
           cursor: "pointer",
           position: "relative",
           overflow: "hidden",
-          fontWeight: "500",
+          fontWeight: "700",
           transition: "0.8s",
           fontSize: "1rem",
           width: "500px",
-          height: "70px",
-          // borderRadius: "20% 20% 20% 20%/60% 60% 60% 60%" ,
+          height: "60px",
+          // borderRadius: "20% 20% 20% 20%/60% 60% 60% 60%" , 
           border: "1px solid black",
          background: isActive ? "black" : "transparent",
+         marginTop:"-400px"
+        
       }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
