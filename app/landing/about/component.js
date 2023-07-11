@@ -4,8 +4,9 @@ import { Jost, Playfair_Display } from 'next/font/google'
 const font = Jost({ subsets: ['latin'], weight: '600' })
 const font2 = Playfair_Display({ subsets: ['latin'], weight: '400' })
 
-// 1.6vw 19px 6px clamp(6px, 1.6vw, 19px)
+
 export default function Component({ index, element }) {
+    if (innerWidth) return
     return (
         <div style={{ display: "flex", height: "50vw", maxHeight: '600px', width: "100%", maxWidth: "1200px", background: index % 2 === 0 ? "white" : "black", flexDirection: index % 2 === 0 ? "row" : "row-reverse" }} >
             <div style={{ width: "50%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: index % 2 === 0 ? "black" : "white" }}>
