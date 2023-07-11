@@ -9,7 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@firebase/firestore": "^3.13.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@firebase/firestore": "^3.7.3",
+    "@mui/icons-material": "^5.13.7",
+    "@mui/material": "^5.13.7",
+    "@mui/material-next": "^6.0.0-alpha.91",
     "dotenv": "^16.3.1",
     "firebase-admin": "^11.9.0",
     "gsap": "^3.12.2",

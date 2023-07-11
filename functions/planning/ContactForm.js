@@ -1,48 +1,216 @@
 import React, { useState } from 'react';
-import styles from './contactForm.module.css'
+import styles from './contactForm.module.css';
 import Link from 'next/link';
 
 export default function ContactForm({ saveData }) {
-    const [formValues, setFormValues] = useState({
-        whereDidYouHear: '',
-        email: '',
-        firstName: '',
-        lastName: '',
-        phone: '',
-        reservedVenue: '',
-        eventDate: '',
-        venueName: '',
-        venueLocation: '',
-        celebrating: '',
-        guestCount: '',
-        additionalService: '',
-        message: '',
-    });
+  const [step, setStep] = useState(1);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues((prevValues) => ({
-            ...prevValues,
-            [name]: value,
-        }));
-    };
+  const [formValues, setFormValues] = useState({
+    whereDidYouHear: '',
+    email: '',
+    firstName: '',
+    lastName: '',
+    phone: '',
+    reservedVenue: '',
+    eventDate: '',
+    venueName: '',
+    venueLocation: '',
+    celebrating: '',
+    guestCount: '',
+    additionalService: '',
+    message: '',
+  });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        saveData(formValues)
-        console.log(formValues);
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
 
-    return (
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    saveData(formValues);
+    console.log(formValues);
+  };
 
-        <div className={styles.formContainer}>
-            <form className={styles.form} onSubmit={handleSubmit}>
-                <div className={styles.intro}>
-                    <p>
-                        READY? <br></br>
-                        LET'S GET THIS PARTY STARTED!</p>
-                </div>
-                <div className={styles.icons}>
+  const handleNext = () => {
+    setStep((prevStep) => prevStep + 1);
+    console.log(step);
+  };
+
+  const renderFormItems = () => {
+    switch (step) {
+      case 1:
+        return (
+          <div>
+            <div>
+              <label htmlFor="whereDidYouHear">Where did you hear about us?</label>
+              <br />
+              <select name="whereDidYouHear" value={formValues.whereDidYouHear} onChange={handleChange}>
+                <option value="">Select an option</option>
+                <option value="instagram">Instagram</option>
+                <option value="facebook">Facebook</option>
+                <option value="friend">Referred by friend or family</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="firstName">First Name</label>
+              <br />
+              <input type="text" id="firstName" name="firstName" value={formValues.firstName} onChange={handleChange} />
+            </div>
+            <br />
+            <div>
+              <label htmlFor="lastName">Last Name</label>
+              <br />
+              <input type="text" id="lastName" name="lastName" value={formValues.lastName} onChange={handleChange} />
+            </div>
+            <br />
+            <br />
+            <div>
+              <label htmlFor="email">Email</label>
+              <br />
+              <input type="email" id="email" name="email" value={formValues.email} onChange={handleChange} />
+            </div>
+            <br />
+            <div>
+              <label htmlFor="phone">Phone</label>
+              <br />
+              <input type="tel" id="phone" name="phone" value={formValues.phone} onChange={handleChange} />
+            </div>
+            <br />
+
+          </div>
+        );
+      case 2:
+        return (
+          <div>
+            <div>
+              <label htmlFor="celebrating">What are you celebrating?</label>
+              <br />
+              <select id="celebrating" name="celebrating" value={formValues.celebrating} onChange={handleChange}>
+                <option value="">Select an option</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Party/Social Event">Party/Social Event</option>
+                <option value="Corporate Event">Corporate Event</option>
+                <option value="Public Event">Public Event</option>
+                <option value="Fundraiser">Fundraiser</option>
+                <option value="Branding/Marketing Event">Branding/Marketing Event</option>
+                <option value="Elopement">Elopement</option>
+                <option value="Styled Photo Shoot">Styled Photo Shoot</option>
+              </select>
+            </div>
+            <br />
+            <div>
+              <label htmlFor="guestCount">How many guests are you wanting to party with?</label>
+              <br />
+              <input
+                type="number"
+                id="guestCount"
+                name="guestCount"
+                value={formValues.guestCount}
+                onChange={handleChange}
+              />
+            </div>
+            <br />
+            <div>
+              <label htmlFor="eventDate">Event Date</label>
+              <br />
+              <input
+                type="datetime-local"
+                id="eventDate"
+                name="eventDate"
+                value={formValues.eventDate}
+                onChange={handleChange}
+              />
+            </div>
+            <br />
+            <div>
+              <label htmlFor="reservedVenue">Have you reserved a venue yet?</label>
+              <br />
+              <select
+                id="reservedVenue"
+                name="reservedVenue"
+                value={formValues.reservedVenue}
+                onChange={handleChange}
+              >
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <br />
+            {formValues.reservedVenue === 'yes' && (
+  <div>
+    <div>
+      <label htmlFor="venueName">Venue Name</label>
+      <br />
+      <input
+        type="text"
+        id="venueName"
+        name="venueName"
+        value={formValues.venueName}
+        onChange={handleChange}
+      />
+    </div>
+    <br />
+    <div>
+      <label htmlFor="venueLocation">Venue Location</label>
+      <br />
+      <input
+        type="text"
+        id="venueLocation"
+        name="venueLocation"
+        value={formValues.venueLocation}
+        onChange={handleChange}
+      />
+    </div>
+    <br />
+    </div>
+)}
+</div>
+          
+        );
+      case 3:
+        return (
+          <div>
+            <div>
+              <label htmlFor="additionalService">What additional service are you interested in?</label>
+              <br />
+              <select
+                id="additionalService"
+                name="additionalService"
+                value={formValues.additionalService}
+                onChange={handleChange}
+              >
+                <option value="">Select an option</option>
+                <option value="Rehearsal Dinner Planning">Rehearsal Dinner Planning</option>
+                <option value="End of Night Pack + Breakdown of My Event">End of Night Pack + Breakdown of My Event</option>
+                <option value="Post Event Farewell">Post Event Farewell</option>
+                <option value="Pre-event Welcome Event">Pre-event Welcome Event</option>
+              </select>
+            </div>
+            <br />
+            <div>
+              <label htmlFor="message">Tell us how we can help you most. (Message)</label>
+              <br />
+              <textarea id="message" name="message" value={formValues.message} onChange={handleChange}></textarea>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className={styles.formContainer}>
+      <form className={styles.form} >
+        <div className={styles.intro}>
+          <p>READY? <br /> LET'S GET THIS PARTY STARTED!</p>
+        </div>
+        <div className={styles.icons}>
                     <Link href="https://facebook.com">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width={50} height={50}><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" /></svg>
@@ -62,188 +230,22 @@ export default function ContactForm({ saveData }) {
 FOR CAREER INQURIES + GENERAL INQUIRY CONTACT, AFRAH CEO, AKA DIDO, DIRECTLY. 
 DO NOT USE CONTACT FORM BELOW
 DIDO@Afrah.com</p></div>
-                <div>
-                    <label htmlFor="whereDidYouHear">Where did you hear about us?</label>
-                    <br />
-
-                    <select
-                     name="whereDidYouHear"
-                        value={formValues.whereDidYouHear}
-                        onChange={handleChange}>
-                        <option value="">Select an option</option>
-                        <option value="instagram">Instagram</option>
-                        <option value="facebook">Facebook</option>
-                        <option value="friend">Referred by friend or family</option>
-                    </select>
-
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <br></br>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formValues.email}
-                        onChange={handleChange}
-                    />
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="firstName">First Name</label>
-                    <br></br>
-                    <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formValues.firstName}
-                        onChange={handleChange}
-                    />
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="lastName">Last Name</label>
-                    <br></br>
-                    <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formValues.lastName}
-                        onChange={handleChange}
-                    />
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="phone">Phone</label>
-                    <br></br>
-                    <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formValues.phone}
-                        onChange={handleChange}
-                    />
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="reservedVenue">Have you reserved a venue yet?</label>
-                    <br />
-                    <select
-                        id="reservedVenue"
-                        name="reservedVenue"
-                        value={formValues.reservedVenue}
-                        onChange={handleChange}
-                    >
-                        <option value="">Select an option</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="eventDate">Event Date</label>
-                    <br />
-                    <input
-                        type="datetime-local"
-                        id="eventDate"
-                        name="eventDate"
-                        value={formValues.eventDate}
-                        onChange={handleChange}
-                    />
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="venueName">Venue Name</label>
-                    <br></br>
-                    <input
-                        type="text"
-                        id="venueName"
-                        name="venueName"
-                        value={formValues.venueName}
-                        onChange={handleChange}
-                    />
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="venueLocation">Venue Location</label>
-                    <br />
-                    <input
-                        type="text"
-                        id="venueLocation"
-                        name="venueLocation"
-                        value={formValues.venueLocation}
-                        onChange={handleChange}
-                    />
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="celebrating">What are you celebrating?</label>
-                    <br />
-                    <select
-                        id="celebrating"
-                        name="celebrating"
-                        value={formValues.celebrating}
-                        onChange={handleChange}
-                    >
-                        <option value="">Select an option</option>
-                        <option value="Wedding">Wedding</option>
-                        <option value="Party/Social Event">Party/Social Event</option>
-                        <option value="Corporate Event">Corporate Event</option>
-                        <option value="Public Event">Public Event</option>
-                        <option value="Fundraiser">Fundraiser</option>
-                        <option value="Branding/Marketing Event">Branding/Marketing Event</option>
-                        <option value="Elopement">Elopement</option>
-                        <option value="Styled Photo Shoot">Styled Photo Shoot</option>
-                    </select>
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="guestCount">How many guests are you wanting to party with?</label>
-                    <br />
-                    <input
-                        type="number"
-                        id="guestCount"
-                        name="guestCount"
-                        value={formValues.guestCount}
-                        onChange={handleChange}
-                    />
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="additionalService">What additional service are you interested in?</label>
-                    <br />
-                    <select
-                        id="additionalService"
-                        name="additionalService"
-                        value={formValues.additionalService}
-                        onChange={handleChange}
-                    >
-                        <option value="">Select an option</option>
-                        <option value="Rehearsal Dinner Planning">Rehearsal Dinner Planning</option>
-                        <option value="End of Night Pack + Breakdown of My Event">End of Night Pack + Breakdown of My Event</option>
-                        <option value="Post Event Farewell">Post Event Farewell</option>
-                        <option value="Pre-event Welcome Event">Pre-event Welcome Event</option>
-                    </select>
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="message">Tell us how we can help you most. (Message)</label>
-
-                    <br />
-                    <textarea
-                        id="message"
-                        name="message"
-                        value={formValues.message}
-                        onChange={handleChange}
-                    >
-                        
-                    </textarea>
-                </div>
-                <div className={styles.policy}>We use Aisle Planner to manage inquiries. By submitting this contact form, Aisle Planner will share your information with us. We may use your information to correspond with you and send you email marketing communications. For more information, please refer to the Aisle Planner Privacy Policy. This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</div>
-                <button type="submit" >SEND</button>
-            </form>
+        <div>
+          {renderFormItems()}
         </div>
 
-    );
+        <div className={styles.policy}>
+          We use Aisle Planner to manage inquiries. By submitting this contact form, Aisle Planner will shareyour information with us. We may use your information to correspond with you and send you email marketing communications. For more information, please refer to the Aisle Planner Privacy Policy. This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+        </div>
+
+        {step < 3 ? (
+          <button type="button" onClick={handleNext}>
+            Next
+          </button>
+        ) : (
+          <button type="button" onClick={handleSubmit}>SEND</button>
+        )}
+      </form>
+    </div>
+  );
 }
