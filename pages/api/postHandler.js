@@ -64,7 +64,7 @@ export default async function handler(req, res) {
         meeting_Time: admin.firestore.Timestamp.fromDate(nextMeetingTime),
         client: data,
         event_Date: data.eventDate,
-        contact_Time: currentTime
+        contact_Time: admin.firestore.Timestamp.fromDate(currentTime)
       });
 
       res.status(200).json({ message: 'User record added to Firestore', nextMeetingTime, client: data });

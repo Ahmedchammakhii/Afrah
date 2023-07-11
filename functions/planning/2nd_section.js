@@ -17,12 +17,12 @@ const Gallery = () => {
     }, [backgrounds.length]);
 
   return (
-   <> <div className={styles.wrap}>
+   <div > <div className={styles.wrap}>
       <div className={styles.primo} style={{ backgroundImage: `url(${backgrounds[backgroundIndex]})` }}></div>
       
     </div>
     <div className={styles.secundo}>
-        <h2>BREAKING DOWN THE BARRIERS THAT Divide Us
+        <h2 style={{textAlign:"center",marginBottom:"10px"}}>BREAKING DOWN THE BARRIERS THAT Divide Us
 
 </h2>
         <div className={styles.web}>
@@ -31,7 +31,7 @@ const Gallery = () => {
           <div className={styles.ele}></div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
