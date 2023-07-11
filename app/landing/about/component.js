@@ -6,7 +6,6 @@ const font2 = Playfair_Display({ subsets: ['latin'], weight: '400' })
 
 
 export default function Component({ index, element }) {
-    if (innerWidth) return
     return (
         <div style={{ display: "flex", height: "50vw", maxHeight: '600px', width: "100%", maxWidth: "1200px", background: index % 2 === 0 ? "white" : "black", flexDirection: index % 2 === 0 ? "row" : "row-reverse" }} >
             <div style={{ width: "50%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: index % 2 === 0 ? "black" : "white" }}>
@@ -23,7 +22,7 @@ export default function Component({ index, element }) {
                 </p>
             </div>
             <div style={{ width: "50%", height: "100%" }}>
-                <Image alt={index} priority width={innerWidth / 2} height={innerWidth / 2} style={{ objectFit: "cover", objectPosition: "center", width: "100%", height: "100%" }} src={"/landing/about/" + (index + 1) + ".jpg"} />
+                <Image alt={index} priority width={700} height={700} style={{ objectFit: "cover", objectPosition: "center", width: "100%", height: "100%" }} src={"/landing/about/" + (index + 1) + ".jpg"} />
             </div>
         </div>)
 }
