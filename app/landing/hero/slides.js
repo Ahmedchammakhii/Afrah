@@ -1,5 +1,5 @@
 "use client";
-import data from '@/data/hero';
+import data from '@/data/hero_data';
 import { useRef, useState, useEffect } from 'react';
 import { iteration, animEnd } from '@/functions/landing/hero_functions';
 export default function slides({ wrapper, container, record, titles, subtitle, matta }) {

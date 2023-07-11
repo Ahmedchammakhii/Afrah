@@ -1,4 +1,4 @@
-import data from '@/data/hero';
+import data from '@/data/hero_data';
 
 export default function Record({ record }) {
     return (

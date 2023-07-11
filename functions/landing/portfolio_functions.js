@@ -10,12 +10,10 @@ export default function (container, portfolio) {
     if (counter === portfolio.length - 1) {
         container.current.children[0].src =  "/landing/portfolio/" + portfolio[counter - 1] + ".jpg"
         container.current.children[1].src =  "/landing/portfolio/" + portfolio[counter] + ".jpg"
-        console.log(portfolio[counter - 1], portfolio[counter])
         counter = 0
     } else if (!counter) {
         container.current.children[0].src =  "/landing/portfolio/" + portfolio[portfolio.length - 1] + ".jpg"
         container.current.children[1].src =  "/landing/portfolio/" + portfolio[0] + ".jpg"
-        console.log(portfolio[portfolio.length - 1], portfolio[0])
 
         counter++
 
@@ -23,7 +21,6 @@ export default function (container, portfolio) {
         container.current.children[0].src =  "/landing/portfolio/" + portfolio[counter - 1] + ".jpg"
         container.current.children[1].src =  "/landing/portfolio/" + portfolio[counter] + ".jpg"
 
-        console.log(portfolio[counter - 1], portfolio[counter])
 
         counter++
     }
