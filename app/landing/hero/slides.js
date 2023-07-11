@@ -56,9 +56,17 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                         zIndex: i + 5,
                         backgroundPosition: "30% center",
                         backgroundSize: "cover",
+                        position: "relative",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
                         // border: "1px solid black"
                     }}
-                />
+                >
+                    <div style={{ width: "calc(100% - 1vw)", height: "calc(100% - 1.5vw)", border: "2px solid white", }}>
+
+                    </div>
+                </div>
             ))}
 
 

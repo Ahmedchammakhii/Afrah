@@ -14,6 +14,7 @@ export function iteration(container, record, wrapper) {
     container.current.children[0].style.display = "block";
     container.current.children[0].style.animation = "scaler 1s";
     container.current.children[0].style.animationTimingFunction = "cubic-bezier(.69,.26,0,1)";
+    container.current.children[1].children[0].style.display = "none"
 
 
 
@@ -56,6 +57,7 @@ export function iteration(container, record, wrapper) {
 
 export function animEnd(wrapper, container, data, record, titles, subtitle, matta) {
 
+    container.current.children[1].children[0].style.display = "block"
     record.current.children[0].textContent = "0" + (counter + 1) + ""
     if (counter === container.current.children.length - 2) {
         record.current.children[1].textContent = "01"
@@ -130,7 +132,7 @@ export function animEnd(wrapper, container, data, record, titles, subtitle, matt
     wrapper.current.style.filter = "none"
     wrapper.current.style.backgroundRepeat = "no-repeat"
     // wrapper.current.style.transform = "scaleX(-1)"
-    
+
 
 
     container.current.children[0].style.background = data[counter].background;
