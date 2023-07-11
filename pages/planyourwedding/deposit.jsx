@@ -314,9 +314,42 @@ transform:translateX(-40%) !important
 
 }
 }
-          
+@media screen and (max-width: 500px) {
+  .maindepoist {
+  height:180vh !important
+  }}
+  @media screen and (max-width: 385px) {
 
-          
+    .leftcontainer {
+      scale:.9 !important ;
+      transform:translateX(-35px) !important
+    }
+    .iphone {
+      transform:translateX(-250px) !important ;
+      scale:.8 !important;
+
+    }
+    .article {
+      scale:.9 !important;
+
+    }
+    ]
+  } @media screen and (max-width: 325px) {
+
+    .leftcontainer {
+      scale:.8 !important ;
+      transform:translateX(-50px) !important
+    }
+   
+  
+  }
+  @media screen and (max-height:601px) and (min-width:585px) {
+    .maindepoist{
+height:150vh !important ;
+    }
+  }
+
+  
           `}</style>
     </main>
   );

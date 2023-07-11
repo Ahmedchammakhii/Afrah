@@ -4,225 +4,113 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import localFont from "next/font/local";
 gsap.registerPlugin(ScrollTrigger);
+const myFont = localFont({ src: "../Garamond-Premier-Pro-Bold.otf" });
 
 const play = Jost({ subsets: ["latin"], weight: "700" });
 const playa = Poppins({ subsets: ["latin"], weight: "300" });
-
-export default function Hero() {
-  const refce = useRef(null);
-  const refce1 = useRef(null);
-
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: refce.current,
-        start: "top top",
-        end: () => "+=" + refce.current.clientHeight,
-        scrub: true,
-        pin: true,
-      },
-    });
-    const minScale = 0.4;
-    const maxScale = 1.2;
-
-    const calculateScale = () => {
-      const viewportWidth = window.innerWidth;
-      return Math.max(minScale, Math.min(maxScale, viewportWidth / 1100));
-    };
-    timeline
-      .fromTo(
-        ".main",
-        {
-          transform: "scale(1)",
-          transformOrigin: "center center",
-          duration: 5,
-        },
-        {
-          transform: "scale(0.4)",
-          transformOrigin: "center center",
-          duration: 5,
-        },
-        0
-      )
-      .fromTo(
-        "#myVideo2",
-        { height: "100%", duration: 4, width: "100%" },
-        { height: "87%", width: "95%", duration: 4 }
-      )
-      .fromTo(
-        ".herotext",
-        { opacity: 1, duration: 5 },
-        { opacity: 0, duration: 5 }
-      )
-      .fromTo(
-        "#map",
-        { opacity: 0, y: 0, x: -50 },
-        {
-          opacity: 1,
-          y: -10,
-          x: 10,
-          scaleX: calculateScale,
-          scaleY: calculateScale,
-        },
-        0
-      )
-      .fromTo(
-        ".card",
-        { opacity: 0, y: 200, x: -50 },
-        {
-          opacity: 1,
-          y: 100,
-          x: 10,
-          duration: 1,
-          scaleX: calculateScale,
-          scaleY: calculateScale,
-        },
-        0
-      )
-      .fromTo(
-        "#carda",
-        { opacity: 0, y: 0 },
-        {
-          opacity: 1,
-          y: -400,
-          duration: 1,
-          scaleX: calculateScale,
-          scaleY: calculateScale,
-        },
-        0
-      )
-      .fromTo(
-        "#bottomtexta",
-        { opacity: 0, y: 0 },
-        { opacity: 1, y: 50, x: -50, duration: 5 },
-        0
-      )
-      .fromTo(
-        "#bottomtextaa",
-        { opacity: 0, y: 0, duration: 5 },
-        { opacity: 1, y: 500, duration: 5 },
-        0
-      )
-      .fromTo(
-        "#colors",
-        { opacity: 0, y: 0 },
-        { opacity: 1, y: -200, right: "10%", duration: 5 },
-        0
-      )
-      .fromTo(
-        "#card",
-        { opacity: 0, y: 0, x: 0 },
-        { opacity: 1, x: 10, duration: 5 },
-        0
-      );
-    // .fromTo(
-    //   "#hmema",
-    //   { opacity: 0, y: 0 },
-    //   { opacity: 1, y: 320, x: 250, duration: 5 },
-    //   0
-    // );
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      timeline.kill();
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
+export default function Hero2() {
   return (
-    <div>
-      <main
-        className="main"
-        ref={refce}
+    <main
+      className="main"
+      style={{
+        width: "100vw",
+        height: "100vh",
+        zIndex: 3,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "fixed",
+        top: 0,
+        zIndex: -1,
+        flexDirection: "column",
+        background: "rgb(230,237,237)",
+      }}
+    >
+      <video
+        id="myVideo2a"
+        autoPlay
+        loop
+        muted
+        autoCorrect="true"
+        src="/assets/hero.mp4"
         style={{
-          width: "100vw",
-          height: "100vh",
-          zIndex: 3,
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          objectFit: "cover",
+          filter: "brightness(40%)",
+          display: "none",
+        }}
+      />
+      <div
+        className="text"
+        style={{
+          position: "relative",
+          width: "100%",
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
-          flexDirection: "column",
-          background: "rgb(230,237,237)",
         }}
       >
-        <video
-          id="myVideo2"
-          autoPlay
-          loop
-          muted
-          autoCorrect="true"
-          src="/assets/hero.mp4"
+        <h1
           style={{
-            width: "100%",
-            height: "100%",
-            position: "absolute",
-            objectFit: "cover",
-            filter: "brightness(40%)",
-          }}
-        />
-
-        <div
-          className="text"
-          style={{
+            color: "white",
+            zIndex: 400,
+            textAlign: "center",
             position: "relative",
             width: "100%",
-            display: "flex",
+            display: "none",
             justifyContent: "center",
+            letterSpacing: "1.2rem",
           }}
+          className={myFont.className}
         >
-          <div
-            ref={refce1}
-            className="herotext"
+          AFRAH
+        </h1>
+        <div
+          className="herotext"
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 15,
+            zIndex: 100,
+            opacity: 0,
+            animation: "opaci 1s linear",
+            animationDelay: "1s",
+          }}
+          onAnimationEnd={(e) => (e.currentTarget.style.opacity = 1)}
+        >
+          <h1
+            className={playa.className}
+            id="id"
             style={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 15,
-              zIndex: 100,
-              opacity: 0,
-              animation: "opaci 1s linear",
-              animationDelay: "1s",
-              textShadow: "2px 2px 2px #000000 ",
+              color: "black",
+              zIndex: 400,
+              textAlign: "center",
             }}
-            onAnimationEnd={(e) => (e.currentTarget.style.opacity = 1)}
           >
-            <h1
-              className={playa.className}
-              id="id"
-              style={{
-                color: "white",
-                zIndex: 400,
-              }}
-            >
-              La date du jour tant attendu 👰🏻 🤵🏻 tant rêvé approche?
-            </h1>
+            La date du jour tant attendu 👰🏻 🤵🏻 tant rêvé approche?
+          </h1>
 
-            <h1
-              id="id3"
-              style={{
-                width: "60%",
-                textAlign: "center",
-                fontSize: "1.3rem",
-                color: "#fff",
-              }}
-              className={playa.className}
-            >
-              Afrah Group dispose des ressources logistiques et humaines
-              nécessaires pour parfaire votre événement, et éblouir vos esprit
-              en peu de temps ✨: un mariage clé en main!{" "}
-            </h1>
-          </div>
-          {/* <div
+          <h1
+            id="id3"
+            style={{
+              width: "60%",
+              textAlign: "center",
+              fontSize: "clamp(1rem,1.2vw,1.3rem)",
+              color: "#000",
+            }}
+            className={playa.className}
+          >
+            Afrah Group dispose des ressources logistiques et humaines
+            nécessaires pour parfaire votre événement, et éblouir vos esprit en
+            peu de temps ✨: un mariage clé en main!{" "}
+          </h1>
+        </div>
+        <div
           className="cards a"
           style={{
             position: "absolute",
@@ -772,297 +660,150 @@ export default function Hero() {
             ></div>
             <p style={{ fontSize: 10 }}>📞 23 120 121</p>
           </div>
-        </div> */}
         </div>
-        {/* <Image
-        src={"/assets/arrow.jpg"}
-        width={300}
-        height={293}
-        style={{
-          position: "absolute",
-          right: 100,
-          bottom: 30,
-          fontSize: 20,
-          transform: "scale(.8) rotate(180deg) 	scaleX(-1) ",
-          zIndex: 3,
-        }}
-      ></Image> */}
-        <style jsx>
-          {`
-            @keyframes heroanim1 {
-              0% {
-                transform: translateY(0px);
-              }
-              100% {
-                transform: translateY(200px);
-              }
+      </div>
+      <style jsx>
+        {`
+          @keyframes heroanim1 {
+            0% {
+              transform: translateY(0px);
             }
-            @keyframes heroanim2 {
-              0% {
-                transform: translateY(0px);
-              }
-              100% {
-                transform: translateY(-150px);
-              }
+            100% {
+              transform: translateY(200px);
             }
-            @keyframes opaci {
-              0% {
-                opacity: 0;
-              }
-              100% {
-                opacity: 1;
-              }
+          }
+          @keyframes heroanim2 {
+            0% {
+              transform: translateY(0px);
             }
+            100% {
+              transform: translateY(-150px);
+            }
+          }
+          @keyframes opaci {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
 
-            @media screen and (max-width: 1247px) {
-              #id1 {
-                font-size: 0.8rem !important;
-              }
-              #id2 {
-                font-size: 1rem !important;
-              }
-              #id3 {
-                font-size: 1rem !important;
-              }
-              .parag {
-                font-size: 0.12rem !important;
-              }
-              .card {
-                height: 35vh !important;
-              }
-              .a {
-                transform: translateY(150px) !important;
-              }
-              .b {
-                transform: translateY(-150px) !important;
-              }
+          @media screen and (max-width: 1247px) {
+            #id1 {
+              font-size: 0.8rem !important;
             }
-            @media screen and (max-width: 1140px) {
-              .a {
-                transform: translateY(180px) !important;
-              }
-              .b {
-                transform: translateY(-150px) !important;
-              }
-              #id1 {
-                font-size: 0.7rem !important;
-              }
-              #id2 {
-                font-size: 0.8rem !important;
-              }
-              #id3 {
-                font-size: 0.8rem !important;
-              }
-              #id {
-                font-size: 1.5rem !important;
-              }
-
-              .card {
-                width: 15vw !important;
-              }
-              #card {
-                transform: scale(0.2);
-              }
+            #id2 {
+              font-size: 1rem !important;
             }
-            @media screen and (max-width: 909px) {
-              .card {
-                width: 35vw !important;
-              }
-              .centertext {
-                align-items: center;
-              }
+            #id3 {
+              font-size: 1rem !important;
             }
-            @media screen and (max-width: 750px) {
-              #id1 {
-                width: 35% !important;
-              }
-              #id {
-                font-size: 1.4rem !important;
-              }
-              .card {
-                width: 120vw !important;
-                height: 30vh !important;
-                .parag {
-                  font-size: 0.1rem !important;
-                  width: 50% !important;
-                }
-              }
+            .parag {
+              font-size: 0.12rem !important;
             }
-          `}
-        </style>
-      </main>
-      <section style={{ overflow: "hidden", width: "95vw" }}>
-        <Image
-          id="map"
-          src={"/assets/map.webp"}
-          style={{
-            position: "absolute",
-            left: 0,
-            zIndex: 50000,
-            bottom: "-500px",
-          }}
-          width={348}
-          height={208}
-        ></Image>
-        <Image
-          id="card"
-          src={"/assets/cardA.png"}
-          style={{
-            position: "absolute",
-            right: 20,
-            zIndex: 50000,
-            bottom: "-700px",
-            transform: "scale(.4)",
-          }}
-          width={742}
-          height={782}
-        ></Image>
-        <Image
-          className="card"
-          src={"/assets/dinner.png"}
-          style={{
-            position: "absolute",
-            right: 30,
-            zIndex: 50000,
-            bottom: "-600px",
-            transform: "scale(1.2)",
-          }}
-          width={174}
-          height={152}
-        ></Image>
-        <Image
-          className="card"
-          src={"/assets/std.png"}
-          style={{
-            position: "absolute",
-            right: "50%",
-            zIndex: 50000,
-            bottom: "-600px",
-            transform: "scale(1.2)",
-          }}
-          width={200}
-          height={211}
-        ></Image>
-        <Image
-          className="card"
-          src={"/assets/song.png"}
-          style={{
-            position: "absolute",
-            right: "20%",
-            zIndex: 50000,
-            bottom: "-600px",
-            transform: "scale(1.2)",
-          }}
-          width={174}
-          height={136}
-        ></Image>
-        <Image
-          id="carda"
-          src={"/assets/table.png"}
-          style={{
-            position: "absolute",
-            right: "50%",
-            zIndex: 50000,
-            bottom: "-600px",
-            transform: "scale(1.2)",
-          }}
-          width={290}
-          height={94}
-        ></Image>
-        <Image
-          className="card"
-          src={"/assets/types.png"}
-          style={{
-            position: "absolute",
-            left: "24%",
-            zIndex: 50000,
-            bottom: "-600px",
-            transform: "scale(1.2)",
-          }}
-          width={56}
-          height={211}
-        ></Image>
-        <p
-          className={playa.className}
-          id="bottomtexta"
-          style={{
-            position: "absolute",
-            left: "10%",
-            zIndex: 50000,
-            bottom: "-600px",
-            transform: "scale(1.5)",
-            width: 150,
-            color: "rgb(188, 129, 41)",
-          }}
-        >
-          Un mariage à votre image, un souvenir éternel
-        </p>
-        <p
-          className={playa.className}
-          id="bottomtextaa"
-          style={{
-            position: "absolute",
-            left: "10%",
-            zIndex: 50000,
-            top: "30%",
-            transform: "scale(1.5)",
-            width: 150,
-            color: "rgb(188, 129, 41)",
-          }}
-        >
-          Créez des souvenirs précieux
-        </p>
-        <p
-          className={playa.className}
-          id="bottomtextaa"
-          style={{
-            position: "absolute",
-            right: "10%",
-            zIndex: 50000,
-            top: "30%",
-            transform: "scale(1.5)",
-            width: 150,
-            color: "rgb(188, 129, 41)",
-          }}
-        >
-          Célébrez l'amour
-        </p>
-        <Image
-          id="colors"
-          src={"/assets/colors.png"}
-          style={{
-            position: "absolute",
-            right: "20%",
-            zIndex: 50000,
-            bottom: "-600px",
-            transform: "scale(1.2)",
-          }}
-          width={36}
-          height={105}
-        ></Image>{" "}
-        {/* <Image
-          id="hmema"
-          src={"/assets/Wedding.png"}
-          style={{
-            position: "absolute",
-            right: "50%",
-            zIndex: 50000,
-            bottom: "-600px",
-            transform: "scale(.4)",
-          }}
-          width={500}
-          height={319}
-        ></Image> */}
-        <style>{`
+            .card {
+              height: 35vh !important;
+            }
+            .a {
+              transform: translateY(150px) !important;
+            }
+            .b {
+              transform: translateY(-150px) !important;
+            }
+          }
           @media screen and (max-width: 1140px) {
-            
-              #card {
-                transform: scale(0.3) !important;
-              }
+            .a {
+              transform: translateY(180px) !important;
             }
-        
-        `}</style>
-      </section>
-    </div>
+            .b {
+              transform: translateY(-150px) !important;
+            }
+            #id1 {
+              font-size: 0.7rem !important;
+            }
+            #id2 {
+              font-size: 0.8rem !important;
+            }
+            #id3 {
+              font-size: 0.8rem !important;
+            }
+            #id {
+              font-size: 1.5rem !important;
+            }
+
+            .card {
+              width: 15vw !important;
+            }
+            #card {
+              transform: scale(0.2);
+            }
+          }
+          @media screen and (max-width: 909px) {
+            .card {
+              width: 35vw !important;
+            }
+            .centertext {
+              align-items: center;
+            }
+          }
+          @media screen and (max-width: 750px) {
+            #id1 {
+              width: 35% !important;
+            }
+            #id {
+              font-size: 1.4rem !important;
+            }
+            .card {
+              width: 120vw !important;
+              height: 40vh !important;
+            }
+            .parag {
+              font-size: 0.1rem !important;
+              width: 50% !important;
+            }
+            .b > .card:nth-child(1),
+            .b > .card:nth-last-child(1) {
+              display: none !important ;
+            }
+            .a > .card:nth-child(1),
+            .a > .card:nth-last-child(1) {
+              display: none !important ;
+            }
+          }
+          @media screen and (max-width: 600px) {
+            .card {
+              width: 35vw !important;
+              height: 43vh !important;
+            }
+            .b > .card:nth-child(3),
+            .b > .card:nth-last-child(3) {
+              display: none !important ;
+            }
+            .a > .card:nth-child(3),
+            .a > .card:nth-last-child(3) {
+              display: none !important ;
+            }
+          }
+          @media screen and (max-width: 550px) {
+            .b {
+              display: none !important;
+            }
+            .a {
+              display: none !important;
+            }
+            .herotext {
+              display: none !important;
+            }
+            .text > h1 {
+              display: flex !important;
+            }
+            #myVideo2a {
+              display: flex !important ;
+            }
+          }
+        `}
+      </style>
+    </main>
   );
 }

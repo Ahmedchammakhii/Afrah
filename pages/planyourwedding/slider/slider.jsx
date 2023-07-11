@@ -10,7 +10,7 @@ const background = [
   "/assets/bg3.jpg",
   "/assets/bg4.jpg",
 ];
-export default function Slider() {
+export default function Slider({ mbottom }) {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function Slider() {
       style={{
         backgroundImage: `url(${background[currentBgIndex]}) `,
         backgroundSize: "cover",
-
+        marginTop: mbottom ? "100vh" : 0,
         height: "80vh",
         width: "100vw",
         display: "flex",
