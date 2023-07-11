@@ -178,9 +178,13 @@ export default function Dashboard() {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  // document.addEventListener('DOMContentLoaded', function() {
+  //   document.addEventListener('selectstart', function(e) {
+  //     e.preventDefault();
+  //   });
+  // });
   return (
-    <ThemeProvider theme={theme} style={{filter:'sepia(0.5)'}}>
+    <ThemeProvider theme={theme} style={{filter:'sepia(0.5) brightness(90%)',userSelect: "none"}}>
       <Box sx={{ display: 'flex', minHeight: '100vh',filter:'sepia(0.5) brightness(90%)' }}>
         <CssBaseline />
         <Box

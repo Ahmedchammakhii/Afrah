@@ -46,44 +46,44 @@ export default function ClientTable(props) {
       /> */}
 
       {/* Clients Table */}
-      {clients && filteredClients .length+ " clients"}
+      <h2 style={{textAlign:"center"}}>{clients && filteredClients .length+ " clients"}</h2>
       <Table style={{ borderCollapse: 'collapse', width: '100%' }}>
         <TableHead>
           <TableRow>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 }}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 }}>
               Nr
             </TableCell>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 }}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 }}>
               Email
             </TableCell>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 }}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 }}>
               First Name
             </TableCell>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 }}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 }}>
               Last Name
             </TableCell>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 }}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 }}>
               Phone
             </TableCell>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 }}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 }}>
               Reserved Venue
             </TableCell>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 ,width:"200px"}}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 ,width:"200px"}}>
               Event Date
             </TableCell>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 }}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 }}>
               Venue Name
             </TableCell>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 }}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 }}>
               Venue Location
             </TableCell>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 }}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 }}>
               Celebrating
             </TableCell>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 }}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 }}>
               Guest Count
             </TableCell>
-            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 450 }}>
+            <TableCell style={{ border: '1px solid #ddd', padding: '10px', fontSize: 'larger', fontWeight: 700 }}>
               Additional Service
             </TableCell>
           </TableRow>
@@ -102,7 +102,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: 'larger',
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {index + 1}
@@ -113,7 +113,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: 'larger',
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {client.email}
@@ -124,7 +124,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: "larger",
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {client.firstName}
@@ -135,7 +135,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: 'larger',
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {client.lastName}
@@ -146,7 +146,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: 'larger',
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {client.phone}
@@ -157,7 +157,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: 'larger',
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {client.reservedVenue}
@@ -168,7 +168,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: 'larger',
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {client.eventDate  &&
@@ -180,7 +180,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: 'larger',
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {client.venueName}
@@ -191,7 +191,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: 'larger',
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {client.venueLocation}
@@ -202,7 +202,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: 'larger',
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {client.celebrating}
@@ -213,7 +213,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: 'larger',
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {client.guestCount}
@@ -224,7 +224,7 @@ export default function ClientTable(props) {
                   padding: '8px',
                   color: index % 2 === 0 ? '#fff' : '#000',
                   fontSize: 'larger',
-                  fontWeight: 500,
+                  fontWeight: 700,
                 }}
               >
                 {client.additionalService}

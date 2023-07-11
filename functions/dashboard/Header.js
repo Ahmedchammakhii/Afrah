@@ -104,9 +104,8 @@ function Header(props) {
       </AppBar>
       <AppBar component="div" position="static" elevation={0} sx={{ zIndex: 0 }}>
         <Tabs value={0} textColor="inherit">
-          <Tab label="Users" />
-          <Tab label="Sign-in method" />
-          <Tab label="Templates" />
+          <Tab label= "Users"  />
+          <Tab label="Agenda" />
           <Tab label="Usage" />
         </Tabs>
       </AppBar>
