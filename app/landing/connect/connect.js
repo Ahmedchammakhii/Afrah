@@ -3,7 +3,7 @@ import Planning from './planning';
 export default function Connect() {
 
 
-  
+
 
 
   // 36px 2.8vw
@@ -13,7 +13,7 @@ export default function Connect() {
       <div style={{ width: "100vw", height: "60vh", background: "black" }}>
       </div>
 
-      <Planning />
+      <Planning/>
       <div style={{ height: "100vh" }} />
 
 
