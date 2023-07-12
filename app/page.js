@@ -12,7 +12,7 @@ const myFont = localFont({ src: "../pages/planyourwedding/BonVivant-Regular.otf"
 export default function Home() {
 
   return (
-    <main style={{ background: "#f3f5f8" }} >
+    <main style={{ background: "#f5f6f7" }} >
       <Hero />
       <div className={myFont.className}
         style={{
