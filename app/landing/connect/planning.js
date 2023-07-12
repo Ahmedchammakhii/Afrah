@@ -61,7 +61,7 @@ export default function planning() {
 
 
             <style>{`
-        .plan_content-wrapper { width: 100vw; height: 100vh; display: flex; flex-direction: row; justify-content: center; position: relative;  }
+        .plan_content-wrapper { width: 100vw;  display: flex; flex-direction: row; justify-content: center; position: relative;  }
         .plan_wrapper { max-width: 1220px; width: 100%; height: 100vh; max-height: 350px; display: flex; }
         .plan_left { width: 32%; height: 40vw; max-height: 440px; background: white; transform: rotate(-5deg); margin-top: -13%; position: relative; z-index: 1;  }
         .plan_firstImg { width: 100%; height: 100%; object-fit: cover; object-position: center; position: absolute; transition: none; opacity: 1;  }
