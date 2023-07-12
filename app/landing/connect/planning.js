@@ -15,18 +15,20 @@ export default function planning() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            container.current.children[0].style.transition = "none"
-            container.current.children[1].style.transition = "0.8s"
-            container.current.children[0].style.opacity = "0"
-            setTimeout(() => {
-                container.current.children[1].style.opacity = "1"
-            }, 50);
-        }, 4000);
-        return () => {
+          container.current.children[0].style.transition = "none";
+          container.current.children[1].style.transition = "0.8s";
+          container.current.children[0].style.opacity = "0";
+          const timeoutId = setTimeout(() => {
+            container.current.children[1].style.opacity = "1";
+          }, 50);
+      
+          return () => {
             clearInterval(interval);
-        };
-    }, []);
-    // myFont.className
+            clearTimeout(timeoutId);
+          };
+        }, 4000);
+      }, []);
+      
     return (
         <div className='plan_content-wrapper' >
             <div className='plan_wrapper' >
@@ -74,21 +76,14 @@ export default function planning() {
         .plan_button-container { width: 100%; height: 12%; display: flex; gap: 4%; margin-left: -15%;  }
         .plan_wedding { width: calc(38%); height: 100%; display: flex; align-items: center; text-align: center; justify-content: center; border: 1px solid; font-size: 13px; letter-spacing: 1.5px;  }
         .plan_event { width: calc(38%); height: 100%; display: flex; align-items: center; text-align: center; justify-content: center; border: 1px solid; font-size: 13px; letter-spacing: 1.5px;  }
-        
+        .plan_signature-container { display: none }
+
 
 
         @media (max-width: 800px) {
-            .plan_left{
-                width: 50vw;
-                max-height: none;
-                height:62vw;
-                position: relative;
-            }
-            .plan_wrapper{
-                flex-direction : column;
-                max-height: none;
-            }
-            .plan_signature-container { width: 50vw; height: 100%; position: absolute; left: 50vw; transform: rotate(-5deg); margin-top: 60%;  }
+            .plan_left{width: 50vw;max-height: none;height:62vw;position: relative;}
+            .plan_wrapper{flex-direction : column;max-height: none;}
+            .plan_signature-container { width: 50vw; height: 100%; position: absolute; left: 50vw; transform: rotate(-5deg); margin-top: 60%; display: block }
             .plan_signature-one { font-size: 17.7vw;  }
             .plan_signature-two { font-size: 17.7vw; margin-top: -15vw; margin-left: -8vw;  }
             .plan_right-container {  width: 100vw; margin-top: 25vh; height: 100vh; position: absolute; display: flex; justify-content: start; flex-direction: column;  }
@@ -98,7 +93,6 @@ export default function planning() {
             .plan_button-container { width: 100vw; height: 20vh; display: flex; gap: 5vh; margin-left: -15%; margin-top: 65vh; flex-direction: column; margin-left:0; align-items: center; position: absolute }
             .plan_wedding { width: 85%;  border: 3px solid; font-size: 3.5vw; letter-spacing: 1.5px; font-weight: 500  }
             .plan_event { width: 85%;  border: 3px solid; font-size: 3.5vw; letter-spacing: 1.5px; font-weight: 500  }
-    
         }
         `}</style>
         </div>
