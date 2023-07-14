@@ -43,8 +43,8 @@ export default function Details() {
 
 
             <style>{`
-                    .details_father { position: relative;  }
-                    .details_content-wrapper { width: 100vw; height: 65vw; max-height: 750px; margin-top: 10vh; display: flex; justify-content: center; background: transparent;  }
+                    .details_father { position: relative;}
+                    .details_content-wrapper { width: 100vw; height: 65vw; max-height: 750px; display: flex; justify-content: center; background: transparent;  }
                     .details_wrapper { width: 100%; max-width: 1220px; display: flex; height: 100%;  }
                     .details_left { width: 45%; position: relative;  }
                     .details_left-container { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 93%; position: relative; float: right; height: 100%;  }
@@ -61,20 +61,18 @@ export default function Details() {
 
 
                     @media (max-width: 800px) {
-                        .details_content-wrapper { margin-top: 30vh; }
+                        .details_content-wrapper { margin-top: 20vw; max-height: none; height: auto; }
                         .details_wrapper { flex-direction: column; }
                         .details_left { width: 100%; }
                         .details_left-container { width: 100%; }
                         .details_ready-container { display: none }
-                        .details_line { height: 100px; width: 2.5px;}
+                        .details_line { height: 17vw; width: 2.5px;}
                         .details_title { font-size: 3.3vw;  }
                         .details_p-one { font-size: 4vw;width: 80%;  }
                         .details_p-two { font-size: 4vw;width: 80%; margin-top: 5%;  }
-
-                        .details_right { width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 10vh; }
-                        .details_image { width: 78%; height: 55vh; object-fit: cover; object-position: center 0%;  }
-                        .details_schedule { position: absolute; top: 115vh; z-index : 2; font-size : 3.5vw; border : 2px solid black ; padding : 2.2vw 5vw }
-
+                        .details_right { width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 9vw; }
+                        .details_image { width: 78%; height: 90vw; object-fit: cover; object-position: center 0%;  }
+                        .details_schedule { position: absolute; top: 185vw; z-index : 2; font-size : 3.5vw; border : 2px solid black ; padding : 2.2vw 5vw }
                     }
                     
             `}</style>

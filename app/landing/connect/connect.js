@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import Planning from './planning';
 import Details from './details';
+import Collab from './collab';
 export default function Connect() {
 
 
@@ -16,6 +17,7 @@ export default function Connect() {
 
       <Planning />
       <Details />
+      <Collab />
       <div style={{ height: "100vh" }} />
 
 
