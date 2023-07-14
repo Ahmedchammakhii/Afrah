@@ -19,12 +19,15 @@ export default function Collab() {
                                 </div>
                                 <div className='collab_top-paragraphe' >
                                     You'll <span> really like </span> our team...we never take ourselves too seriously & we all love a good party!
-
                                 </div>
                             </div>
 
                             <div className='collab_bottom-section' >
-                                <p className='collab_bottom-paragraphe' ><div>see what people are saying</div></p>
+                                <div className='collab_bottom-paragraphe' >
+                                    <div>
+                                        see what people are saying
+                                    </div>
+                                </div>
                                 <div className='collab_stop-press' >
                                     stop the presses
                                     <img className='collab_arrow'
@@ -53,7 +56,7 @@ export default function Collab() {
 
 
             <style>{`
-                .collab_content-wrapper { width: 100vw; height: 32vh; display: flex; justify-content: center;  }
+                .collab_content-wrapper { width: 100vw; height: 32vh; display: flex; justify-content: center; background: linear-gradient(to bottom, #f3f5f8, #fdfdfe)  }
                 .collab_wrapper { width: 100%; max-width: 1220px; display: flex;  }
                 .collab_left { width: 50%;  }
                 .collab_left-container { width: 90%; background: linear-gradient(0deg, rgba(243,245,248,1) 0%, rgba(255,255,255,1) 100%); background-origin: border-box; height: 100%; margin-left: -15%;  }

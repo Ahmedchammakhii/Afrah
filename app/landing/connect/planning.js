@@ -63,7 +63,7 @@ export default function planning() {
 
 
             <style>{`
-        .plan_content-wrapper { width: 100vw;  display: flex; flex-direction: row; justify-content: center; position: relative;  }
+        .plan_content-wrapper { width: 100vw;  display: flex; flex-direction: row; justify-content: center; position: relative; background : background: linear-gradient(to bottom, white, #f3f5f8) }
         .plan_wrapper { max-width: 1220px; width: 100%; height: 100vh; max-height: 350px; display: flex; }
         .plan_left { width: 32%; height: 40vw; max-height: 440px; background: white; transform: rotate(-5deg); margin-top: -13%; position: relative; z-index: 1;  }
         .plan_firstImg { width: 100%; height: 100%; object-fit: cover; object-position: center; position: absolute; transition: none; opacity: 1;  }
@@ -81,7 +81,7 @@ export default function planning() {
 
 
         @media (max-width: 800px) {
-            .plan_content-wrapper { overflow hidden; height: 180vw }
+            .plan_content-wrapper { height: 180vw; width: 100vw; }
             .plan_left{width: 50vw;max-height: none;height:62vw;position: relative;}
             .plan_wrapper{flex-direction : column;max-height: none;}
             .plan_signature-container { width: 50vw; height: 100%; position: absolute; left: 50vw; transform: rotate(-5deg); margin-top: 60%; display: block }

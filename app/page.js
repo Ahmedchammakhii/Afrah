@@ -7,6 +7,7 @@ import About from "./landing/about/about";
 import Portfolio from "./landing/portfolio/portfolio";
 import Partners from "./landing/partners/partners";
 import Connect from "./landing/connect/connect";
+import Blogs from "./landing/blogs/blogs";
 const myFont = localFont({ src: "../pages/planyourwedding/BonVivant-Regular.otf" });
 
 export default function Home() {
@@ -20,7 +21,8 @@ export default function Home() {
           alignItems: "center",
           width: "100vw",
           height: "25vh",
-          fontSize: "3vw"
+          fontSize: "3vw",
+          overflow: "hidden"
         }}>
         Where to Begin
       </div>
@@ -30,6 +32,10 @@ export default function Home() {
       <Portfolio />
       <Partners />
       <Connect />
+      <Blogs />
+
+
+      <div style={{ width: "1px", height: "100vh" }} />
       <style>{`
       *{
         *::-webkit-scrollbar {

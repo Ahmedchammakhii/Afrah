@@ -43,7 +43,7 @@ export default function Details() {
 
 
             <style>{`
-                    .details_father { position: relative;}
+                    .details_father { position: relative; background: linear-gradient(to bottom, #f3f5f8, #f7f6f3)}
                     .details_content-wrapper { width: 100vw; height: 65vw; max-height: 750px; display: flex; justify-content: center; background: transparent;  }
                     .details_wrapper { width: 100%; max-width: 1220px; display: flex; height: 100%;  }
                     .details_left { width: 45%; position: relative;  }
@@ -61,6 +61,7 @@ export default function Details() {
 
 
                     @media (max-width: 800px) {
+                        .details_father {width: 100vw}
                         .details_content-wrapper { margin-top: 20vw; max-height: none; height: auto; }
                         .details_wrapper { flex-direction: column; }
                         .details_left { width: 100%; }
