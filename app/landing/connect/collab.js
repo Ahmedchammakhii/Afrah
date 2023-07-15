@@ -91,7 +91,7 @@ export default function Collab() {
                     .collab_stop-press { margin-left: 2%;  padding: 6%; font-size: 3.5vw;  top: -25%;  }
                     .collab_right { width: 100%; position: relative; display: flex; justify-content: center; height: 88vw;; background: white }
                     .collab_right-container {gap: 8%; width: 90%; font-size: 3.7vw; text-transform: uppercase; font-weight: 500; font-style: normal}
-                    .collab_right-links {  background: #f7f8fa; }
+                    .collab_right-links {  background: #f3f5f8; }
 
                 }
             `}</style>

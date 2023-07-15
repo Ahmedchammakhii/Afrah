@@ -18,7 +18,6 @@ export default function Connect() {
       <Planning />
       <Details />
       <Collab />
-      <div style={{ height: "100vh" }} />
 
 
       <style>{`
