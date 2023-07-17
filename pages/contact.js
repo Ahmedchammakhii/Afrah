@@ -63,37 +63,59 @@ export default function Form() {
         flexDirection: "column",
         height: "100vh",
         width: "100vw",
-        left: 0,
-        bottom: 0,
         background: 'linear-gradient( to bottom,  #ffffff,#d0e6e4)',
         backgroundRepeat: "no-repeat",
         backgroundSize: 'cover',
-
         zIndex: "2",
-        marginTop: -500,
+        marginTop: -400,
         justifyContent: 'center',
         alignItems: 'center',
 
       }}
       >
-        <h2 style={{ marginTop:"30px",fontSize: "larger" }}>THE BLOG</h2>
+        <div id="title" style={{top:0,left:0,display:"flex",marginTop:"50px",zIndex: "2",marginBottom:"50px"}}><h2 style={{ fontSize: "larger" }}>THE BLOG</h2></div>
         <div id="gallery" style={{
           display: 'flex',
         flexDirection:"row",
-          height: '100%',
-        marginBottom:'100px',
+          height: '100%' ,
           gap: '100px',
           textAlign: "center",
           justifyContent: 'center',
           alignItems: 'center',
-          // marginBottom: '300px',
-         
+           marginTop: '-200px',
+           zIndex: "2"
      
         }}><style>{`
-        @media (max-width: 700px){
+        @media  (max-width: 1350px){
+          #title{
+            margin-top:20px !important;
+          }
           #father{
-            top:0 !important;
-            height:270vh !important;
+           
+            height:120vh !important;
+             padding-bottom:20px !important;
+            
+          }
+          #gallery{
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: center;
+            align-items: center;
+            width:80% ;
+          }
+          .child{
+            height: 400px !important; 
+            width: 80% !important;
+            margin-top:100px;
+          }
+        }
+        @media  (max-width: 700px){
+          #title{
+            margin-top:0 !important;
+          }
+          #father{
+           
+            height:300vh !important;
              padding-bottom:20px !important;
             
           }
@@ -105,15 +127,37 @@ export default function Form() {
             width:100% ;
           }
           .child{
-            height: 500px !important; 
-            width: 80%;
+            height: 400px !important; 
+            width: 80% !important;
             margin-top:100px;
           }
         }
+        @media  (max-width: 450px){
+          #father{
+            marginTop: -3000 !important;
+            height:300vh !important;
+          
+            
+          }
+         
+          #gallery{
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center;
+            align-items: center;
+            width:100% ;
+            
+          }
+          .child{
+            height: 400px !important; 
+            width: 70% !important;
+            
+          }
+        }
         `}</style>
-          <div className="child"style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center 0;", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center" }}><div style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px"}}><h2 style={{ fontWeight: "500" }}>top five tips for budgeting your wedding</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button></div></div>
-          <div className="child" style={{ backgroundImage: "url('/2b.jpg')", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center" }}><div style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px" }}><h2 style={{ fontWeight: "500", text: "lowercase" }}> pro wedding day timeline MADE BY PLANNERS  </h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button ></div></div>
-          <div className="child" style={{ backgroundImage: "url('/3b.jpg')", height: "500px", width: "calc(100vw- 250px / 3)", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center" }}><div style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px" }}><h2 style={{ fontWeight: "400", fontSize: "20px" }}> WEDDING PLANNER VS. VENUE MANAGER and what the differences are</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button></div></div>
+          <div className="child"style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center 0;", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center" ,marginBottom:"50px"}}><div style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px"}}><h2 style={{ fontWeight: "500" }}>top five tips for budgeting your wedding</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button></div></div>
+          <div className="child" style={{ backgroundImage: "url('/2b.jpg')", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center" ,marginBottom:"50px"}}><div style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px" }}><h2 style={{ fontWeight: "500", text: "lowercase" }}> pro wedding day timeline MADE BY PLANNERS  </h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button ></div></div>
+          <div className="child" style={{ backgroundImage: "url('/3b.jpg')", height: "500px", width: "calc(100vw- 250px / 3)", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center" ,marginBottom:"50px"}}><div style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px" }}><h2 style={{ fontWeight: "400", fontSize: "20px" }}> WEDDING PLANNER VS. VENUE MANAGER and what the differences are</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button></div></div>
         </div>
 
       </div>
