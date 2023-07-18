@@ -6,9 +6,10 @@ const myFont = localFont({ src: "../../../pages/planyourwedding/BonVivant-Regula
 
 const font = Jost({ subsets: ['latin'], weight: '600' })
 const font2 = Playfair_Display({ subsets: ['latin'], weight: '400' })
-const maxMarginTop = (innerWidth > 1220 ? '85px' : '7vw')
 
 export default function Details() {
+
+
     return (
         <div className='details_father' >
             <div className='details_content-wrapper' >
@@ -43,7 +44,7 @@ export default function Details() {
 
 
             <style>{`
-                    .details_father { position: relative; background: linear-gradient(to bottom, #f3f5f8, #f7f6f3); margin-top: ${maxMarginTop}}
+                    .details_father { position: relative; background: linear-gradient(to bottom, #f3f5f8, #f7f6f3); margin-top: 85px}
                     .details_content-wrapper { width: 100vw; height: 65vw; max-height: 750px; display: flex; justify-content: center; background: transparent;  }
                     .details_wrapper { width: 100%; max-width: 1220px; display: flex; height: 100%;  }
                     .details_left { width: 45%; position: relative;  }
@@ -59,6 +60,9 @@ export default function Details() {
                     .details_ready-container { font-size: 100px; position: absolute; left: 45%; display: flex; top: -15%; color: #d9e4e3; transform: rotate(-10deg);  }
                     .details_ready { margin-top: -5px; margin-left: 20px;  }
 
+                    @media (max-width: 1220px) { 
+                        .details_father {margin-top: 7vw}
+                    }
 
                     @media (max-width: 800px) {
                         .details_father {width: 100vw}
