@@ -6,7 +6,7 @@ const myFont = localFont({ src: "../../../pages/planyourwedding/BonVivant-Regula
 
 const font = Jost({ subsets: ['latin'], weight: '600' })
 const font2 = Playfair_Display({ subsets: ['latin'], weight: '400' })
-const maxMarginTop = (innerWidth > 1220 ? '85px' : '7vw')
+// const maxMarginTop = (innerWidth > 1220 ? '85px' : '7vw')
 
 export default function Details() {
     return (
