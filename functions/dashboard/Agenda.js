@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
-
+import Button from '@mui/material/Button';
+import PropTypes from 'prop-types';
 export default function Agenda(props) {
-    const { searchDate } = props
+    const { searchDate ,searchTerms} = props
     const [agenda, setAgenda] = useState([]);
     //   const [searchDate, setSearchDate] = useState('');
     useEffect(() => {
         fetchAgenda();
         handleSearch()
-    }, [searchDate]);
+    }, [searchDate,searchTerms]);
 
     const fetchAgenda = async () => {
         try {
@@ -20,7 +21,16 @@ export default function Agenda(props) {
             console.error(error);
         }
     };
-
+    const filteredClients =agenda &&  agenda.filter((client) => {
+        const { firstName, lastName, email, phone } = client.client;
+        const search = searchTerms.toLowerCase();
+        return (
+          firstName?.toLowerCase().includes(search) ||
+          lastName?.toLowerCase().includes(search) ||
+          email?.toLowerCase().includes(search) ||
+          phone?.toLowerCase().includes(search)
+        );
+      });
     const compareDateOnly = (date1, date2) => {
         const formattedDate1 = new Date(date1).toLocaleDateString();
         const formattedDate2 = new Date(date2).toLocaleDateString();
@@ -50,13 +60,14 @@ export default function Agenda(props) {
         <div>
             {/* Search */}
             
-            <div >
-    
-                <button onClick={handleSearch}>Search</button>
+            <div style={{display:"flex",justifyContent:"right",alignItems:"right"}}>
+            <Button variant="contained" sx={{ mr: 1 }} onClick={handleSearch}>
+                Search by date
+              </Button>
             </div>
 
             {/* Table */}
-            <div style={{ textAlign: "center" }}>
+            <div style={{ textAlign: "center" ,color:"red",height:"100px",fontWeight:"500",fontSize:"25px"}}>
                 {agenda && !searchDate
                     ? `${agenda.filter((client) =>
                         new Date(
@@ -125,7 +136,7 @@ export default function Agenda(props) {
                     </TableRow>
                 </TableHead>
                 <TableBody >
-                    {agenda.map((client, index) => (
+                    {filteredClients.map((client, index) => (
                         <TableRow
                             key={index}
                             style={{
@@ -196,4 +207,9 @@ export default function Agenda(props) {
             </Table>
         </div>
     );
+    
+}
+Agenda.propTypes={
+    handleSearch: PropTypes.func.isRequired,
+
 }

@@ -9,10 +9,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import PeopleIcon from '@mui/icons-material/People';
-import DnsRoundedIcon from '@mui/icons-material/DnsRounded';
 import PermMediaOutlinedIcon from '@mui/icons-material/PhotoSizeSelectActual';
 import PublicIcon from '@mui/icons-material/Public';
-import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
 import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
 import TimerIcon from '@mui/icons-material/Timer';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -26,7 +24,7 @@ const categories = [
       {
         id: 'Clients',
         icon: <PeopleIcon />,
-        active: true,
+        active: false,
       },
       { id: 'Agenda', icon: <TodayIcon /> },
       { id: 'Storage', icon: <PermMediaOutlinedIcon /> },
@@ -59,7 +57,7 @@ const itemCategory = {
 };
 
 export default function Navigator(props) {
-  const { onChildClick,...other } = props;
+  const { selectedChildId,onChildClick,...other } = props;
 
   return (
     <Drawer variant="permanent" {...other}>
@@ -81,9 +79,9 @@ export default function Navigator(props) {
             {children.map(({ id: childId, icon, active }) => (
               <ListItem disablePadding key={childId}>
                 <ListItemButton
-                  selected={active}
+                  selected={selectedChildId === childId}
                   sx={item}
-                  onClick={() => onChildClick(childId)}
+                  onClick={() => {onChildClick(childId)}}
                 >
                   <ListItemIcon>{icon}</ListItemIcon>
                   <ListItemText>{childId}</ListItemText>

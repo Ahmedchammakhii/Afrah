@@ -46,7 +46,7 @@ export default function ClientTable(props) {
       /> */}
 
       {/* Clients Table */}
-      <h2 style={{textAlign:"center"}}>{clients && filteredClients .length+ " clients"}</h2>
+      <h2 style={{textAlign:"center",color:"red"}}>{clients && filteredClients .length+ " clients"}</h2>
       <Table style={{ borderCollapse: 'collapse', width: '100%' }}>
         <TableHead>
           <TableRow>

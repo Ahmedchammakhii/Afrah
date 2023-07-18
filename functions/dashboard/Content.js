@@ -27,7 +27,10 @@ export default function Content(props) {
     setSearchDate(value)
     console.log(searchDate);
   }
-  
+  const handleClick = () => {
+    
+    setSearchDate("");
+  };
   return (
     <Paper sx={{ maxWidth: 1450, margin:"auto", overflow: 'hidden' }}>
       <AppBar
@@ -60,20 +63,17 @@ export default function Content(props) {
     <DatePicker  sx={{ my: 2, mx: 2 }} value={searchDate} onChange={handleSearchDate}/>
     </LocalizationProvider>
             </Grid>
-            <Grid>
-            {/* <InputLabel id="label">filter</InputLabel> */}
-<Select labelId="label" id="select" value="20" >
-  <MenuItem value="10">meeting_time</MenuItem>
-  <MenuItem value="20">event_date</MenuItem>
-</Select>
-            </Grid>
-            <Grid item>
-              <Button variant="contained" sx={{ mr: 1 }}>
-                Search
+           
+            {/* <Grid >
+            <Button variant="contained"  onClick={handleSearch}>
+                Search by date
               </Button>
+            </Grid> */}
+            <Grid item>
+              
               <Tooltip title="Reload">
                 <IconButton>
-                  <RefreshIcon color="inherit" sx={{ display: 'block' }} />
+                  <RefreshIcon color="inherit" sx={{ display: 'block' }} onClick={handleClick} />
                 </IconButton>
               </Tooltip>
             </Grid>
@@ -83,14 +83,18 @@ export default function Content(props) {
       {/* <Typography sx={{ my: 5, mx: 2 }} color="text.secondary" align="center">
       </Typography> */}
      {selectedChildId  ==="Clients" && <Table searchTerm={searchTerm}/>}
-     {selectedChildId ==="Agenda" && <Agenda agendasearchTerm={searchTerm} searchDate={searchDate}/>}
+     {selectedChildId ==="Agenda" && <Agenda agendasearchTerm={searchTerm} searchDate={searchDate} searchTerms={searchTerm}/>}
      
       
     </Paper>
   );
-  Content.propTypes = {
-    searchTerm: PropTypes.string.isRequired,
-    searchDate:PropTypes.string.isRequired
-  };
+  
   
 }
+/* <Grid>
+            { <InputLabel id="label">filter</InputLabel> }
+<Select labelId="label" id="select" value="20" >
+  <MenuItem value="10">meeting_time</MenuItem>
+  <MenuItem value="20">event_date</MenuItem>
+</Select>
+            </Grid> */

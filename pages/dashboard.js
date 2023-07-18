@@ -198,6 +198,9 @@ export default function Dashboard() {
               variant="temporary"
               open={mobileOpen}
               onClose={handleDrawerToggle}
+              sx={{ display: { sm: 'flex', xs: 'none' } }}
+            onChildClick={handleChildClick}
+            selectedChildId={selectedChildId}
             />
           )}
 
@@ -205,6 +208,7 @@ export default function Dashboard() {
             PaperProps={{ style: { width: drawerWidth } }}
             sx={{ display: { sm: 'flex', xs: 'none' } }}
             onChildClick={handleChildClick}
+            selectedChildId={selectedChildId}
           />
         </Box>
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
@@ -220,4 +224,5 @@ export default function Dashboard() {
       </Box>
     </ThemeProvider>
   );
+  
 }
