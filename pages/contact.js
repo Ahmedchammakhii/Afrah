@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Fix from '../functions/planning/3rd_section';
 import CustomButton from '@/functions/planning/CustomButton';
 import '../app/globals.css'
+import Footer from '@/app/layout/footer';
 import localFont from "next/font/local";
 const myFont = localFont({ src: '../pages/planyourwedding/BonVivant-Regular.otf' });
 export default function Form() {
@@ -169,7 +170,7 @@ export default function Form() {
       </div>
       <div style={{
         display: "flex",
-        height: "70vh",
+        height: "50vh",
         width: "100vw",
         left: 0,
         bottom: 0,
@@ -190,6 +191,7 @@ export default function Form() {
         // onClick={() => fileInputRef.current.click()}
         />
       </div>
+      <Footer/>
     </div>
   );
 }

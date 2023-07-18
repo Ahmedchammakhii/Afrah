@@ -6,6 +6,7 @@ import Deposit from "./deposit";
 import Parallaxe from "./parallaxesection";
 import { useEffect, useState } from "react";
 import Hero2 from "./hero/hero2";
+import Footer from "@/app/layout/footer";
 const myFont = localFont({ src: "./BonVivant-Regular.otf" });
 
 export default function Planyourwedding() {
@@ -25,6 +26,7 @@ export default function Planyourwedding() {
       <Deposit></Deposit>
 
       <Parallaxe></Parallaxe>
+      <Footer></Footer>
     </main>
   );
 }
