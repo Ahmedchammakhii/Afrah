@@ -23,7 +23,7 @@ export default function Component({ index, element }) {
                 </p>
             </div>
             <div style={{ width: "50%", height: "100%" }}>
-                <Image alt={index} priority width={innerWidth / 2} height={innerWidth / 2} style={{ objectFit: "cover", objectPosition: "center", width: "100%", height: "100%" }} src={"/landing/about/" + (index + 1) + ".jpg"} />
+                <Image alt={index} priority width={700} height={700} style={{ objectFit: "cover", objectPosition: "center", width: "100%", height: "100%" }} src={"/landing/about/" + (index + 1) + ".jpg"} />
             </div>
         </div>)
 }
