@@ -5,12 +5,33 @@ const myFont = localFont({ src: '../../pages/planyourwedding/BonVivant-Regular.o
 
 export default function footer() {
     return (
-        <div style={{height:"40vh", background:"black", width:"100vw",display:"flex", alignItems:"center",justifyContent:"center",color:"white",fontSize:"14px" }}>
-      <div style={{width:"100%",maxWidth:"1220px",height:"70%",display:"flex", alignItems:"center",justifyContent:"center"}}>
-      <div style={{width:"calc(100% / 3)", height:"100%",  display:"flex", alignItems:"center",justifyContent:"center"}}>
-     <div style={{width:"100%",height:"80%",display:"flex", alignItems:"center",justifyContent:"center"}}>
+        <div class="all" style={{height:"40vh", background:"black", width:"100vw",overflowX:"hidden",display:"flex", alignItems:"center",justifyContent:"center",color:"white",fontSize:"14px" }}>
+      <div className="wrapit" style={{width:"100%",maxWidth:"1220px",height:"70%",display:"flex", alignItems:"center",justifyContent:"center"}}>
+        <style>{`
+        @media (max-width:770px){
+            .all{
+                height:max-content !important;
+                padding:15px !important;
+            }
+            .wrapit{
+                display:flex !important;
+                flex-direction:column !important;
+            }
+            .left{
+                width:100% !important;
+            }
+            .middle{
+                width:100% !important;
+                border:none !important;
+            }
+            .middle p{
+                margin-bottom:10px !important;
+            }
+        }`}</style>
+      <div className='left' style={{width:"calc(100% / 3)", height:"100%",  display:"flex", alignItems:"center",justifyContent:"center"}}>
+     <div className='left' style={{width:"80%",height:"80%",display:"flex", alignItems:"center",justifyContent:"center",marginBottom:"20px"}}>
       
-     <div style={{width:"50%",height:"90%",display:"flex",flexDirection:"column",lineHeight:"30px"}}>
+     <div style={{width:"40%",height:"90%",display:"flex",flexDirection:"column",lineHeight:"30px"}}>
             <a>HOME</a>
             <a>ABOUT</a>
             <a>CONTACT</a>
@@ -18,24 +39,23 @@ export default function footer() {
             <a>VENUES</a>
             <a>PORTFOLIO</a>
         </div>
-        <div style={{width:"50%",height:"90%",display:"flex",flexDirection:"column",lineHeight:"30px",marginRight:"30px"}}>
+        <div style={{width:"40%",height:"90%",display:"flex",flexDirection:"column",lineHeight:"30px"}}>
         <a>HOME</a>
-            <a>Wedding planning</a>
-            <a>Wedding planning</a>
-            <a>Wedding planning</a>
-            <a>Wedding planning </a>
+            <a>Weddings</a>
+            <a>Corporates </a>
+            <a>Public </a>
+            <a>Festivals </a>
             <a style={{fontWeight:"bold"}}>PORTFOLIO</a>
         </div>
         </div>
 </div>
 
 
-<div style={{height:"100%", width:"calc(100% / 2)", borderLeft:"1px solid white", borderRight:"1px solid white",display:"flex",flexDirection:"column"}} >
+<div className="middle" style={{height:"100%", width:"calc(100% / 2.2)", borderLeft:"1px solid white", borderRight:"1px solid white",display:"flex",flexDirection:"column"}} >
 <div style={{width:"100%",height:"100%",display:"flex", alignItems:"center",justifyContent:"center",flexDirection:"column"}}>
-<div><h1 className={myFont.className} style={{textAlign:"center",letterSpacing:"4px",fontWeight:"400",padding:5}}>LET'S MAKE MAGIC</h1></div>
+<div><h1 className={myFont.className} style={{textAlign:"center",letterSpacing:"4px",fontWeight:"400"}}>LET'S MAKE MAGIC</h1></div>
 <p style={{textAlign:"center",fontWeight:"400",width:"85%",lineHeight:"20px"}}>
-Serving the great Wild West, our teams are based in Portland Oregon, Seattle Washington and Sun Valley (Ketchum) Idaho.
-
+Serving the great Wild West, our teams are based in Portland Oregon, Seattle Washington and Sun Valley (Ketchum) Idaho. 
 <br>
 </br>
 <br>
@@ -60,10 +80,10 @@ We believe that there's not much a dance party won't cure.&nbsp;
                 </div>
 </div>
 </div>
-<div style={{height:"100%", width:"calc(100% / 3)",display:'flex',flexDirection:'column',justifyContent:'center',alignItems:"center"}} >
+<div className='left' style={{height:"100%", width:"calc(100% / 3)",display:'flex',flexDirection:'column',justifyContent:'center',alignItems:"center"}} >
 <p style={{textAlign:"center",fontWeight:"300",width:"80%",marginBottom:"30px",marginTop:0,fontSize:"15px"}}> Interested? Have questions? 
     <br></br>
-Let our 14 years of experience help guide you, How can we help?</p>
+Let our 21 years of experience help guide you, How can we help?</p>
 <button style={{background:"transparent",color:"white",marginBottom:"3px",width:"250px",height:"45px",border:"1px solid white",padding:"auto",fontSize:"18px",fontWeight:"100"}}>I'm planning a wedding</button>
 <br></br>
 <button style={{background:"transparent",color:"white",marginBottom:"5px",width:"250px",height:"45px",border:"1px solid white",padding:"auto",fontSize:"18px",fontWeight:"100"}}>I'm planning an event</button>
