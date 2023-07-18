@@ -9,6 +9,7 @@ import Partners from "./landing/partners/partners";
 import Connect from "./landing/connect/connect";
 import Blogs from "./landing/blogs/blogs";
 import Instagram from "./landing/instagram/instagram";
+import Footer from "./layout/footer";
 const myFont = localFont({ src: "../pages/planyourwedding/BonVivant-Regular.otf" });
 
 export default function Home() {
@@ -35,15 +36,8 @@ export default function Home() {
       <Connect />
       <Blogs />
       <Instagram />
-
-      <div style={{  height: "100vh", background: "black" }} />
-      <style>{`
-      *{
-        *::-webkit-scrollbar {
-          display: none;
-        }
-     }
-      `}</style>
+      <Footer/>
+      
     </main>
   )
 }
