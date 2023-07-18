@@ -36,7 +36,6 @@ export default function Home() {
       <Blogs />
       <Instagram />
 
-      <div style={{  height: "100vh", background: "black" }} />
       <style>{`
       *{
         *::-webkit-scrollbar {
