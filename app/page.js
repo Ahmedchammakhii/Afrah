@@ -36,7 +36,6 @@ export default function Home() {
       <Connect />
       <Blogs />
       <Instagram />
-      <Footer/>
       
     </main>
   )
