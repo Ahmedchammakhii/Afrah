@@ -22,9 +22,7 @@ const Gallery = () => {
       
     </div>
     <div className={styles.secundo}>
-        <h2 style={{textAlign:"center",marginBottom:"10px"}}>BREAKING DOWN THE BARRIERS THAT Divide Us
-
-</h2>
+        <h2 style={{textAlign:"center",marginBottom:"20px"}}>BREAKING DOWN THE BARRIERS THAT Divide Us</h2>
         <div className={styles.web}>
           <div className={styles.ele}></div>
           <div className={styles.ele}></div>

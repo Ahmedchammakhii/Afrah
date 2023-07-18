@@ -7,10 +7,10 @@ export default function Fix() {
     
           if (parallaxElement) {
             const scrollPosition = window.scrollY;
-            const elementTopPosition=parallaxElement.offsetTop+ (innerHeight*1.1 )
+            const elementTopPosition=parallaxElement.offsetTop+ innerHeight 
             const distance = elementTopPosition-scrollPosition *0.5; 
     
-            parallaxElement.style.backgroundPositionY = `${distance}px`;
+            parallaxElement.style.backgroundPositionY = `${distance*0.6}px`;
           }
         };
     
@@ -44,9 +44,12 @@ export default function Fix() {
             // filter: "sepia(0.2) brightness(90%)",
             
 }} /><style>{`
-@media (max-width:850px){
+@media (max-width:390px){
   #parallax1{
-     height: 120% !important;
+    // transform:scale(1.1) !important;
+  }
+  #toto{
+    height: 150vh !important ;
   }
 }`}</style>
         </div>

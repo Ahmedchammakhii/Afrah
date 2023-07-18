@@ -88,15 +88,23 @@
     margin-top: 10px;
 }
 @media screen and (max-width: 830px) {
+  .formContainer{
+    padding-bottom: 30vh;
+  }
   .form {
     max-width: 100%;
     padding: 10px;
   }
-
+  .icons {
+    
+    gap:30px;
+    margin-bottom: 10px;
+  }
   .form .intro {
     font-size: 25px;
     margin-top: 100px;
     width: 70%;
+    line-height: 40px;
   }
 
   .co {
@@ -107,6 +115,7 @@
   .policy {
     max-width:300px;
     margin-top: 10px;
+    
   }
 
   .form input,
@@ -115,5 +124,44 @@
   }
   .form select{
     width:310px
+  }
+}
+@media screen and (max-width: 390px) {
+  .formContainer{
+    padding-bottom: 20vh;
+  }
+  
+  .form {
+    max-width: 100%;
+    padding: 10px;
+  }
+  .icons {
+    
+    gap:20px;
+    margin-bottom: 10px;
+  }
+  .form .intro {
+    font-size: 25px;
+    margin-top: 100px;
+    width: 70%;
+  }
+ 
+  .co {
+    max-width: 80%;
+    margin-bottom: 10px;
+    font-size: smaller;
+  }
+
+  .policy {
+    max-width:230px;
+    margin-top: 10px;
+  }
+
+  .form input,
+  .form textarea {
+    width: 250px;
+  }
+  .form select{
+    width:260px
   }
 }

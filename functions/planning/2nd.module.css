@@ -24,15 +24,16 @@
   .secundo {
     height: 35vh;
     width: 100%;
-    background: white;
+    /* background: white; */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    z-index: 3;
+    flex-direction: column !important;
+    z-index: 2;
     background-position: center;
     position: relative;
     margin: 0;
+    flex-wrap: wrap;
   }
   
   .web {
@@ -53,7 +54,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     display: flex;
-    z-index: 3;
+    z-index: 2;
   }
   
 
@@ -61,9 +62,17 @@
   @media (max-width: 850px) {
     .secundo h2{font-size:smaller !important;
       max-width:70%;
-      margin-top: -30px;
+      /* margin-top: -30px; */
     } 
       .ele{
         height:100px
       }
+  }
+  @media (max-width: 450px) {
+    .secundo {
+    height: 25vh !important;
+    } 
+    .secundo h2{
+      transform: translateY(30px) !important;
+    }
   }
