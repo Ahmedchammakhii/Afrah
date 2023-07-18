@@ -2,7 +2,7 @@ import React from 'react'
 import localFont from "next/font/local";
 import Link from 'next/link';
 const myFont = localFont({ src: '../../pages/planyourwedding/BonVivant-Regular.otf' });
-
+import '../globals.css'
 export default function footer() {
     return (
         <div class="all" style={{height:"40vh", background:"black", width:"100vw",overflowX:"hidden",display:"flex", alignItems:"center",justifyContent:"center",color:"white",fontSize:"14px" }}>
@@ -11,14 +11,17 @@ export default function footer() {
         @media (max-width:770px){
             .all{
                 height:max-content !important;
-                padding:15px !important;
+                
+                max-width:100vw !important;
+               
             }
             .wrapit{
                 display:flex !important;
                 flex-direction:column !important;
+                padding:15px !important;
             }
             .left{
-                width:100% !important;
+                width:80% !important;
             }
             .middle{
                 width:100% !important;
@@ -27,6 +30,14 @@ export default function footer() {
             .middle p{
                 margin-bottom:10px !important;
             }
+             .icons{
+            //     transform:translateY(250px) !important;
+            //     margin-bottom:10px !important;
+            margin-bottom:10px !important;
+             }
+             .middle h1{
+                font-size:20px !important;
+             }
         }`}</style>
       <div className='left' style={{width:"calc(100% / 3)", height:"100%",  display:"flex", alignItems:"center",justifyContent:"center"}}>
      <div className='left' style={{width:"80%",height:"80%",display:"flex", alignItems:"center",justifyContent:"center",marginBottom:"20px"}}>
@@ -64,7 +75,7 @@ We believe that there's not much a dance party won't cure.&nbsp;
 <br>
 </br>
 </p>
-<div style={{width:"100%",height:"100%",display:"flex", alignItems:"center",justifyContent:"center",gap:"20px",margin:0}}>
+<div className='icons' style={{width:"100%",height:"100%",display:"flex", alignItems:"center",justifyContent:"center",gap:"20px",margin:0}}>
                     <Link href="https://facebook.com">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width={30} height={30} fill="white"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" /></svg>
