@@ -5,7 +5,6 @@ const font = Playfair_Display({ subsets: ['latin'], weight: '400' });
 
 
 export default function Collab() {
-    const maxTop = (window.innerWidth * 0.4 < 1220 ? "4vw" : "50px")
 
     return (
         <>
@@ -63,7 +62,7 @@ export default function Collab() {
                 .collab_top-section { width: 100%; height: 80%; display: flex; }
                 .collab_img-container { width: 30%; height: 19.7vw; max-height: 250px; position: relative;  }
                 .collab_img { width: 100%; height: 100%; position: absolute; margin-top: -20%; margin-left: 20%; object-fit: cover; object-position: center;  }
-                .collab_top-paragraphe { width: 53%; height: 100%; margin-left: 12%; font-size: clamp(18px, 1.7vw, 23px); position: relative; top: ${maxTop};  }
+                .collab_top-paragraphe { width: 53%; height: 100%; margin-left: 12%; font-size: clamp(18px, 1.7vw, 23px); position: relative; top: 50px;  }
                 
                 .collab_bottom-section { width: 100%; height: 10%; display: flex; position: relative;  }
                 .collab_bottom-paragraphe { font-style: italic; color: rgba(109,152,156,1); margin-left: 14%; font-size: clamp(8px, 1.3vw, 15px);  }
@@ -72,7 +71,6 @@ export default function Collab() {
                 .collab_right { width: 50%;  }
                 .collab_right-container { width: 78%; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 12%; font-style: italic; font-size: clamp(18px, 1.85vw, 23px); letter-spacing: 0.2em;  }
                 .collab_right-links { width: 100%; background: white; height: 16%; display: flex; justify-content: center; align-items: center;  }
-               
                
                
                 @media (max-width: 800px) {
