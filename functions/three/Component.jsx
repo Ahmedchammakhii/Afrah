@@ -2,11 +2,14 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useTexture, Stars, Text } from '@react-three/drei';
 import { DoubleSide, ShaderMaterial,Vector3 ,Color} from 'three';
+import { Suspense } from 'react'
+import { Environment } from '@react-three/drei'
+
 
 const textureArray = [
+    '/night.jpg',
   '/p1.jpg',
   '/pool.jpg',
-  '/night.jpg',
   '/depth.jpg',
   '/day.jpg',
 ];
@@ -62,9 +65,9 @@ const threshold=220
       mesh.current.rotation.y = totalMovementX / 100;
     // mesh.current.rotation.z=movementZ/100
       const distance = camera.position.distanceTo(mesh.current.position);
-      if (distance > threshold) {
+  
         mesh.current.rotation.y += 0.01;
-      }
+      
     }
   });
 
@@ -156,7 +159,7 @@ const starMaterial = new ShaderMaterial({
     }
   `,
 });
-export default function Component() {
+export default function App() {
   const cameraRef = useRef();
   const [cameraPosition, setCameraPosition] = useState([0,0,0]);
   const [currentTextureIndex, setCurrentTextureIndex] = useState(0);
@@ -184,10 +187,13 @@ export default function Component() {
       const mouseY = -(clientY / window.innerHeight) * 2 + 1;
       // console.log("x", mouseX, "y", mouseY, cameraRef.current.position, "hiii", cameraPosition);
       const camera = cameraRef.current;
-      camera.position.x = mouseX * 100;
+     if (camera && camera.position )
+     { camera.position.x = mouseX * 100;
       camera.position.y = mouseY * 100;
       camera.lookAt(0, 0, 0);
       mouseX && mouseY && setCameraPosition([mouseX * 100, mouseY * 100, 0]);
+      }
+      return
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -199,14 +205,13 @@ export default function Component() {
 
   return (
     
-        <Canvas
-        style={{ position: 'absolute', background: 'transparent' ,height:"60vh",filter:" brightness(90%)"}}
+      <Canvas
+        style={{ position: 'absolute', background: 'transparent',height:"60vh" }}
         onCreated={({ gl }) => {
           gl.setClearColor('black');
           gl.setSize(window.innerWidth, window.innerHeight);
         }}
       >
-        
         <perspectiveCamera ref={cameraRef} position={cameraPosition} target={[0, 0, 0]} />
 
         <ambientLight intensity={0.7} />
@@ -258,7 +263,7 @@ export default function Component() {
           fade
         />
 
-        <OrbitControls enableDamping dampingFactor={0.5} rotateSpeed={0.5}  maxPolarAngle={Math.PI} maxDistance={820}/>
+        <OrbitControls enableDamping dampingFactor={0.3} rotateSpeed={0.5}  maxPolarAngle={Math.PI} maxDistance={720} enableZoom={false} autoRotate={true}  autoRotateSpeed={0.2}/>
 
 
       </Canvas>

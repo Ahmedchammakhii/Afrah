@@ -3,6 +3,7 @@ import Planning from './planning';
 import Details from './details';
 import Collab from './collab';
 import Component from '../../../functions/three/Component';
+
 export default function Connect() {
 
 
