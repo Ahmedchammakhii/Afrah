@@ -44,7 +44,7 @@ export default function Portfolio() {
       </div>
 
       <style>{`
-                 .wrapper { height: 75vh; width: 100%; position: relative; display: flex; justify-content: center; align-items: center;  }
+                 .wrapper { height: 75vh; width: 100%; position: relative; display: flex; justify-content: center; align-items: center; background: black  }
                  .firstImg { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(50%); position: absolute; transition: 1s; opacity: 1;  }
                  .secondImg { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(50%); position: absolute; transition: 1s; opacity: 0;  }
                  .container { z-index: 1; color: white; display: flex; align-items: center; justify-content: center; flex-direction: column; width: 100%; height: 100%; max-width: 1000px;  }
