@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useTexture, Stars, Text } from '@react-three/drei';
-import { DoubleSide, ShaderMaterial,Vector3 ,Color} from 'three';
+import { DoubleSide, ShaderMaterial, Vector3, Color } from 'three';
 
 const textureArray = [
   '/p1.jpg',
@@ -48,19 +48,19 @@ const Sphere = (props) => {
       window.removeEventListener('deviceorientation', handleOrientationChange);
     };
   }, []);
-const threshold=220
+  const threshold = 220
   useFrame(({ camera }) => {
     if (mesh.current) {
       const movementX = orientation.gamma * 10;
       const movementY = orientation.beta * 10;
       // const movementZ=orientation.alpha*2
 
-      const totalMovementX = movementX + mousePosition.x*360;
-      const totalMovementY = movementY + mousePosition.y*60;
-      
+      const totalMovementX = movementX + mousePosition.x * 360;
+      const totalMovementY = movementY + mousePosition.y * 60;
+
       mesh.current.rotation.x = totalMovementY / 100;
       mesh.current.rotation.y = totalMovementX / 100;
-    // mesh.current.rotation.z=movementZ/100
+      // mesh.current.rotation.z=movementZ/100
       const distance = camera.position.distanceTo(mesh.current.position);
       if (distance > threshold) {
         mesh.current.rotation.y += 0.01;
@@ -158,26 +158,31 @@ const starMaterial = new ShaderMaterial({
 });
 export default function Component() {
   const cameraRef = useRef();
-  const [cameraPosition, setCameraPosition] = useState([0,0,0]);
+  const [cameraPosition, setCameraPosition] = useState([0, 0, 0]);
   const [currentTextureIndex, setCurrentTextureIndex] = useState(0);
- 
-  const [loadedTextures, setLoadedTextures] = useState([]);
+  const [resolution, setResolution] = useState([1200, 700]);
 
-  useEffect(() => {
-    const preloadTextures = async () => {
-      const textures = await loadTextures(textureArray);
-      setLoadedTextures(textures);
-    };
+  // const [loadedTextures, setLoadedTextures] = useState([]); if (innerWidth && innerHeight)
 
-    preloadTextures();
-    
-  }, []);
+    useEffect(() => {
+      const preloadTextures = async () => {
+        const textures = await loadTextures(textureArray);
+        // setLoadedTextures(textures);
+      };
+
+      preloadTextures();
+
+    }, []);
 
   const handleChangeTexture = () => {
     setCurrentTextureIndex((prevIndex) => (prevIndex + 1) % textureArray.length);
   };
 
   useEffect(() => {
+    if (innerWidth && innerHeight) {
+      setResolution([innerWidth, innerHeight])
+      console.log("azeaze")
+    }
     const handleMouseMove = (event) => {
       const { clientX, clientY } = event;
       const mouseX = (clientX / window.innerWidth) * 2 - 1;
@@ -198,71 +203,71 @@ export default function Component() {
   }, [cameraPosition]);
 
   return (
-    
-        <Canvas
-        style={{ position: 'absolute', background: 'transparent' ,height:"60vh",filter:" brightness(90%)"}}
-        onCreated={({ gl }) => {
-          gl.setClearColor('black');
-          gl.setSize(window.innerWidth, window.innerHeight);
-        }}
+
+    <Canvas
+      style={{ position: 'absolute', background: 'transparent', height: "60vh", filter: " brightness(90%)" }}
+      onCreated={({ gl }) => {
+        gl.setClearColor('black');
+        gl.setSize([resolution[0]], resolution[1]);
+      }}
+    >
+
+      <perspectiveCamera ref={cameraRef} position={cameraPosition} target={[0, 0, 0]} />
+
+      <ambientLight intensity={0.7} />
+      <pointLight position={[15, 15, 15]} />
+
+      <Sphere position={[0, 0, 0]} texture={textureArray[currentTextureIndex]} />
+      <Text
+
+        position={[0, 400, 70]}
+        side={DoubleSide}
+        fontSize={50}
+        maxWidth={300}
+        lineHeight={1}
+        letterSpacing={0.02}
+        textAlign="center"
+        font="/fonts/Roboto.ttf"
+        anchorX="center"
+        anchorY="center"
+
+
       >
-        
-        <perspectiveCamera ref={cameraRef} position={cameraPosition} target={[0, 0, 0]} />
+        Welcome to afrah events!
+      </Text>
+      <Text
+        cursor='pointer'
+        position={[150, 100, 250]}
+        side={DoubleSide}
+        fontSize={20}
+        maxWidth={200}
+        lineHeight={1}
+        letterSpacing={0.02}
+        textAlign="center"
+        font="/fonts/Roboto.ttf"
+        anchorX="center"
+        anchorY="middle"
+        onClick={handleChangeTexture}
 
-        <ambientLight intensity={0.7} />
-        <pointLight position={[15, 15, 15]} />
+      >
+        click me!
+      </Text>
+      <Stars
+        // material={new ShaderMaterial(WaveShader)}
+        material={starMaterial}
+        radius={250}
+        depth={50}
+        count={10000}
+        factor={4}
+        saturation={1}
+        fade
+      />
 
-        <Sphere position={[0, 0, 0]} texture={textureArray[currentTextureIndex]} />
-        <Text
-
-          position={[0, 400, 70]}
-          side={DoubleSide}
-          fontSize={50}
-          maxWidth={300}
-          lineHeight={1}
-          letterSpacing={0.02}
-          textAlign="center"
-          font="/fonts/Roboto.ttf"
-          anchorX="center"
-          anchorY="center"
-          
-
-        >
-          Welcome to afrah events!
-        </Text>
-        <Text
-          cursor='pointer'
-          position={[150, 100, 250]}
-          side={DoubleSide}
-          fontSize={20}
-          maxWidth={200}
-          lineHeight={1}
-          letterSpacing={0.02}
-          textAlign="center"
-          font="/fonts/Roboto.ttf"
-          anchorX="center"
-          anchorY="middle"
-          onClick={handleChangeTexture}
-
-        >
-          click me!
-        </Text>
-        <Stars
-          // material={new ShaderMaterial(WaveShader)}
-          material={starMaterial}
-          radius={250}
-          depth={50}
-          count={10000}
-          factor={4}
-          saturation={1}
-          fade
-        />
-
-        <OrbitControls enableDamping dampingFactor={0.5} rotateSpeed={0.5}  maxPolarAngle={Math.PI} maxDistance={820}/>
+      <OrbitControls enableDamping dampingFactor={0.5} rotateSpeed={0.5} maxPolarAngle={Math.PI} maxDistance={820} />
 
 
-      </Canvas>
+    </Canvas>
 
-  
+
   );
 }
