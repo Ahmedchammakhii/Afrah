@@ -5,7 +5,7 @@ const myFont = localFont({ src: '../../pages/planyourwedding/BonVivant-Regular.o
 import '../globals.css'
 export default function footer() {
     return (
-        <div class="all" style={{height:"40vh", background:"black", width:"100vw",overflowX:"hidden",display:"flex", alignItems:"center",justifyContent:"center",color:"white",fontSize:"14px" }}>
+        <div className="all" style={{height:"40vh", background:"black", width:"100vw",overflowX:"hidden",display:"flex", alignItems:"center",justifyContent:"center",color:"white",fontSize:"14px" }}>
       <div className="wrapit" style={{width:"100%",maxWidth:"1220px",height:"70%",display:"flex", alignItems:"center",justifyContent:"center"}}>
         <style>{`
         @media (max-width:770px){
@@ -20,8 +20,12 @@ export default function footer() {
                 flex-direction:column !important;
                 padding:15px !important;
             }
+            #left{
+                // display:none !important;
+            }
             .left{
                 width:80% !important;
+                height:100% !important;
             }
             .middle{
                 width:100% !important;
@@ -38,8 +42,12 @@ export default function footer() {
              .middle h1{
                 font-size:20px !important;
              }
+             .left button{
+                height:40px !important;
+                width:250px !important;
+             }
         }`}</style>
-      <div className='left' style={{width:"calc(100% / 3)", height:"100%",  display:"flex", alignItems:"center",justifyContent:"center"}}>
+      <div id="left" className='left' style={{width:"calc(100% / 3)", height:"100%",  display:"flex", alignItems:"center",justifyContent:"center"}}>
      <div className='left' style={{width:"80%",height:"80%",display:"flex", alignItems:"center",justifyContent:"center",marginBottom:"20px"}}>
       
      <div style={{width:"40%",height:"90%",display:"flex",flexDirection:"column",lineHeight:"30px"}}>
