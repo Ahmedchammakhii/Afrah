@@ -21,7 +21,7 @@ export default function footer() {
                 padding:15px !important;
             }
             #left{
-                // display:none !important;
+                display:none !important;
             }
             .left{
                 width:80% !important;
