@@ -78,21 +78,21 @@ export default function header() {
 
   return (
     <>
-      <div className='nav' style={{ position: "fixed", height: "8vh", width: "100vw", zIndex: "0", display: "flex", justifyContent: "space-between", color: "white", alignItems: "center" }}>
-        <div className={myFont.className} style={{ fontWeight: "600", letterSpacing: "0.3em", marginLeft: "5vw" }}>
+      <div className='nav' style={{ position: "fixed", height: "8vh", width: "100vw", zIndex: "0", display: "flex", justifyContent: "space-between", color: "white", alignItems: "center", }}>
+        <div className={myFont.className} style={{ fontWeight: "600", letterSpacing: "0.3em", marginLeft: "5vw",textShadow: "0px 0px 4px black", }}>
           AFRAH
         </div>
         <div style={{}} >
           <ul className={font.className} style={{ display: "flex", whiteSpace: "nowrap", width: "100%", justifyContent: "center", gap: "10%" }}>
-            <li style={{ listStyleType: "none", fontWeight: "bold" }}>HOME</li>
-            <li style={{ listStyleType: "none", fontWeight: "bold" }}>PLAN YOUR EVENT</li>
-            <li style={{ listStyleType: "none", fontWeight: "bold" }}>PLAN YOUR WEDDING</li>
-            <li style={{ listStyleType: "none", fontWeight: "bold" }}>GALLERY</li>
-            <li style={{ listStyleType: "none", fontWeight: "bold" }}>BLOG</li>
+            <li style={{ listStyleType: "none", fontWeight: "bold",textShadow: "0px 0px 4px black", }}>HOME</li>
+            <li style={{ listStyleType: "none", fontWeight: "bold",textShadow: "0px 0px 4px black", }}>PLAN YOUR EVENT</li>
+            <li style={{ listStyleType: "none", fontWeight: "bold",textShadow: "0px 0px 4px black", }}>PLAN YOUR WEDDING</li>
+            <li style={{ listStyleType: "none", fontWeight: "bold",textShadow: "0px 0px 4px black", }}>GALLERY</li>
+            <li style={{ listStyleType: "none", fontWeight: "bold",textShadow: "0px 0px 4px black", }}>BLOG</li>
           </ul>
         </div>
 
-        <div className={myFont.className} style={{ marginRight: "5vw", fontSize: "2vw", textDecoration: "underline" }}>connect</div>
+        <div className={myFont.className} style={{ marginRight: "5vw", fontSize: "2vw", textDecoration: "underline",textShadow: "0px 0px 4px black", }}>connect</div>
       </div>
 
     </>

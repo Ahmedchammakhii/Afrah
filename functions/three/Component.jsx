@@ -219,7 +219,6 @@ export default function Component() {
 
       <Sphere position={[0, 0, 0]} texture={textureArray[currentTextureIndex]} />
       <Text
-
         position={[0, 400, 70]}
         side={DoubleSide}
         fontSize={50}
@@ -230,8 +229,6 @@ export default function Component() {
         font="/fonts/Roboto.ttf"
         anchorX="center"
         anchorY="center"
-
-
       >
         Welcome to afrah events!
       </Text>
