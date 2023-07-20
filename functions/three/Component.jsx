@@ -272,7 +272,7 @@ export default function App() {
         fade
       />
 
-        <OrbitControls enableDamping dampingFactor={0.3} rotateSpeed={0.5}  maxPolarAngle={Math.PI} maxDistance={720} enableZoom={false} autoRotate={true}  autoRotateSpeed={0.2}/>
+        <OrbitControls enableDamping dampingFactor={1} rotateSpeed={0.5}  maxPolarAngle={Math.PI} maxDistance={720} enableZoom={false} autoRotate={true}  autoRotateSpeed={0.2}/>
 
 
     </Canvas>
