@@ -16,7 +16,7 @@ export default function Connect() {
     <div style={{width:"100vw", overflow:"hidden"}}>
 
       <div style={{ width: "100vw", height: "60vh", background: "black", overflow: "hidden" }}>
-      <Component />
+      {/* <Component /> */}
       </div>
 
       <Planning />

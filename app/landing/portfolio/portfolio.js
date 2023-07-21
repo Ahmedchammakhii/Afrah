@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import portfolio from '@/data/portfolio_data'
+import portfolio from '@/data/landing/portfolio_data'
 import iteration from '@/functions/landing/portfolio_functions';
 import { Jost, Playfair_Display } from 'next/font/google'
 const font = Jost({ subsets: ['latin'], weight: '600' })

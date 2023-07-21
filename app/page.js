@@ -5,7 +5,7 @@ import Hero from "./landing/hero/hero";
 import localFont from "next/font/local";
 import About from "./landing/about/about";
 import Portfolio from "./landing/portfolio/portfolio";
-import Partners from "./landing/partners/partners";
+import Partners from "./landing/testimony/testimony";
 import Connect from "./landing/connect/connect";
 import Blogs from "./landing/blogs/blogs";
 import Instagram from "./landing/instagram/instagram";

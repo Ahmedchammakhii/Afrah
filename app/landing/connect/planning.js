@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import connect_data from '@/data/connect_data'
+import connect_data from '@/data/landing/connect_data'
 import iteration from '@/functions/landing/connect_functions';
 
 import { Jost, Playfair_Display } from 'next/font/google'
