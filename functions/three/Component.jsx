@@ -4,14 +4,11 @@ import { OrbitControls, useTexture, Stars, Text } from '@react-three/drei';
 import { DoubleSide, ShaderMaterial,Vector3 ,Color} from 'three';
 import { Suspense } from 'react'
 import { Environment } from '@react-three/drei'
-
+import AudioPlayer from './AudioPlayer';
 
 const textureArray = [
     '/night.jpg',
-  '/p1.jpg',
-  '/pool.jpg',
-  '/depth.jpg',
-  '/day.jpg',
+
 ];
 const loadTextures = async (textures) => {
   const promises = textures.map((texture) => new Promise((resolve, reject) => {
@@ -181,6 +178,14 @@ export default function App() {
     setCurrentTextureIndex((prevIndex) => (prevIndex + 1) % textureArray.length);
   };
 
+  // useEffect(() => {
+  //   const audioElement = new Audio(video);
+  //   audioElement.play();
+  // }, []);
+
+
+
+
   useEffect(() => {
     if (innerWidth && innerHeight) {
       setResolution([innerWidth, innerHeight])
@@ -223,11 +228,11 @@ export default function App() {
     
         <perspectiveCamera ref={cameraRef} position={cameraPosition} target={[0, 0, 0]} />
 
-      <ambientLight intensity={0.7} />
+      <ambientLight intensity={0.5} />
       <pointLight position={[15, 15, 15]} />
 
       <Sphere position={[0, 0, 0]} texture={textureArray[currentTextureIndex]} />
-      <Text
+      {/* <Text
 
         position={[0, 400, 70]}
         side={DoubleSide}
@@ -243,8 +248,8 @@ export default function App() {
 
       >
         Welcome to afrah events!
-      </Text>
-      <Text
+      </Text> */}
+      {/* <Text
         cursor='pointer'
         position={[150, 100, 250]}
         side={DoubleSide}
@@ -260,8 +265,8 @@ export default function App() {
 
       >
         click me!
-      </Text>
-      <Stars
+      </Text> */}
+      {/* <Stars
         // material={new ShaderMaterial(WaveShader)}
         material={starMaterial}
         radius={250}
@@ -270,10 +275,10 @@ export default function App() {
         factor={4}
         saturation={1}
         fade
-      />
+      /> */}
 
         <OrbitControls enableDamping dampingFactor={1} rotateSpeed={0.5}  maxPolarAngle={Math.PI} maxDistance={720} enableZoom={false} autoRotate={true}  autoRotateSpeed={0.2}/>
-
+        <AudioPlayer src="/static/sounds/slight.mp3" />
 
     </Canvas>
 

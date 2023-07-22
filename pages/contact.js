@@ -8,6 +8,7 @@ import CustomButton from '@/functions/planning/CustomButton';
 import '../app/globals.css'
 import Footer from '@/app/layout/footer';
 import localFont from "next/font/local";
+import { Padding } from '@mui/icons-material';
 const myFont = localFont({ src: '../pages/planyourwedding/BonVivant-Regular.otf' });
 export default function Form() {
   const [message, setMessage] = useState('');
@@ -51,7 +52,7 @@ export default function Form() {
       Width: "100vw",
       left: 0,
       top: 0,
-      filter:'sepia(0.3) brightness(90%)'
+      filter: 'sepia(0.3) brightness(90%)'
     }} >
       {/* <h1>Welcome to my Next.js app</h1>
       <button onClick={fetchData}>Fetch from Backend</button>
@@ -61,7 +62,7 @@ export default function Form() {
       <ContactForm saveData={saveData} />
       <Gallery />
       <Fix />
-      <div id='father'style={{
+      <div id='father' style={{
         display: "flex",
         flexDirection: "column",
         height: "100vh",
@@ -73,35 +74,36 @@ export default function Form() {
         marginTop: -400,
         justifyContent: 'center',
         alignItems: 'center',
+        padding: 0,
 
       }}
       >
-        <div id="title" style={{top:0,left:0,display:"flex",flexDirection:"column",marginTop:"50px",zIndex: "2",marginBottom:"50px",alignItems:"center"}}><h2 style={{ fontSize: "larger" }}>THE BLOG</h2>
-      <br></br> 
-       <p
-        className={myFont.className}
-        style={{
-          fontSize: 36,
-          letterSpacing: ".4rem",
-          transform: "rotate(-2deg)",
-          marginBottom: 10,
-          alignSelf:"center",
-        }}
-        id="myfont"
-      >
-       The Latest
-      </p></div>
+        <div id="title" style={{ top: 0, left: 0, display: "flex", flexDirection: "column", marginTop: "50px", zIndex: "2", marginBottom: "50px", alignItems: "center" }}><h2 style={{ fontSize: "larger" }}>THE BLOG</h2>
+          <br></br>
+          <p
+            className={myFont.className}
+            style={{
+              fontSize: 36,
+              letterSpacing: ".4rem",
+              transform: "rotate(-2deg)",
+              marginBottom: 10,
+              alignSelf: "center",
+            }}
+            id="myfont"
+          >
+            The Latest
+          </p></div>
         <div id="gallery" style={{
           display: 'flex',
-        flexDirection:"row",
-          height: '100%' ,
+          flexDirection: "row",
+          height: '100%',
           gap: '100px',
           textAlign: "center",
           justifyContent: 'center',
           alignItems: 'center',
-           marginTop: '-200px',
-           zIndex: "2"
-     
+          marginTop: '-200px',
+          zIndex: "2",
+          paddingTop: "0",
         }}><style>{`
         @media  (max-width: 1350px){
           #title{
@@ -138,6 +140,7 @@ export default function Form() {
             justify-content: center;
             align-items: center;
             width:100% ;
+          
           }
           .child{
             height: 400px !important; 
@@ -151,20 +154,27 @@ export default function Form() {
            
             height:250vh !important;  
           }
-          
+          #gallery{
+            padding-top:0 important;
+          }
           .child{
             height: 350px !important; 
             width: 70% !important;
+            // margin-top:0 ! important;
           
           }
           .ch{
-            margin-bottom: 50px important;
+            // margin-bottom: 50px important;
+            margin-top:730px !important;
           }
         }
         `}</style>
-          <div className="child"style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center 0;", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center" ,marginBottom:"50px"}}><div className='ch'style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px"}}><h2 style={{ fontWeight: "500" }}>top five tips for budgeting your wedding</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button></div></div>
-          <div className="child" style={{ backgroundImage: "url('/2b.jpg')", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center" ,marginBottom:"50px"}}><div className='ch'style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px" }}><h2 style={{ fontWeight: "500", text: "lowercase" }}> pro wedding day timeline MADE BY PLANNERS  </h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button ></div></div>
-          <div className="child" style={{ backgroundImage: "url('/3b.jpg')", height: "500px", width: "calc(100vw- 250px / 3)", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center" ,marginBottom:"50px"}}><div className='ch'style={{ marginTop: 800, maxWidth: "350px",marginBottom:"150px" }}><h2 style={{ fontWeight: "400", fontSize: "20px" }}> WEDDING PLANNER VS. VENUE MANAGER and what the differences are</h2><button style={{ width: "150px", height: "50px", background: "black", color: "#fff" ,marginTop:"20px"}}>read more</button></div></div>
+          <div className="child" style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center 0;", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
+            <div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px" }}>
+              <p style={{ fontSize: "20px", textAlign: "center", lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal" }}>top five tips for budgeting your wedding</p>
+              <button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button></div></div>
+          <div className="child" style={{ backgroundImage: "url('/2b.jpg')", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}><div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px" }}><p style={{ fontSize: "20px" , lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal" }}> pro wedding day timeline MADE BY PLANNERS  </p><button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button ></div></div>
+          <div className="child" style={{ backgroundImage: "url('/3b.jpg')", height: "500px", width: "calc(100vw- 250px / 3)", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}><div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px",paddingTop:"20px" }}><p style={{ fontSize: "20px", lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal"  }}> WEDDING PLANNER VS. VENUE MANAGER and what the differences are</p><button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button></div></div>
         </div>
 
       </div>
@@ -184,14 +194,14 @@ export default function Form() {
         justifyContent: 'center',
         alignItems: 'center',
 
-      }}> 
-         <CustomButton
+      }}>
+        <CustomButton
           label="YOU'RE FOLLOWING ON INSTAGRAM, RIGHT?"
           isActive={false}
         // onClick={() => fileInputRef.current.click()}
         />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

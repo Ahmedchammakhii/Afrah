@@ -3,7 +3,7 @@ import Planning from './planning';
 import Details from './details';
 import Collab from './collab';
 import Component from '../../../functions/three/Component';
-
+import AudioPlayer from '../../..//functions/three/AudioPlayer';
 export default function Connect() {
 
 
@@ -17,6 +17,7 @@ export default function Connect() {
 
       <div style={{ width: "100vw", height: "60vh", background: "black", overflow: "hidden" }}>
       <Component />
+      {/* <AudioPlayer src="/static/sounds/slight.mp3" /> */}
       </div>
 
       <Planning />
