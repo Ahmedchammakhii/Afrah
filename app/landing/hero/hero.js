@@ -1,5 +1,5 @@
 "use client";
-import data from '@/data/hero_data';
+import data from '@/data/landing/hero_data';
 import { useEffect, useRef } from 'react';
 import Slides from './slides';
 import { iteration, counter } from '@/functions/landing/hero_functions';

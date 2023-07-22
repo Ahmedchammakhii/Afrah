@@ -244,8 +244,6 @@ export default function App() {
         font="/fonts/Roboto.ttf"
         anchorX="center"
         anchorY="center"
-
-
       >
         Welcome to afrah events!
       </Text> */}

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import portfolio from '@/data/portfolio_data'
+import portfolio from '@/data/landing/portfolio_data'
 import iteration from '@/functions/landing/portfolio_functions';
 import { Jost, Playfair_Display } from 'next/font/google'
 const font = Jost({ subsets: ['latin'], weight: '600' })
@@ -37,7 +37,7 @@ export default function Portfolio() {
         </h2>
 
         <div className='vertical-line' />
-        <p className={font2.className + "p"} >
+        <p className={font2.className + "p"} style={{ textAlign: "center" }} >
           From Portland to Seattle to gorgeous Sun Valley Idaho, our diverse team of uber style-centric creatives implement eclectic and highly-styled concept ideas personalized for each event: sure to get you blogged, pinned, regrammed and trending.
           {/* {!element.h32 ? null : <span >{element.h32}</span>} */}
         </p>

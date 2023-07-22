@@ -70,7 +70,7 @@ export default function blogs() {
             </div>
 
             <style>{`
-            .blogs_content-wrapper { width: 100vw; display: flex; justify-content: center; background: linear-gradient(to bottom, #fdfdfe, #d7e3e2); }
+            .blogs_content-wrapper { width: 100%; display: flex; justify-content: center; background: linear-gradient(to bottom, #fdfdfe, #d7e3e2); }
             .blogs_wrapper { width: 100%; max-width: 1220px;  }
             .blogs_top-section { width: 100%; height: 18vw; max-height: 219.6px; display: flex; justify-content: center; position: relative; align-items: end;  }
             .blogs_top-container { height: 70%; display: flex; flex-direction: column; justify-content: center;  }
