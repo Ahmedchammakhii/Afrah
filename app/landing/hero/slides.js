@@ -82,7 +82,7 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                
                  100% {
                  transform: none;
-                 width : 100vw;
+                 width : 100%;
                  height: 100vh;
                  left : -45%;
                  margin-top : 0;
