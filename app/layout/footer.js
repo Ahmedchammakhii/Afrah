@@ -5,14 +5,14 @@ const myFont = localFont({ src: '../../pages/planyourwedding/BonVivant-Regular.o
 import '../globals.css'
 export default function footer() {
     return (
-        <div className="all" style={{height:"40vh", background:"black", width:"100vw",overflowX:"hidden",display:"flex", alignItems:"center",justifyContent:"center",color:"white",fontSize:"14px" }}>
+        <div className="all" style={{height:"40vh", background:"black", width:"100%",overflowX:"hidden",display:"flex", alignItems:"center",justifyContent:"center",color:"white",fontSize:"14px" }}>
       <div className="wrapit" style={{width:"100%",maxWidth:"1220px",height:"70%",display:"flex", alignItems:"center",justifyContent:"center"}}>
         <style>{`
         @media (max-width:770px){
             .all{
                 height:max-content !important;
                 
-                max-width:100vw !important;
+                max-width:100% !important;
                
             }
             .wrapit{

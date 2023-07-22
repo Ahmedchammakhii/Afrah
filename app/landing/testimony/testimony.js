@@ -42,13 +42,13 @@ export default function Partners() {
             .testimony_view-all { background: black; color: white; font-size: clamp(16px, 1.5vw, 18px); letter-spacing: 0.1em; width: 132.328px; height: 42.0781px; display: flex; justify-content: center; align-items: center;  }
             .testimony_testimony { white-space: nowrap; font-style: italic; margin-top: 5%; font-size: clamp(10px, 2vw, 25px); letter-spacing: 0.04em; margin-bottom: 2%;  }
             .testimony_identity-content { display: flex; align-items: center;  }
-            .testimony_identity-img-container { width: 3.5vw; height: 3.5vw; background: red; border-radius: 50%; overflow: hidden  }
+            .testimony_identity-img-container { width: 3.5vw; height: 3.5vw; border-radius: 50%; overflow: hidden  }
             .testimony_identity-img { width: 100%; height: 100%; object-fit: cover; object-position: center;  }
             .testimony_name { margin-left: 2vw; font-weight: bold; text-transform: uppercase;  }
             .testimony_company { text-transform: none; font-size: 85%;  }
-            .testimony_company br {display: none}
+            .testimony_name br {display: none}
             .testimony_record { display: flex; gap: 13px; width: 20%; justify-content: center; align-items: center; margin-top: 2%;  }
-            .testimony_record-picked { width: clamp(9px, 0.9vw, 11px); height: clamp(9px, 0.9vw, 11px); background: red;  }
+            .testimony_record-picked { width: clamp(9px, 0.9vw, 11px); height: clamp(9px, 0.9vw, 11px); background: #6d989c;  }
             .testimony_record-not-picked { width: clamp(9px, 0.9vw, 11px); height: clamp(9px, 0.9vw, 11px); background: black;  }
 
 
@@ -79,11 +79,13 @@ function Component({ opacity, container }) {
         </p>
         <div className='testimony_identity-content' >
             <div className='testimony_identity-img-container' >
-            <img src={'/landing/testimony/' + opacity + '.jpg'} className='testimony_identity-img'  />
+                <img src={'/landing/testimony/' + opacity + '.jpg'} className='testimony_identity-img' />
             </div>
 
             <div className={font.className + ' testimony_name'} >
-                <span>{testimony_data[opacity].name}  /</span><br /> <span className={font2.className + ' testimony_company'} > {testimony_data[opacity].position}</span>
+                <span>{testimony_data[opacity].name}  /</span>
+                <br />
+                <span className={font2.className + ' testimony_company'} > {testimony_data[opacity].position}</span>
             </div>
         </div>
 

@@ -9,7 +9,7 @@ import Partners from "./landing/testimony/testimony";
 import Connect from "./landing/connect/connect";
 import Blogs from "./landing/blogs/blogs";
 import Instagram from "./landing/instagram/instagram";
-import Footer from "./layout/footer";
+import HeroMobile from './landing/hero/hero-mobile'
 const myFont = localFont({ src: "../pages/planyourwedding/BonVivant-Regular.otf" });
 
 export default function Home() {
@@ -19,35 +19,38 @@ export default function Home() {
       if (innerWidth > 1200) {
         setHero(<Hero />)
       } else {
-        // setHero(<Hero />)
+        setHero(<HeroMobile />)
 
       }
     }
   }, [])
   if (window && window.innerWidth)
     return (
-      <main style={{ background: "#f5f6f7" }} >
-        {hero}
-        <div className={myFont.className}
-          style={{
-            display: "flex", justifyContent: "center",
-            alignItems: "center",
-            width: "100vw",
-            height: "25vh",
-            fontSize: "3vw",
-            overflow: "hidden"
-          }}>
-          Where to Begin
-        </div>
+      <>
+        <main style={{ background: "#f5f6f7" }} >
+          {hero}
+          <div
+            className={myFont.className + ' where-to-begin'} >
+            Where to Begin
+          </div>
 
+          <About />
+          <Portfolio />
+          <Partners />
+          <Connect />
+          <Blogs />
+          <Instagram />
 
-        <About />
-        <Portfolio />
-        <Partners />
-        <Connect />
-        <Blogs />
-        <Instagram />
+        </main>
 
-      </main>
+        <style>{`
+        .where-to-begin { display: flex; justify-content: center; align-items: center; width: 100%; height: 25vh; font-size: 3vw; overflow: hidden;  }
+        @media (max-width: 700px) {
+          .where-to-begin { font-size: 7vw;   }
+
+        }
+
+        `}</style>
+      </>
     )
 }
