@@ -49,24 +49,24 @@ const Sphere = (props) => {
     };
   }, []);
   const threshold = 220
-  useFrame(({ camera }) => {
-    if (mesh.current) {
-      const movementX = orientation.gamma * 10;
-      const movementY = orientation.beta * 10;
-      // const movementZ=orientation.alpha*2
+  // useFrame(({ camera }) => {
+  //   if (mesh.current) {
+  //     const movementX = orientation.gamma * 10;
+  //     const movementY = orientation.beta * 10;
+  //     // const movementZ=orientation.alpha*2
 
-      const totalMovementX = movementX + mousePosition.x * 360;
-      const totalMovementY = movementY + mousePosition.y * 60;
+  //     const totalMovementX = movementX + mousePosition.x * 360;
+  //     const totalMovementY = movementY + mousePosition.y * 60;
 
-      mesh.current.rotation.x = totalMovementY / 100;
-      mesh.current.rotation.y = totalMovementX / 100;
-      // mesh.current.rotation.z=movementZ/100
-      const distance = camera.position.distanceTo(mesh.current.position);
+  //     mesh.current.rotation.x = totalMovementY / 100;
+  //     mesh.current.rotation.y = totalMovementX / 100;
+  //     // mesh.current.rotation.z=movementZ/100
+  //     const distance = camera.position.distanceTo(mesh.current.position);
 
-      mesh.current.rotation.y += 0.01;
+  //     mesh.current.rotation.y += 0.01;
 
-    }
-  });
+  //   }
+  // });
 
   const handleClick = () => {
     console.log('Clicked!');
@@ -178,10 +178,7 @@ export default function App() {
     setCurrentTextureIndex((prevIndex) => (prevIndex + 1) % textureArray.length);
   };
 
-  // useEffect(() => {
-  //   const audioElement = new Audio(video);
-  //   audioElement.play();
-  // }, []);
+  
 
 
 
