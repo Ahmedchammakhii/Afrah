@@ -58,6 +58,8 @@ const font = Jost({ subsets: ['latin'], weight: '600' })
 
 
 export default function header() {
+  
+
   const [isOpen, setIsOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0)
 
