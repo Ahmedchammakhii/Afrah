@@ -3,7 +3,6 @@ import Planning from './planning';
 import Details from './details';
 import Collab from './collab';
 import Component from '../../../functions/three/Component';
-import AudioPlayer from '../../..//functions/three/AudioPlayer';
 import lottie from 'lottie-web';
 
 export default function Connect() {

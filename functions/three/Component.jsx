@@ -273,7 +273,7 @@ export default function App() {
       /> */}
 
       <OrbitControls enableDamping dampingFactor={1} rotateSpeed={0.5} maxPolarAngle={Math.PI} maxDistance={720} enableZoom={false} autoRotate={true} autoRotateSpeed={0.2} />
-      <AudioPlayer src="/static/sounds/slight.mp3" />
+      {/* <AudioPlayer src="/static/sounds/slight.mp3" /> */}
 
     </Canvas>
 

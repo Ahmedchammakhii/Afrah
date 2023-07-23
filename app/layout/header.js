@@ -74,7 +74,7 @@ export default function header() {
 
         if (window.scrollY >= (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "transparent") {
           document.querySelector('.header_nav').style.background = "black"
-          document.querySelector('.header_nav').style.zIndex = "1"
+          document.querySelector('.header_nav').style.zIndex = "3"
           document.querySelector('.header_nav').style.position = "fixed"
           if (pathname.length < 2) {
             document.querySelector('.three-container').style.display = "block"
@@ -113,7 +113,7 @@ export default function header() {
       } else {
         if (window.scrollY >= ((innerHeight * 0.75) - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "transparent") {
           document.querySelector('.header_nav').style.background = "black"
-          document.querySelector('.header_nav').style.zIndex = "1"
+          document.querySelector('.header_nav').style.zIndex = "3"
           document.querySelector('.header_nav').style.position = "fixed"
           if (pathname.length < 2) {
             document.querySelector('.three-container').style.display = "block"
@@ -169,7 +169,7 @@ export default function header() {
 
       if (window.scrollY >= ((innerHeight * 0.75) - (innerHeight * 0.08))) {
         document.querySelector('.header_nav').style.background = "black"
-        document.querySelector('.header_nav').style.zIndex = "1"
+        document.querySelector('.header_nav').style.zIndex = "3"
         document.querySelector('.header_nav').style.position = "fixed"
         if (pathname.length >= 2) {
           afrah.current.style.color = 'white'
@@ -236,7 +236,7 @@ export default function header() {
 
       </menu>
       <style>{`
-      .header_nav { position: fixed; height: 8vh; width: 100%; z-index: 1; display: flex; justify-content: space-between; color: white; align-items: center;  transition: 0.4s ease 0s; }
+      .header_nav { position: fixed; height: 8vh; width: 100%; z-index: 3; display: flex; justify-content: space-between; color: white; align-items: center;  transition: 0.4s ease 0s; }
       .header_afrah { font-weight: 600; letter-spacing: 0.3em; margin-left: 5vw; text-shadow: 0px 0px 4px black;  }
       .header_links-wrapper {  }
       .header_links-container { display: flex; white-space: nowrap; width: 100%; justify-content: center; gap: 10%;  }
