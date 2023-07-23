@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation'
@@ -62,6 +62,8 @@ const font = Jost({ subsets: ['latin'], weight: '600' })
 export default function header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0)
+  const afrah = useRef(null)
+  const menu_container = useRef(null)
   const pathname = usePathname()
 
   useEffect(scrollEvent(() => setScrollY(window.scrollY)))
@@ -76,6 +78,14 @@ export default function header() {
           document.querySelector('.header_nav').style.position = "fixed"
           if (pathname.length < 2) {
             document.querySelector('.three-container').style.display = "block"
+          } else {
+            afrah.current.style.color = 'white'
+            document.querySelector('.header_connect').style.color = "white"
+            document.querySelector('.header_connect').children[0].style.color = "white"
+
+            for (let i = 0; document.querySelector('.header_links-container').children.length > i; i++) {
+              document.querySelector('.header_links-container').children[i].children[0].style.color = "white"
+            }
           }
         } else if (window.scrollY < (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "black") {
           if (pathname.length < 2) {
@@ -85,6 +95,12 @@ export default function header() {
             document.querySelector('.header_nav').style.zIndex = "6"
 
           } else {
+            afrah.current.style.color = 'black'
+            document.querySelector('.header_connect').style.color = "black"
+            document.querySelector('.header_connect').children[0].style.color = "black"
+            for (let i = 0; document.querySelector('.header_links-container').children.length > i; i++) {
+              document.querySelector('.header_links-container').children[i].children[0].style.color = "black"
+            }
             document.querySelector('.header_nav').style.background = "transparent"
             document.querySelector('.header_nav').style.opacity = "0"
             setTimeout(() => {
@@ -101,8 +117,13 @@ export default function header() {
           document.querySelector('.header_nav').style.position = "fixed"
           if (pathname.length < 2) {
             document.querySelector('.three-container').style.display = "block"
+          } else {
+            afrah.current.style.color = 'white'
+            for (let i = 0; menu_container.current.children.length > i; i++) {
+              menu_container.current.children[i].style.background = "white"
+            }
           }
-        } else if (window.scrollY < (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "black") {
+        } else if (window.scrollY < ((innerHeight * 0.75) - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "black") {
           if (pathname.length < 2) {
             document.querySelector('.three-container').style.display = "none"
             document.querySelector('.header_nav').style.background = "transparent"
@@ -110,6 +131,11 @@ export default function header() {
             document.querySelector('.header_nav').style.zIndex = "6"
 
           } else {
+            afrah.current.style.color = 'black'
+            for (let i = 0; menu_container.current.children.length > i; i++) {
+              menu_container.current.children[i].style.background = "black"
+            }
+
             document.querySelector('.header_nav').style.background = "transparent"
             document.querySelector('.header_nav').style.opacity = "0"
             setTimeout(() => {
@@ -119,28 +145,51 @@ export default function header() {
             }, 400);
           }
         }
+
       }
     }
   }, [scrollY])
 
   useEffect(() => {
     if (isOpen) {
+      document.querySelector('.header_nav').style.transition = 'none'
       document.querySelector('.header_nav').style.background = "black"
       document.querySelector('.header_nav').style.zIndex = "6"
       document.querySelector('.header_nav').style.position = "fixed"
 
+      if (pathname.length >= 2) {
+        afrah.current.style.color = 'white'
+        for (let i = 0; menu_container.current.children.length > i; i++) {
+          menu_container.current.children[i].style.background = "white"
+        }
+      }
+
     } else {
+      document.querySelector('.header_nav').style.transition = '0.4s ease 0s'
+
       if (window.scrollY >= ((innerHeight * 0.75) - (innerHeight * 0.08))) {
         document.querySelector('.header_nav').style.background = "black"
         document.querySelector('.header_nav').style.zIndex = "1"
         document.querySelector('.header_nav').style.position = "fixed"
+        if (pathname.length >= 2) {
+          afrah.current.style.color = 'white'
+          for (let i = 0; menu_container.current.children.length > i; i++) {
+            menu_container.current.children[i].style.background = "white"
+          }
 
+        }
       } else {
         document.querySelector('.header_nav').style.background = "transparent"
         document.querySelector('.header_nav').style.position = "absolute"
         document.querySelector('.header_nav').style.zIndex = "6"
-
+        if (pathname.length >= 2) {
+          afrah.current.style.color = 'black'
+          for (let i = 0; menu_container.current.children.length > i; i++) {
+            menu_container.current.children[i].style.background = "black"
+          }
+        }
       }
+
     }
   }, [isOpen])
 
@@ -148,22 +197,22 @@ export default function header() {
     <>
       <div className='header_nav' >
         <div className={myFont.className + ' header_afrah'} style={{ fontWeight: "600", letterSpacing: "0.3em", marginLeft: "5vw", textShadow: "0px 0px 4px black", }}>
-          <Link style={{ textDecoration: "none", color: "white" }} href="/" >AFRAH</Link>
+          <Link ref={afrah} style={{ textDecoration: "none", color: pathname.length < 2 ? 'white' : 'black' }} href="/" >AFRAH</Link>
         </div>
         <div className='header_links-wrapper' style={{}} >
           <ul className={font.className + ' header_links-container'} style={{ display: "flex", whiteSpace: "nowrap", width: "100%", justifyContent: "center", gap: "10%" }}>
-            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/" >HOME</Link></li>
-            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/" >PLAN YOUR EVENT</Link></li>
-            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/planyourwedding" >PLAN YOUR WEDDING</Link></li>
-            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/" >GALLERY</Link></li>
-            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/" >BLOG</Link></li>
+            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link href="/" >HOME</Link></li>
+            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link href="/" >PLAN YOUR EVENT</Link></li>
+            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link href="/planyourwedding" >PLAN YOUR WEDDING</Link></li>
+            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link href="/" >GALLERY</Link></li>
+            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link href="/" >BLOG</Link></li>
           </ul>
         </div>
 
-        <div className={myFont.className + ' header_connect'} style={{ marginRight: "5vw", fontSize: "2vw", textDecoration: "underline", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/contact" >connect</Link></div>
+        <div className={myFont.className + ' header_connect'}><Link href="/contact" >connect</Link></div>
         <div onClick={() => { setIsOpen(!isOpen) }}
           className='header_menu-clickable' >
-          <div className='header_menu-container' >
+          <div ref={menu_container} className='header_menu-container' >
             <div className='header_menu-lines' />
             <div className='header_menu-lines' />
             <div className='header_menu-lines' />
@@ -177,12 +226,12 @@ export default function header() {
         />
 
         <ul className='header_menu-links-container' >
-          <li className={font.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/'>HOME</Link></li>
-          <li className={font.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/'>PLAN YOUR EVENT</Link></li>
-          <li className={font.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/planyourwedding'>PLAN YOUR WEDDING</Link></li>
-          <li className={font.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/'>GALLERY</Link></li>
-          <li className={font.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/'>BLOG</Link></li>
-          <li className={myFont.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/contact'>Connect</Link></li>
+          <li className={font.className + ' header_menu-links'} ><Link href='/'>HOME</Link></li>
+          <li className={font.className + ' header_menu-links'} ><Link href='/'>PLAN YOUR EVENT</Link></li>
+          <li className={font.className + ' header_menu-links'} ><Link href='/planyourwedding'>PLAN YOUR WEDDING</Link></li>
+          <li className={font.className + ' header_menu-links'} ><Link href='/'>GALLERY</Link></li>
+          <li className={font.className + ' header_menu-links'} ><Link href='/'>BLOG</Link></li>
+          <li className={myFont.className + ' header_menu-links'} ><Link href='/contact'>Connect</Link></li>
         </ul>
 
       </menu>
@@ -196,7 +245,9 @@ export default function header() {
       .header_link { list-style-type: none; font-weight: bold; text-shadow: 0px 0px 4px black;  }
       .header_link { list-style-type: none; font-weight: bold; text-shadow: 0px 0px 4px black;  }
       .header_link { list-style-type: none; font-weight: bold; text-shadow: 0px 0px 4px black;  }
-      .header_connect { margin-right: 5vw; font-size: 2vw; text-decoration: underline; text-shadow: 0px 0px 4px black;  }
+      .header_connect { margin-right: 5vw; font-size: 2vw; text-shadow: 0px 0px 4px black;  }
+      .header_nav a { color: ${pathname.length < 2 ? 'white' : 'black'} ; text-decoration : none }
+      .header_connect a { text-decoration : underline }
       .header_menu{display: none}
       .header_menu-clickable {display: none}
 
@@ -206,13 +257,14 @@ export default function header() {
         .header_connect { display: none  }
         .header_menu-clickable { cursor: pointer; width: 8vh; height: 8vh; display: flex; flex-direction: column; justify-content: center; align-items: center;  }
         .header_menu-container { height: 22.5%; width: 31%; position: relative; display: flex; flex-direction: column; justify-content: space-between;  }
-        .header_menu-lines { transition: 0.2s ease 0s; width: 100%; height: calc(50% / 3); background: white }
+        .header_menu-lines { transition: 0.2s ease 0s; width: 100%; height: calc(50% / 3); background: ${pathname.length < 2 ? 'white' : 'black'} }
         .header_menu-lines:nth-child(1){transform: ${isOpen ? 'rotate(45deg) translateY(150%) translateX(19%)' : 'none'}}
         .header_menu-lines:nth-child(2){transform: ${isOpen ? 'rotate(-45deg) translateX(4%)' : 'none'}}
         .header_menu-lines:nth-child(3){opacity: ${isOpen ? 0 : 1}}
         .header_menu {display: block; background: black; width: 100%; height: 100vh; position: absolute; top: ${isOpen ? "calc(8vh)" : '11.5vh'}; transition: 0.4s ease 0s; opacity: ${isOpen ? 1 : 0}; z-index :0 }
         .header_menu-wave { position: absolute; top: -52%; pointer-events: none; z-index: -1; width: 100vw; height: 100vh }
-        .header_menu-links-container { width: 100%; justify-content: center; text-align: center;  }
+        .header_menu-links-container { width: 100%; justify-content: center; text-align: center; margin-top: 20% }
+        .header_menu-links-container a { text-decoration : none; color: white }
         .header_menu-links { margin-top: ${isOpen ? "3%" : "8%"}; font-size: ${isOpen ? '20px' : '15px'}; transition: 0.4s ease 0s; text-decoration: none;   }
 
       }
