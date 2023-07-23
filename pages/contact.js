@@ -168,6 +168,24 @@ export default function Form() {
             margin-top:730px !important;
           }
         }
+        @media (max-height: 720px) {
+          
+          #father{
+           
+            height:310vh !important;  
+          }
+         
+        
+        }
+        @media (max-height: 660px) {
+          
+          #father{
+           
+            height:330vh !important;  
+          }
+         
+        
+        }
         `}</style>
           <div className="child" style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center 0;", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
             <div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px" }}>

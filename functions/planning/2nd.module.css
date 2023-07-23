@@ -23,12 +23,12 @@
   
   .secundo {
     height: 35vh;
-    width: 100%;
+    width: 100vw;
     /* background: white; */
     display: flex;
+    flex-direction: column !important;
     justify-content: center;
     align-items: center;
-    flex-direction: column !important;
     z-index: 2;
     background-position: center;
     position: relative;
@@ -43,6 +43,8 @@
     align-items: center;
     justify-items: center;
     gap: 30px;
+    /* width:100%; */
+    height:auto !important;
   }
 
 
@@ -75,4 +77,11 @@
     .secundo h2{
       transform: translateY(30px) !important;
     }
+  }
+  @media (max-width: 400px) {
+    .secundo {
+    height: 35vh !important;
+  
+    } 
+  
   }

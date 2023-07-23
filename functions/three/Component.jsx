@@ -178,10 +178,7 @@ export default function App() {
     setCurrentTextureIndex((prevIndex) => (prevIndex + 1) % textureArray.length);
   };
 
-  // useEffect(() => {
-  //   const audioElement = new Audio(video);
-  //   audioElement.play();
-  // }, []);
+  
 
 
 
