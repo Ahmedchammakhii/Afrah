@@ -1,13 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useTexture, Stars, Text } from '@react-three/drei';
-import { DoubleSide, ShaderMaterial,Vector3 ,Color} from 'three';
+import { DoubleSide, ShaderMaterial, Vector3, Color } from 'three';
 import { Suspense } from 'react'
 import { Environment } from '@react-three/drei'
 import AudioPlayer from './AudioPlayer';
 
 const textureArray = [
-    '/night.jpg',
+  '/night.jpg',
 
 ];
 const loadTextures = async (textures) => {
@@ -62,9 +62,9 @@ const Sphere = (props) => {
       mesh.current.rotation.y = totalMovementX / 100;
       // mesh.current.rotation.z=movementZ/100
       const distance = camera.position.distanceTo(mesh.current.position);
-  
-        mesh.current.rotation.y += 0.01;
-      
+
+      mesh.current.rotation.y += 0.01;
+
     }
   });
 
@@ -164,15 +164,15 @@ export default function App() {
 
   // const [loadedTextures, setLoadedTextures] = useState([]); if (innerWidth && innerHeight)
 
-    useEffect(() => {
-      const preloadTextures = async () => {
-        const textures = await loadTextures(textureArray);
-        // setLoadedTextures(textures);
-      };
+  useEffect(() => {
+    const preloadTextures = async () => {
+      const textures = await loadTextures(textureArray);
+      // setLoadedTextures(textures);
+    };
 
-      preloadTextures();
+    preloadTextures();
 
-    }, []);
+  }, []);
 
   const handleChangeTexture = () => {
     setCurrentTextureIndex((prevIndex) => (prevIndex + 1) % textureArray.length);
@@ -189,7 +189,6 @@ export default function App() {
   useEffect(() => {
     if (innerWidth && innerHeight) {
       setResolution([innerWidth, innerHeight])
-      console.log("azeaze")
     }
     const handleMouseMove = (event) => {
       const { clientX, clientY } = event;
@@ -197,11 +196,11 @@ export default function App() {
       const mouseY = -(clientY / resolution.innerHeight) * 2 + 1;
       // console.log("x", mouseX, "y", mouseY, cameraRef.current.position, "hiii", cameraPosition);
       const camera = cameraRef.current;
-     if (camera && camera.position )
-     { camera.position.x = mouseX * 100;
-      camera.position.y = mouseY * 100;
-      camera.lookAt(0, 0, 0);
-      mouseX && mouseY && setCameraPosition([mouseX * 100, mouseY * 100, 0]);
+      if (camera && camera.position) {
+        camera.position.x = mouseX * 100;
+        camera.position.y = mouseY * 100;
+        camera.lookAt(0, 0, 0);
+        mouseX && mouseY && setCameraPosition([mouseX * 100, mouseY * 100, 0]);
       }
       return
     };
@@ -218,15 +217,16 @@ export default function App() {
     <Canvas
       style={{ position: 'absolute', background: 'transparent', height: "60vh", filter: " brightness(90%)" }}
       onCreated={({ gl }) => {
+        console.log("aze")
         gl.setClearColor('black');
         gl.setSize([resolution[0]], resolution[1]);
       }}
     >
 
       <perspectiveCamera ref={cameraRef} position={cameraPosition} target={[0, 0, 0]} />
-    
-    
-        <perspectiveCamera ref={cameraRef} position={cameraPosition} target={[0, 0, 0]} />
+
+
+      <perspectiveCamera ref={cameraRef} position={cameraPosition} target={[0, 0, 0]} />
 
       <ambientLight intensity={0.5} />
       <pointLight position={[15, 15, 15]} />
@@ -275,8 +275,8 @@ export default function App() {
         fade
       /> */}
 
-        <OrbitControls enableDamping dampingFactor={1} rotateSpeed={0.5}  maxPolarAngle={Math.PI} maxDistance={720} enableZoom={false} autoRotate={true}  autoRotateSpeed={0.2}/>
-        <AudioPlayer src="/static/sounds/slight.mp3" />
+      <OrbitControls enableDamping dampingFactor={1} rotateSpeed={0.5} maxPolarAngle={Math.PI} maxDistance={720} enableZoom={false} autoRotate={true} autoRotateSpeed={0.2} />
+      <AudioPlayer src="/static/sounds/slight.mp3" />
 
     </Canvas>
 

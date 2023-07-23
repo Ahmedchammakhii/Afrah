@@ -71,23 +71,26 @@ export default function header() {
           document.querySelector('.header_nav').style.background = "black"
           document.querySelector('.header_nav').style.zIndex = "1"
           document.querySelector('.header_nav').style.position = "fixed"
+          document.querySelector('.three-container').style.display = "block"
 
         } else {
           document.querySelector('.header_nav').style.background = "transparent"
           document.querySelector('.header_nav').style.position = "absolute"
           document.querySelector('.header_nav').style.zIndex = "6"
-
+          document.querySelector('.three-container').style.display = "none"
         }
       } else {
         if (window.scrollY >= ((innerHeight * 0.75) - (innerHeight * 0.08))) {
           document.querySelector('.header_nav').style.background = "black"
           document.querySelector('.header_nav').style.zIndex = "1"
           document.querySelector('.header_nav').style.position = "fixed"
+          document.querySelector('.three-container').style.display = "block"
 
         } else {
           document.querySelector('.header_nav').style.background = "transparent"
           document.querySelector('.header_nav').style.position = "absolute"
           document.querySelector('.header_nav').style.zIndex = "6"
+          document.querySelector('.three-container').style.display = "none"
 
         }
       }
