@@ -31,7 +31,7 @@ export default function heroMobile() {
             <div ref={container} className='mhero_wrapper' >
                 {data.slice(0, 2).map((e, i) => {
                     return <div onTransitionEnd={() => i ? iteration(container, data) : null} key={i}
-                        className='mhero_container'  >
+                        className='mhero_container' style={{ opacity: i ? 0 : 1 }}  >
                         <img alt={i} className='mhero_img'
                             src={i ? '/landing/hero/' + (data[data.length - 1]) + '.jpg' : '/landing/hero/' + data[data.length - 2] + '.jpg'} />
                     </div>
@@ -48,7 +48,7 @@ export default function heroMobile() {
             </div>
             <style>{`
             .mhero_wrapper { width: 100%; height: 75vh; background: black; z-index: 2; position: relative; display: none }
-            .mhero_container { width: 100%; height: 100%; position: absolute; opacity: 0; transition: 4s;  }
+            .mhero_container { width: 100%; height: 100%; position: absolute;  transition: 4s;  }
             .mhero_img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(50%);  }
             .mhero_text-container { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; position: absolute; color: white;  }
             .mhero_production { letter-spacing: 0.2em; font-size: 7vw;  }
