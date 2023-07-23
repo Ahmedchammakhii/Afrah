@@ -18,7 +18,7 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                 display: "flex",
                 overflow: "hidden",
                 height: "100%",
-                marginLeft: "18.8vw"
+                marginLeft: "18vw"
             }}
         >
             <div onAnimationEnd={() => animEnd(wrapper, container, data, record, titles, subtitle, matta)}
@@ -31,7 +31,7 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                     transition: `1s`,
                     pointerEvents: "none",
                     position: "absolute",
-                    left: "18.8%",
+                    left: "18vw",
                     // display: "none",
                     background: data[0].background,
                     backgroundPosition: "center",
@@ -50,7 +50,7 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                         boxShadow: "10px 10px 40px 0px rgba(0,0,0,0.7)",
                         cursor: "pointer",
                         marginTop: "50px",
-                        marginLeft: i ? "2.5%" : 0,
+                        marginLeft: i ? "2.5vw" : 0,
                         transition: `transform 0.5s`,
                         pointerEvents: "none",
                         zIndex: i + 5,

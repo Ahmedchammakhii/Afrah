@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation'
+
 export const scrollTrigger = (ref, f, values, customStart, customEnd) => {
   return () => {
     let start = customStart || ref.current.offsetTop - window.innerHeight
@@ -52,7 +54,7 @@ export const scrollEvent = (f) => {
 
 const myFont = localFont({ src: "../../pages/planyourwedding/BonVivant-Regular.otf" });
 import localFont from "next/font/local";
-import { Jost, Playfair_Display } from 'next/font/google'
+import { Jost } from 'next/font/google'
 
 const font = Jost({ subsets: ['latin'], weight: '600' })
 
@@ -60,6 +62,7 @@ const font = Jost({ subsets: ['latin'], weight: '600' })
 export default function header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0)
+  const pathname = usePathname()
 
   useEffect(scrollEvent(() => setScrollY(window.scrollY)))
 
@@ -67,31 +70,54 @@ export default function header() {
     if (!isOpen) {
       if (innerWidth > 1200) {
 
-        if (window.scrollY >= (innerHeight - (innerHeight * 0.08))) {
+        if (window.scrollY >= (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "transparent") {
           document.querySelector('.header_nav').style.background = "black"
           document.querySelector('.header_nav').style.zIndex = "1"
           document.querySelector('.header_nav').style.position = "fixed"
-          document.querySelector('.three-container').style.display = "block"
+          if (pathname.length < 2) {
+            document.querySelector('.three-container').style.display = "block"
+          }
+        } else if (window.scrollY < (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "black") {
+          if (pathname.length < 2) {
+            document.querySelector('.three-container').style.display = "none"
+            document.querySelector('.header_nav').style.background = "transparent"
+            document.querySelector('.header_nav').style.position = "absolute"
+            document.querySelector('.header_nav').style.zIndex = "6"
 
-        } else {
-          document.querySelector('.header_nav').style.background = "transparent"
-          document.querySelector('.header_nav').style.position = "absolute"
-          document.querySelector('.header_nav').style.zIndex = "6"
-          document.querySelector('.three-container').style.display = "none"
+          } else {
+            document.querySelector('.header_nav').style.background = "transparent"
+            document.querySelector('.header_nav').style.opacity = "0"
+            setTimeout(() => {
+              document.querySelector('.header_nav').style.opacity = "1"
+              document.querySelector('.header_nav').style.position = "absolute"
+              document.querySelector('.header_nav').style.zIndex = "6"
+            }, 400);
+          }
         }
       } else {
-        if (window.scrollY >= ((innerHeight * 0.75) - (innerHeight * 0.08))) {
+        if (window.scrollY >= ((innerHeight * 0.75) - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "transparent") {
           document.querySelector('.header_nav').style.background = "black"
           document.querySelector('.header_nav').style.zIndex = "1"
           document.querySelector('.header_nav').style.position = "fixed"
-          document.querySelector('.three-container').style.display = "block"
+          if (pathname.length < 2) {
+            document.querySelector('.three-container').style.display = "block"
+          }
+        } else if (window.scrollY < (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "black") {
+          if (pathname.length < 2) {
+            document.querySelector('.three-container').style.display = "none"
+            document.querySelector('.header_nav').style.background = "transparent"
+            document.querySelector('.header_nav').style.position = "absolute"
+            document.querySelector('.header_nav').style.zIndex = "6"
 
-        } else {
-          document.querySelector('.header_nav').style.background = "transparent"
-          document.querySelector('.header_nav').style.position = "absolute"
-          document.querySelector('.header_nav').style.zIndex = "6"
-          document.querySelector('.three-container').style.display = "none"
-
+          } else {
+            document.querySelector('.header_nav').style.background = "transparent"
+            document.querySelector('.header_nav').style.opacity = "0"
+            setTimeout(() => {
+              document.querySelector('.header_nav').style.opacity = "1"
+              document.querySelector('.header_nav').style.position = "absolute"
+              document.querySelector('.header_nav').style.zIndex = "6"
+            }, 400);
+          }
         }
       }
     }
@@ -120,21 +146,21 @@ export default function header() {
 
   return (
     <>
-      <div className='header_nav' style={{ position: "fixed", height: "8vh", width: "100%", zIndex: "0", display: "flex", justifyContent: "space-between", color: "white", alignItems: "center", }}>
+      <div className='header_nav' >
         <div className={myFont.className + ' header_afrah'} style={{ fontWeight: "600", letterSpacing: "0.3em", marginLeft: "5vw", textShadow: "0px 0px 4px black", }}>
-          AFRAH
+          <Link style={{ textDecoration: "none", color: "white" }} href="/" >AFRAH</Link>
         </div>
         <div className='header_links-wrapper' style={{}} >
           <ul className={font.className + ' header_links-container'} style={{ display: "flex", whiteSpace: "nowrap", width: "100%", justifyContent: "center", gap: "10%" }}>
-            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}>HOME</li>
-            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}>PLAN YOUR EVENT</li>
-            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}>PLAN YOUR WEDDING</li>
-            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}>GALLERY</li>
-            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}>BLOG</li>
+            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/" >HOME</Link></li>
+            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/" >PLAN YOUR EVENT</Link></li>
+            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/planyourwedding" >PLAN YOUR WEDDING</Link></li>
+            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/" >GALLERY</Link></li>
+            <li className='header_link' style={{ listStyleType: "none", fontWeight: "bold", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/" >BLOG</Link></li>
           </ul>
         </div>
 
-        <div className={myFont.className + ' header_connect'} style={{ marginRight: "5vw", fontSize: "2vw", textDecoration: "underline", textShadow: "0px 0px 4px black", }}>connect</div>
+        <div className={myFont.className + ' header_connect'} style={{ marginRight: "5vw", fontSize: "2vw", textDecoration: "underline", textShadow: "0px 0px 4px black", }}><Link style={{ textDecoration: "none", color: "white" }} href="/contact" >connect</Link></div>
         <div onClick={() => { setIsOpen(!isOpen) }}
           className='header_menu-clickable' >
           <div className='header_menu-container' >
@@ -153,7 +179,7 @@ export default function header() {
         <ul className='header_menu-links-container' >
           <li className={font.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/'>HOME</Link></li>
           <li className={font.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/'>PLAN YOUR EVENT</Link></li>
-          <li className={font.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/'>PLAN YOUR WEDDING</Link></li>
+          <li className={font.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/planyourwedding'>PLAN YOUR WEDDING</Link></li>
           <li className={font.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/'>GALLERY</Link></li>
           <li className={font.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/'>BLOG</Link></li>
           <li className={myFont.className + ' header_menu-links'} ><Link style={{ textDecoration: "none", color: "white" }} href='/contact'>Connect</Link></li>
@@ -161,7 +187,7 @@ export default function header() {
 
       </menu>
       <style>{`
-      .header_nav { position: fixed; height: 8vh; width: 100%; z-index: 0; display: flex; justify-content: space-between; color: white; align-items: center;  transition: 0.4s ease 0s; }
+      .header_nav { position: fixed; height: 8vh; width: 100%; z-index: 1; display: flex; justify-content: space-between; color: white; align-items: center;  transition: 0.4s ease 0s; }
       .header_afrah { font-weight: 600; letter-spacing: 0.3em; margin-left: 5vw; text-shadow: 0px 0px 4px black;  }
       .header_links-wrapper {  }
       .header_links-container { display: flex; white-space: nowrap; width: 100%; justify-content: center; gap: 10%;  }
