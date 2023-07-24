@@ -52,7 +52,8 @@ export default function Form() {
       Width: "100vw",
       left: 0,
       top: 0,
-      filter: 'sepia(0.3) brightness(90%)'
+      filter: 'sepia(0.3) brightness(90%)',
+      overflow: "hidden",
     }} >
       {/* <h1>Welcome to my Next.js app</h1>
       <button onClick={fetchData}>Fetch from Backend</button>
@@ -97,8 +98,6 @@ export default function Form() {
           display: 'flex',
           flexDirection: "row",
           height: '100%',
-          width:"100%",
-          maxWidth:"1150px",
           gap: '100px',
           textAlign: "center",
           justifyContent: 'center',
@@ -128,7 +127,6 @@ export default function Form() {
             height: 500px !important; 
             width: 80% !important;
             margin-top:100px;
-            
           }
         }
         @media  (max-width: 700px){
@@ -171,7 +169,7 @@ export default function Form() {
             margin-top:730px !important;
           }
         }
-        @media (max-height: 750px) {
+        @media (max-height: 720px) {
           
           #father{
            

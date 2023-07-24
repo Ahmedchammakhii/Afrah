@@ -1,8 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import localFont from "next/font/local";
-import Header from './layout/header';
-import Footer from './layout/footer';
+import Layout from './layout/layout';
 const inter = Inter({ subsets: ['latin'] })
 const myFont = localFont({ src: "../pages/planyourwedding/BonVivant-Regular.otf" });
 
@@ -15,9 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
+        <Layout>
+          {children}
+        </Layout>
       </body>
     </html>
   )
