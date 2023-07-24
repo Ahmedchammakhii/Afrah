@@ -4,6 +4,8 @@ export function onMouseEnter(event, clicked) {
         event.currentTarget.children[1].style.borderRadius = '0'
         event.currentTarget.children[1].style.top = '0'
         event.currentTarget.children[2].style.transform = 'translatey(-50%)'
+        event.currentTarget.children[2].children[0].style.opacity = 0
+        event.currentTarget.children[2].children[1].style.opacity = 1
     }
 }
 export function onMouseLeave(event, clicked) {
@@ -16,6 +18,9 @@ export function onMouseLeave(event, clicked) {
             event.currentTarget.children[1].style.borderRadius = '50%'
         }
         event.currentTarget.children[2].style.transform = 'none'
+        event.currentTarget.children[2].children[0].style.opacity = 1
+        event.currentTarget.children[2].children[1].style.opacity = 0
+
         random = Math.floor(Math.random() * 2)
     }
 }

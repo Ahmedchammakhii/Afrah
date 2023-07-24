@@ -9,6 +9,7 @@ import '../app/globals.css'
 import Layout from '@/app/layout/layout';
 import localFont from "next/font/local";
 import { Padding } from '@mui/icons-material';
+import Instagram from '@/app/landing/instagram/instagram';
 const myFont = localFont({ src: '../pages/planyourwedding/BonVivant-Regular.otf' });
 export default function Form() {
   const [message, setMessage] = useState('');
@@ -55,7 +56,7 @@ export default function Form() {
           Width: "100%",
           left: 0,
           top: 0,
-          overflow:"hidden",
+          overflow: "hidden",
           filter: 'sepia(0.3) brightness(90%)'
         }} >
           {/* <h1>Welcome to my Next.js app</h1>
@@ -118,29 +119,7 @@ export default function Form() {
             </div>
 
           </div>
-          <div style={{
-            display: "flex",
-            height: "50vh",
-            width: "100%",
-            left: 0,
-            bottom: 0,
-            background: 'white',
-            backgroundPosition: "center",
-            backgroundSize: 'cover',
-            zIndex: "2",
-
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: 'center',
-            alignItems: 'center',
-
-          }}>
-            <CustomButton
-              label="YOU'RE FOLLOWING ON INSTAGRAM, RIGHT?"
-              isActive={false}
-            // onClick={() => fileInputRef.current.click()}
-            />
-          </div>
+          <Instagram />
         </div>
       </Layout>
 

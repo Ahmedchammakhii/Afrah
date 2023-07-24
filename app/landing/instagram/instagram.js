@@ -8,7 +8,7 @@ export default function instagram() {
       <div className='instagram_content-wrapper' >
         <div className='instagram_wrapper' >
           <button >
-            <Button color={['black', 'white']}  >
+            <Button color={['black', 'white']} duration={0.5}  >
               <h1 className={font.className + ' instagram'}>
                 you're following on instagram, right?
               </h1>
