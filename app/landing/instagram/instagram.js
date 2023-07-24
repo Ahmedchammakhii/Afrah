@@ -1,60 +1,36 @@
-import React from 'react';
 import { Jost, Playfair_Display } from 'next/font/google';
-
+import Button from '@/sharedComponents/button/button';
 const font = Jost({ subsets: ['latin'], weight: '500' });
 
 export default function instagram() {
   return (
     <>
-      <div className={font.className + ' instagram_wrapper'}>
-        <div className='instagram'>
-          you're following on instagram, right?
+      <div className='instagram_content-wrapper' >
+        <div className='instagram_wrapper' >
+          <button >
+            <Button color={['black', 'white']}  >
+              <h1 className={font.className + ' instagram'}>
+                you're following on instagram, right?
+              </h1>
+            </Button>
+          </button>
         </div>
       </div>
 
       <style>{`
-        .instagram_wrapper {
-          width: 100%;
-          height: 21.5vw;
-          max-height: 265px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-        }
+          .instagram_content-wrapper {width: 100%;height: 21.5vw;max-height: 350px;display: flex;justify-content: center;align-items: center}
+          .instagram {text-align: center;text-transform: uppercase; font-size: clamp(14px, 1.5vw, 19px); }
+          .instagram_wrapper { width: 30%; height: 25%; border: 1px solid black}
+          .instagram_wrapper button { width: 100%; height: 100%}
 
-        .instagram {
-          background: #505152;
-          color: white;
-          text-align: center;
-          text-transform: uppercase;
-          padding: 1.2% 3%;
-          font-size: clamp(14px, 1.5vw, 19px);
-          letter-spacing: 1.5px;
-        }
+         
+          @media (max-width: 800px) {
+            .instagram_content-wrapper {  height: 110vw;  max-height: none;}
+            .instagram_wrapper { width: 70%; height: 20%; border: 1px solid black}
 
-        @media (max-width: 1220px) {
-          .instagram {
-            padding: 1.8% 3%;
+            .instagram {width: 58%;height: 15%; display: flex;align-items: center;justify-content: center;}
           }
-        }
-
-        @media (max-width: 800px) {
-          .instagram_wrapper {
-            height: 130vw;
-            max-height: none;
-          }
-
-          .instagram {
-            width: 58%;
-            height: 15%;
-            padding: 0; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-        }
-      `}</style>
+    `}</style>
     </>
   );
 }

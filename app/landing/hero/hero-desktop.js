@@ -37,7 +37,7 @@ export default function Hero() {
 
 
     return (
-        <div className={'content-wrapper ' + font.className}>
+        <div className={'d-hero-content-wrapper ' + font.className}>
             <div ref={wrapper} style={{
                 transition: "scale 1s cubic-bezier(.69,.26,0,1), filter 1s",
                 width: "100%", height: "100vh", position: "absolute", zIndex: 0,
@@ -72,14 +72,14 @@ export default function Hero() {
 
             <style>{`
 
-                .content-wrapper {width: 100%; height: 100vh; overflow: hidden; position: relative; display: flex; background-position: center; background-size: cover;  background : black }
+                .d-hero-content-wrapper {z-index: 3; width: 100%; height: 100vh; overflow: hidden; position: relative; display: flex; background-position: center; background-size: cover;  background : black }
                 .loading { height: 1%; width: 0; background: transparent; position: absolute; border-radius: 50px; margin-left: -50px;  }
                 .left-wrapper { width: 45%; color: white }
                 .right-wrapper { width: 55%; }
                 .right-container { width: 100%; height: 32vw; position: absolute; bottom: 0;  }
                             
                 @media (max-width: 1200px) { 
-                    .content-wrapper { display: none; }
+                    .d-hero-content-wrapper { display: none; }
 
                 }
 

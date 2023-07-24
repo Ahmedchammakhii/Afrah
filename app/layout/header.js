@@ -220,7 +220,7 @@ export default function header() {
         </div>
       </div>
 
-      <menu className='header_menu' style={{ position: "fixed", zIndex: 3 }}  >
+      <menu className='header_menu'  >
         <Image alt='wave' src='/assets/layout/wave.svg' width={1920} height={1080}
           className='header_menu-wave'
         />
@@ -248,11 +248,12 @@ export default function header() {
       .header_connect { margin-right: 5vw; font-size: 2vw; text-shadow: 0px 0px 4px black;  }
       .header_nav a { color: ${pathname.length < 2 ? 'white' : 'black'} ; text-decoration : none }
       .header_connect a { text-decoration : underline }
-      .header_menu{display: none}
+      .header_menu {display: none}
       .header_menu-clickable {display: none}
 
 
       @media (max-width: 1200px) {
+        .header_menu {pointer-events: ${isOpen ? 'all' : 'none'} ;display: block; background: black; width: 100%; height: 100vh; position: fixed; top: ${isOpen ? "calc(8vh)" : '11.5vh'}; transition: 0.4s ease 0s; opacity: ${isOpen ? 1 : 0}; z-index :4 }
         .header_links-wrapper {display: none  }
         .header_connect { display: none  }
         .header_menu-clickable { cursor: pointer; width: 8vh; height: 8vh; display: flex; flex-direction: column; justify-content: center; align-items: center;  }
@@ -261,7 +262,6 @@ export default function header() {
         .header_menu-lines:nth-child(1){transform: ${isOpen ? 'rotate(45deg) translateY(150%) translateX(19%)' : 'none'}}
         .header_menu-lines:nth-child(2){transform: ${isOpen ? 'rotate(-45deg) translateX(4%)' : 'none'}}
         .header_menu-lines:nth-child(3){opacity: ${isOpen ? 0 : 1}}
-        .header_menu {display: block; background: black; width: 100%; height: 100vh; position: absolute; top: ${isOpen ? "calc(8vh)" : '11.5vh'}; transition: 0.4s ease 0s; opacity: ${isOpen ? 1 : 0}; z-index :0 }
         .header_menu-wave { position: absolute; top: -52%; pointer-events: none; z-index: -1; width: 100vw; height: 100vh }
         .header_menu-links-container { width: 100%; justify-content: center; text-align: center; margin-top: 20% }
         .header_menu-links-container a { text-decoration : none; color: white }
