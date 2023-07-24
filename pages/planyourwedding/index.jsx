@@ -7,6 +7,7 @@ import Parallaxe from "./parallaxesection";
 import { useEffect, useState } from "react";
 import Hero2 from "./hero/hero2";
 import Footer from "@/app/layout/footer";
+import Layout from "@/app/layout/layout";
 const myFont = localFont({ src: "./BonVivant-Regular.otf" });
 
 export default function Planyourwedding() {
@@ -20,13 +21,14 @@ export default function Planyourwedding() {
     window.addEventListener("resize", handleResize);
   }, []);
   return (
-    <main style={{ overflow: "hidden" }}>
+    <Layout>
+      <main style={{ overflow: "hidden" }}>
       {windowWidth > 1100 ? <Hero></Hero> : <Hero2></Hero2>}
       <Slider mbottom={windowWidth > 1100 ? false : true}></Slider>
       <Deposit></Deposit>
 
       <Parallaxe></Parallaxe>
-      <Footer></Footer>
     </main>
+    </Layout>
   );
 }

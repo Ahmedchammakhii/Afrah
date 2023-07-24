@@ -59,7 +59,7 @@ import { Jost } from 'next/font/google'
 const font = Jost({ subsets: ['latin'], weight: '600' })
 
 
-export default function header() {
+export default function header({ dark }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0)
   const afrah = useRef(null)
@@ -74,10 +74,12 @@ export default function header() {
 
         if (window.scrollY >= (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "transparent") {
           document.querySelector('.header_nav').style.background = "black"
-          document.querySelector('.header_nav').style.zIndex = "3"
+          document.querySelector('.header_nav').style.zIndex = "100000"
           document.querySelector('.header_nav').style.position = "fixed"
-          if (pathname.length < 2) {
-            document.querySelector('.three-container').style.display = "block"
+          if (!dark) {
+            if (pathname.length < 2) {
+              document.querySelector('.three-container').style.display = "block"
+            }
           } else {
             afrah.current.style.color = 'white'
             document.querySelector('.header_connect').style.color = "white"
@@ -88,11 +90,13 @@ export default function header() {
             }
           }
         } else if (window.scrollY < (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "black") {
-          if (pathname.length < 2) {
-            document.querySelector('.three-container').style.display = "none"
+          if (!dark) {
+            if (pathname.length < 2) {
+              document.querySelector('.three-container').style.display = "none"
+            }
             document.querySelector('.header_nav').style.background = "transparent"
             document.querySelector('.header_nav').style.position = "absolute"
-            document.querySelector('.header_nav').style.zIndex = "6"
+            document.querySelector('.header_nav').style.zIndex = "100002"
 
           } else {
             afrah.current.style.color = 'black'
@@ -106,17 +110,19 @@ export default function header() {
             setTimeout(() => {
               document.querySelector('.header_nav').style.opacity = "1"
               document.querySelector('.header_nav').style.position = "absolute"
-              document.querySelector('.header_nav').style.zIndex = "6"
+              document.querySelector('.header_nav').style.zIndex = "100002"
             }, 400);
           }
         }
       } else {
         if (window.scrollY >= ((innerHeight * 0.75) - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "transparent") {
           document.querySelector('.header_nav').style.background = "black"
-          document.querySelector('.header_nav').style.zIndex = "3"
+          document.querySelector('.header_nav').style.zIndex = "100000"
           document.querySelector('.header_nav').style.position = "fixed"
-          if (pathname.length < 2) {
-            document.querySelector('.three-container').style.display = "block"
+          if (!dark) {
+            if (pathname.length < 2) {
+              document.querySelector('.three-container').style.display = "block"
+            }
           } else {
             afrah.current.style.color = 'white'
             for (let i = 0; menu_container.current.children.length > i; i++) {
@@ -124,11 +130,13 @@ export default function header() {
             }
           }
         } else if (window.scrollY < ((innerHeight * 0.75) - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "black") {
-          if (pathname.length < 2) {
-            document.querySelector('.three-container').style.display = "none"
-            document.querySelector('.header_nav').style.background = "transparent"
+          if (!dark) {
+            if (pathname.length < 2) {
+
+              document.querySelector('.three-container').style.display = "none"
+            } document.querySelector('.header_nav').style.background = "transparent"
             document.querySelector('.header_nav').style.position = "absolute"
-            document.querySelector('.header_nav').style.zIndex = "6"
+            document.querySelector('.header_nav').style.zIndex = "100002"
 
           } else {
             afrah.current.style.color = 'black'
@@ -141,7 +149,7 @@ export default function header() {
             setTimeout(() => {
               document.querySelector('.header_nav').style.opacity = "1"
               document.querySelector('.header_nav').style.position = "absolute"
-              document.querySelector('.header_nav').style.zIndex = "6"
+              document.querySelector('.header_nav').style.zIndex = "100002"
             }, 400);
           }
         }
@@ -154,10 +162,10 @@ export default function header() {
     if (isOpen) {
       document.querySelector('.header_nav').style.transition = 'none'
       document.querySelector('.header_nav').style.background = "black"
-      document.querySelector('.header_nav').style.zIndex = "6"
+      document.querySelector('.header_nav').style.zIndex = "100002"
       document.querySelector('.header_nav').style.position = "fixed"
 
-      if (pathname.length >= 2) {
+      if (dark) {
         afrah.current.style.color = 'white'
         for (let i = 0; menu_container.current.children.length > i; i++) {
           menu_container.current.children[i].style.background = "white"
@@ -169,9 +177,9 @@ export default function header() {
 
       if (window.scrollY >= ((innerHeight * 0.75) - (innerHeight * 0.08))) {
         document.querySelector('.header_nav').style.background = "black"
-        document.querySelector('.header_nav').style.zIndex = "3"
+        document.querySelector('.header_nav').style.zIndex = "100000"
         document.querySelector('.header_nav').style.position = "fixed"
-        if (pathname.length >= 2) {
+        if (dark) {
           afrah.current.style.color = 'white'
           for (let i = 0; menu_container.current.children.length > i; i++) {
             menu_container.current.children[i].style.background = "white"
@@ -181,8 +189,8 @@ export default function header() {
       } else {
         document.querySelector('.header_nav').style.background = "transparent"
         document.querySelector('.header_nav').style.position = "absolute"
-        document.querySelector('.header_nav').style.zIndex = "6"
-        if (pathname.length >= 2) {
+        document.querySelector('.header_nav').style.zIndex = "100002"
+        if (dark) {
           afrah.current.style.color = 'black'
           for (let i = 0; menu_container.current.children.length > i; i++) {
             menu_container.current.children[i].style.background = "black"
@@ -197,7 +205,7 @@ export default function header() {
     <>
       <div className='header_nav' >
         <div className={myFont.className + ' header_afrah'} style={{ fontWeight: "600", letterSpacing: "0.3em", marginLeft: "5vw", textShadow: "0px 0px 4px black", }}>
-          <Link ref={afrah} style={{ textDecoration: "none", color: pathname.length < 2 ? 'white' : 'black' }} href="/" >AFRAH</Link>
+          <Link ref={afrah} style={{ textDecoration: "none", color: !dark ? 'white' : 'black' }} href="/" >AFRAH</Link>
         </div>
         <div className='header_links-wrapper' style={{}} >
           <ul className={font.className + ' header_links-container'} style={{ display: "flex", whiteSpace: "nowrap", width: "100%", justifyContent: "center", gap: "10%" }}>
@@ -236,7 +244,7 @@ export default function header() {
 
       </menu>
       <style>{`
-      .header_nav { position: fixed; height: 8vh; width: 100%; z-index: 3; display: flex; justify-content: space-between; color: white; align-items: center;  transition: 0.4s ease 0s; }
+      .header_nav { position: fixed; height: 8vh; width: 100%; z-index: 100002; display: flex; justify-content: space-between; color: white; align-items: center;  transition: 0.4s ease 0s; }
       .header_afrah { font-weight: 600; letter-spacing: 0.3em; margin-left: 5vw; text-shadow: 0px 0px 4px black;  }
       .header_links-wrapper {  }
       .header_links-container { display: flex; white-space: nowrap; width: 100%; justify-content: center; gap: 10%;  }
@@ -246,19 +254,19 @@ export default function header() {
       .header_link { list-style-type: none; font-weight: bold; text-shadow: 0px 0px 4px black;  }
       .header_link { list-style-type: none; font-weight: bold; text-shadow: 0px 0px 4px black;  }
       .header_connect { margin-right: 5vw; font-size: 2vw; text-shadow: 0px 0px 4px black;  }
-      .header_nav a { color: ${pathname.length < 2 ? 'white' : 'black'} ; text-decoration : none }
+      .header_nav a { color: ${!dark ? 'white' : 'black'} ; text-decoration : none }
       .header_connect a { text-decoration : underline }
       .header_menu {display: none}
       .header_menu-clickable {display: none}
 
 
       @media (max-width: 1200px) {
-        .header_menu {pointer-events: ${isOpen ? 'all' : 'none'} ;display: block; background: black; width: 100%; height: 100vh; position: fixed; top: ${isOpen ? "calc(8vh)" : '11.5vh'}; transition: 0.4s ease 0s; opacity: ${isOpen ? 1 : 0}; z-index :4 }
+        .header_menu {pointer-events: ${isOpen ? 'all' : 'none'} ;display: block; background: black; width: 100%; height: 100vh; position: fixed; top: ${isOpen ? "calc(8vh)" : '11.5vh'}; transition: 0.4s ease 0s; opacity: ${isOpen ? 1 : 0}; z-index :100002 }
         .header_links-wrapper {display: none  }
         .header_connect { display: none  }
         .header_menu-clickable { cursor: pointer; width: 8vh; height: 8vh; display: flex; flex-direction: column; justify-content: center; align-items: center;  }
         .header_menu-container { height: 22.5%; width: 31%; position: relative; display: flex; flex-direction: column; justify-content: space-between;  }
-        .header_menu-lines { transition: 0.2s ease 0s; width: 100%; height: calc(50% / 3); background: ${pathname.length < 2 ? 'white' : 'black'} }
+        .header_menu-lines { transition: 0.2s ease 0s; width: 100%; height: calc(50% / 3); background: ${!dark ? 'white' : 'black'} }
         .header_menu-lines:nth-child(1){transform: ${isOpen ? 'rotate(45deg) translateY(150%) translateX(19%)' : 'none'}}
         .header_menu-lines:nth-child(2){transform: ${isOpen ? 'rotate(-45deg) translateX(4%)' : 'none'}}
         .header_menu-lines:nth-child(3){opacity: ${isOpen ? 0 : 1}}

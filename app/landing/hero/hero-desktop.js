@@ -72,7 +72,7 @@ export default function Hero() {
 
             <style>{`
 
-                .d-hero-content-wrapper {z-index: 3; width: 100%; height: 100vh; overflow: hidden; position: relative; display: flex; background-position: center; background-size: cover;  background : black }
+                .d-hero-content-wrapper {z-index: 100001; width: 100%; height: 100vh; overflow: hidden; position: relative; display: flex; background-position: center; background-size: cover;  background : black }
                 .loading { height: 1%; width: 0; background: transparent; position: absolute; border-radius: 50px; margin-left: -50px;  }
                 .left-wrapper { width: 45%; color: white }
                 .right-wrapper { width: 55%; }
