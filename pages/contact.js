@@ -97,6 +97,8 @@ export default function Form() {
           display: 'flex',
           flexDirection: "row",
           height: '100%',
+          width:"100%",
+          maxWidth:"1150px",
           gap: '100px',
           textAlign: "center",
           justifyContent: 'center',
@@ -126,6 +128,7 @@ export default function Form() {
             height: 500px !important; 
             width: 80% !important;
             margin-top:100px;
+            
           }
         }
         @media  (max-width: 700px){
@@ -168,7 +171,7 @@ export default function Form() {
             margin-top:730px !important;
           }
         }
-        @media (max-height: 720px) {
+        @media (max-height: 750px) {
           
           #father{
            
