@@ -6,9 +6,10 @@ import Image from 'next/image';
 import Fix from '../functions/planning/3rd_section';
 import CustomButton from '@/functions/planning/CustomButton';
 import '../app/globals.css'
-import Footer from '@/app/layout/footer';
+import Layout from '@/app/layout/layout';
 import localFont from "next/font/local";
 import { Padding } from '@mui/icons-material';
+import Instagram from '@/app/landing/instagram/instagram';
 const myFont = localFont({ src: '../pages/planyourwedding/BonVivant-Regular.otf' });
 export default function Form() {
   const [message, setMessage] = useState('');
@@ -43,69 +44,89 @@ export default function Form() {
   };
 
   return (
-    <div style={{
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: "100%",
-      Width: "100vw",
-      left: 0,
-      top: 0,
-      filter: 'sepia(0.3) brightness(90%)',
-      overflow: "hidden",
-    }} >
-      {/* <h1>Welcome to my Next.js app</h1>
+    <>
+      <Layout>
+
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: "100%",
+          Width: "100%",
+          left: 0,
+          top: 0,
+          overflow: "hidden",
+          filter: 'sepia(0.3) brightness(90%)'
+        }} >
+          {/* <h1>Welcome to my Next.js app</h1>
       <button onClick={fetchData}>Fetch from Backend</button>
       {message && <p>{message}</p>} */}
 
 
-      <ContactForm saveData={saveData} />
-      <Gallery />
-      <Fix />
-      <div id='father' style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100vh",
-        width: "100vw",
-        background: 'linear-gradient( to bottom,  #ffffff,#d0e6e4)',
-        backgroundRepeat: "no-repeat",
-        backgroundSize: 'cover',
-        zIndex: "2",
-        marginTop: -400,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 0,
+          <ContactForm saveData={saveData} />
+          <Gallery />
+          <Fix />
+          <div id='father' style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100vh",
+            width: "100%",
+            background: 'linear-gradient( to bottom,  #ffffff,#d0e6e4)',
+            backgroundRepeat: "no-repeat",
+            backgroundSize: 'cover',
+            zIndex: "2",
+            marginTop: -400,
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 0,
 
-      }}
-      >
-        <div id="title" style={{ top: 0, left: 0, display: "flex", flexDirection: "column", marginTop: "50px", zIndex: "2", marginBottom: "50px", alignItems: "center" }}><h2 style={{ fontSize: "larger" }}>THE BLOG</h2>
-          <br></br>
-          <p
-            className={myFont.className}
-            style={{
-              fontSize: 36,
-              letterSpacing: ".4rem",
-              transform: "rotate(-2deg)",
-              marginBottom: 10,
-              alignSelf: "center",
-            }}
-            id="myfont"
+          }}
           >
-            The Latest
-          </p></div>
-        <div id="gallery" style={{
-          display: 'flex',
-          flexDirection: "row",
-          height: '100%',
-          gap: '100px',
-          textAlign: "center",
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginTop: '-200px',
-          zIndex: "2",
-          paddingTop: "0",
-        }}><style>{`
+            <div id="title" style={{ top: 0, left: 0, display: "flex", flexDirection: "column", marginTop: "50px", zIndex: "2", marginBottom: "50px", alignItems: "center" }}><h2 style={{ fontSize: "larger" }}>THE BLOG</h2>
+              <br></br>
+              <p
+                className={myFont.className}
+                style={{
+                  fontSize: 36,
+                  letterSpacing: ".4rem",
+                  transform: "rotate(-2deg)",
+                  marginBottom: 10,
+                  alignSelf: "center",
+                }}
+                id="myfont"
+              >
+                The Latest
+              </p></div>
+            <div id="gallery" style={{
+              display: 'flex',
+              flexDirection: "row",
+              height: '100%',
+              gap: '100px',
+              textAlign: "center",
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: '-200px',
+              zIndex: "2",
+              paddingTop: "0",
+            }}>
+              <div className="child" style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center 0;", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100%- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
+                <div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px" }}>
+                  <p style={{ fontSize: "20px", textAlign: "center", lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal" }}>top five tips for budgeting your wedding</p>
+                  <button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button></div></div>
+              <div className="child" style={{ backgroundImage: "url('/2b.jpg')", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100%- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}><div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px" }}><p style={{ fontSize: "20px", lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal" }}> pro wedding day timeline MADE BY PLANNERS  </p><button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button ></div></div>
+              <div className="child" style={{ backgroundImage: "url('/3b.jpg')", height: "500px", width: "calc(100%- 250px / 3)", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}><div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px", paddingTop: "20px" }}><p style={{ fontSize: "20px", lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal" }}> WEDDING PLANNER VS. VENUE MANAGER and what the differences are</p><button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button></div></div>
+            </div>
+
+          </div>
+          <Instagram />
+        </div>
+      </Layout>
+
+
+
+
+      <style>{`
         @media  (max-width: 1350px){
           #title{
             //margin-top:20px !important;
@@ -188,39 +209,6 @@ export default function Form() {
         
         }
         `}</style>
-          <div className="child" style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center 0;", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
-            <div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px" }}>
-              <p style={{ fontSize: "20px", textAlign: "center", lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal" }}>top five tips for budgeting your wedding</p>
-              <button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button></div></div>
-          <div className="child" style={{ backgroundImage: "url('/2b.jpg')", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100vw- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}><div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px" }}><p style={{ fontSize: "20px" , lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal" }}> pro wedding day timeline MADE BY PLANNERS  </p><button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button ></div></div>
-          <div className="child" style={{ backgroundImage: "url('/3b.jpg')", height: "500px", width: "calc(100vw- 250px / 3)", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}><div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px",paddingTop:"20px" }}><p style={{ fontSize: "20px", lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal"  }}> WEDDING PLANNER VS. VENUE MANAGER and what the differences are</p><button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button></div></div>
-        </div>
-
-      </div>
-      <div style={{
-        display: "flex",
-        height: "50vh",
-        width: "100vw",
-        left: 0,
-        bottom: 0,
-        background: 'white',
-        backgroundPosition: "center",
-        backgroundSize: 'cover',
-        zIndex: "2",
-
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: 'center',
-        alignItems: 'center',
-
-      }}>
-        <CustomButton
-          label="YOU'RE FOLLOWING ON INSTAGRAM, RIGHT?"
-          isActive={false}
-        // onClick={() => fileInputRef.current.click()}
-        />
-      </div>
-      <Footer />
-    </div>
+    </>
   );
 }
