@@ -42,8 +42,9 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                     // border: "1px solid black"
-                }}
-            />
+                }}>
+                <div style={{ width: "calc(100% - 1vw)", height: "calc(100% - 1.5vw)", border: "2px solid white", position: "relative", transition: '0.4 opacity' }} />
+            </div>
             {data.map((e, i) => (
                 <div
                     key={i}
@@ -65,9 +66,8 @@ export default function slides({ wrapper, container, record, titles, subtitle, m
                         alignItems: "center",
                         justifyContent: "center"
                         // border: "1px solid black"
-                    }}
-                >
-                    <div style={{ width: "calc(100% - 1vw)", height: "calc(100% - 1.5vw)", border: "2px solid white", position: "relative" , }}>
+                    }}>
+                    <div style={{ width: "calc(100% - 1vw)", height: "calc(100% - 1.5vw)", border: "2px solid white", position: "relative", }}>
                         <div style={{ color: "white", width: "100%", height: "30%", position: "absolute", bottom: 0 }}>
                             <div style={{ width: '15%', height: "3%", background: "white", marginLeft: "5%", boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.4)" }} />
                             <h3 style={{ width: "90%", marginLeft: "5%", marginTop: "5%", marginBottom: "2%", fontWeight: "normal", fontSize: "0.7vw", textShadow: 'rgba(0, 0, 0, 0.5) 0px 0px 15px' }} >{e.location}</h3>

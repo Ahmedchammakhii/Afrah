@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import connect_data from '@/data/landing/connect_data'
 import iteration from '@/functions/landing/connect_functions';
-
+import Button from '@/sharedComponents/vawzen/button/button';
 import { Jost, Playfair_Display } from 'next/font/google'
 import localFont from "next/font/local";
 
@@ -51,10 +51,14 @@ export default function planning() {
                     </div>
                     <div className='plan_button-container'  >
                         <div className='plan_wedding'  >
-                            I'M PLANING A WEDDING
+                            <Button color={['white', 'black']}>
+                                I'M PLANING A WEDDING
+                            </Button>
                         </div>
                         <div className='plan_event'  >
-                            I'M PLANING AN EVENT
+                        <Button color={['white', 'black']}>
+                                I'M PLANING A WEDDING
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -84,7 +88,7 @@ export default function planning() {
             .plan_content-wrapper { height: 180vw; width: 100vw; }
             .plan_left{width: 50vw;max-height: none;height:62vw;position: relative;}
             .plan_wrapper{flex-direction : column;max-height: none;}
-            .plan_signature-container { width: 50vw; height: 100%; position: absolute; left: 50vw; transform: rotate(-5deg); margin-top: 60%; display: block }
+            .plan_signature-container {pointer-events:none;  width: 50vw; height: 100%; position: absolute; left: 50vw; transform: rotate(-5deg); margin-top: 60%; display: block }
             .plan_signature-one { font-size: 17.7vw;  }
             .plan_signature-two { font-size: 17.7vw; margin-top: -15vw; margin-left: -8vw;  }
             .plan_right-container {  width: 100vw; margin-top: 25vw; height: 100vh; position: absolute; display: flex; justify-content: start; flex-direction: column;  }

@@ -18,6 +18,7 @@ export function iteration(container, record, wrapper) {
 
 
 
+    container.current.children[0].children[0].style.opacity = 0
 
 
     for (let i = 1; container.current.children.length > i; i++) {
@@ -115,7 +116,6 @@ export function animEnd(wrapper, container, data, record, titles, subtitle, matt
                 titles.current.children[i].children[0].style.transform = "none"
                 titles.current.children[i].children[0].style.opacity = "1";
             }
-
             if (titles.current.children.length - 2 === i) {
                 titles.current.children[i].children[0].style.opacity = "1";
             }
@@ -143,7 +143,7 @@ export function animEnd(wrapper, container, data, record, titles, subtitle, matt
     container.current.children[0].style.animationTimingFunction = "";
 
 
-
+    container.current.children[0].children[0].style.opacity = 1
 
     const arr = []
     let i = counter
