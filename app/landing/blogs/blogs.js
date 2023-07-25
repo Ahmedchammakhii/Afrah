@@ -1,6 +1,6 @@
 import React from 'react'
 import { Jost, Playfair_Display } from 'next/font/google'
-
+import Button from '@/sharedComponents/vawzen/button/button';
 const font = Jost({ subsets: ['latin'], weight: '500' });
 const font3 = Jost({ subsets: ['latin'], weight: '400' });
 const font2 = Playfair_Display({ subsets: ['latin'], weight: '400' });
@@ -33,10 +33,12 @@ export default function blogs() {
                             <div className={font3.className + ' blogs_paragraphe'} >
                                 TOP 5 TIPS FOR BUDGETING YOUR WEDDING
                             </div>
-                            <div className={font2.className + ' blogs_button-container'} >
-                                <div className='blogs_read'  >
-                                    <span className='blogs_span' >a</span>  read more <span className='blogs_span' >a</span>
-                                </div>
+                            <div className={font2.className + ' blogs_button-container blogs_button-container-first'}   >
+                                <Button color={['black', '#dbe6e5']}>
+                                    <div className='blogs_read'  >
+                                        read more
+                                    </div>
+                                </Button>
                             </div>
                         </div>
                         <div className='blogs_img-container' >
@@ -45,10 +47,12 @@ export default function blogs() {
                             <div className={font3.className + ' blogs_paragraphe'} >
                                 PRO WEDDING DAY TIMELINE -MADE BY PLANNERS | WEDDING DAY TIMELINES FOR FIRST LOOK AND NO FIRST LOOK
                             </div>
-                            <div className={font2.className + ' blogs_button-container'} >
-                                <div className='blogs_read'  >
-                                    <span className='blogs_span' >a</span>  read more <span className='blogs_span' >a</span>
-                                </div>
+                            <div className={font2.className + ' blogs_button-container'}   >
+                                <Button color={['black', '#dbe6e5']}>
+                                    <div className='blogs_read'  >
+                                        read more
+                                    </div>
+                                </Button>
                             </div>
                         </div>
                         <div className='blogs_img-container' >
@@ -57,10 +61,12 @@ export default function blogs() {
                             <div className={font3.className + ' blogs_paragraphe'} >
                                 WEDDING PLANNER VS. VENUE MANAGER AND WHAT THE DIFFERENCES ARE
                             </div>
-                            <div className={font2.className + ' blogs_button-container'} >
-                                <div className='blogs_read'  >
-                                    <span className='blogs_span' >a</span>  read more <span className='blogs_span' >a</span>
-                                </div>
+                            <div className={font2.className + ' blogs_button-container'}   >
+                                <Button color={['black', '#dbe6e5']}>
+                                    <div className='blogs_read'  >
+                                        read more
+                                    </div>
+                                </Button>
                             </div>
                         </div>
 
@@ -81,9 +87,8 @@ export default function blogs() {
             .blogs_img-container { height: 100%; width: calc((100% / 3) - (5% / 3)); display: flex; flex-direction: column; align-items: center;  }
             .blogs_img { width: 100%; height: 70%; object-fit: cover; object-position: center;  }
             .blogs_paragraphe { line-height: 1.5; letter-spacing: 0.1em; font-size: clamp(10px, 1.19vw, 15px); width: 90%; height: 15%; text-align: center; display: flex; align-items: center;  }
-            .blogs_button-container { display: flex; justify-content: center;  }
-            .blogs_read { white-space: nowrap; letter-spacing: 0.3em; line-height: 2.8; font-size: clamp(10px, 1.15vw, 15px); padding: 0.4% 10%; color: white; font-style: italic; background: black;  }
-            .blogs_span { color: black; font-size: clamp(6px, 0.85vw, 10px);  }
+            .blogs_button-container { display: flex; justify-content: center; border: 1px solid black ; width: 40%; height: 7% }
+            .blogs_read { white-space: nowrap; letter-spacing: 0.3em; line-height: 2.8; font-size: clamp(10px, 1.15vw, 15px); font-style: italic;}
             
 
             @media (max-width: 800px) {
@@ -97,6 +102,8 @@ export default function blogs() {
 
                 .blogs_img-container { height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center;  }
                 .blogs_paragraphe { width: 80%; font-size: 4vw; height: auto; padding: 8vw 0vw; }
+                .blogs_button-container { height: 12% }
+                .blogs_button-container-first { height: 5.5% }
                 .blogs_read {  padding: 1vw 5vw; font-size: 4vw;}
 
             }
