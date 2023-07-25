@@ -6,10 +6,10 @@ import Image from 'next/image';
 import Fix from '../functions/planning/3rd_section';
 import CustomButton from '@/functions/planning/CustomButton';
 import '../app/globals.css'
-import Layout from '@/app/layout/layout';
+import Layout from '@/sharedComponents/layout/layout';
+import Instagram from '@/sharedComponents/instagram/instagram';
 import localFont from "next/font/local";
 import { Padding } from '@mui/icons-material';
-import Instagram from '@/app/landing/instagram/instagram';
 const myFont = localFont({ src: '../pages/planyourwedding/BonVivant-Regular.otf' });
 export default function Form() {
   const [message, setMessage] = useState('');

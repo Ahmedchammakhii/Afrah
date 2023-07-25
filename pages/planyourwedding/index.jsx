@@ -6,8 +6,7 @@ import Deposit from "./deposit";
 import Parallaxe from "./parallaxesection";
 import { useEffect, useState } from "react";
 import Hero2 from "./hero/hero2";
-import Footer from "@/app/layout/footer";
-import Layout from "@/app/layout/layout";
+import Layout from "@/sharedComponents/layout/layout";
 const myFont = localFont({ src: "./BonVivant-Regular.otf" });
 
 export default function Planyourwedding() {

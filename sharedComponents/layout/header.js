@@ -73,22 +73,24 @@ export default function header({ dark }) {
       if (innerWidth > 1200) {
 
         if (window.scrollY >= (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "transparent") {
-          document.querySelector('.header_nav').style.background = "black"
           document.querySelector('.header_nav').style.zIndex = "100000"
-          document.querySelector('.header_nav').style.position = "fixed"
-          if (!dark) {
-            if (pathname.length < 2) {
-              document.querySelector('.three-container').style.display = "block"
-            }
-          } else {
-            afrah.current.style.color = 'white'
-            document.querySelector('.header_connect').style.color = "white"
-            document.querySelector('.header_connect').children[0].style.color = "white"
+          setTimeout(() => {
+            document.querySelector('.header_nav').style.background = "black"
+            document.querySelector('.header_nav').style.position = "fixed"  
+            if (!dark) {
+              if (pathname.length < 2) {
+                document.querySelector('.three-container').style.display = "block"
+              }
+            } else {
+              afrah.current.style.color = 'white'
+              document.querySelector('.header_connect').style.color = "white"
+              document.querySelector('.header_connect').children[0].style.color = "white"
 
-            for (let i = 0; document.querySelector('.header_links-container').children.length > i; i++) {
-              document.querySelector('.header_links-container').children[i].children[0].style.color = "white"
+              for (let i = 0; document.querySelector('.header_links-container').children.length > i; i++) {
+                document.querySelector('.header_links-container').children[i].children[0].style.color = "white"
+              }
             }
-          }
+          }, 100);
         } else if (window.scrollY < (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "black") {
           if (!dark) {
             if (pathname.length < 2) {
