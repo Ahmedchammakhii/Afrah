@@ -56,7 +56,7 @@ export default function Hero() {
             }} ref={loader} className="loading" />
 
             <div className='left-wrapper' style={{ display: "flex", flexDirection: "column", justifyContent: "center", zIndex: 2, textShadow: "0px 0px 15px rgba(0,0,0,0.5)", marginTop: "2vw" }}>
-                <Content refs={[matta, titles, subtitle]} />
+                <Content refs={[matta, titles, subtitle]} data={data} />
             </div>
             <div className='right-wrapper' >
                 <div className='right-container' >

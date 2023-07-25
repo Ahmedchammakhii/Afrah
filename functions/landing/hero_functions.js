@@ -1,6 +1,7 @@
 export let counter = 1
 
 export function iteration(container, record, wrapper) {
+
     container.current.children[1].style.background = "transparent";
     container.current.children[1].style.boxShadow = "none";
 
@@ -78,6 +79,11 @@ export function animEnd(wrapper, container, data, record, titles, subtitle, matt
     document.querySelector('.left-wrapper').style.opacity = 1
     document.querySelector('.left-wrapper').style.filter = "none"
     document.querySelector('.left-wrapper').style.transform = "none"
+
+    subtitle.current.children[0].textContent = data[counter - 1 === -1 ? data.length - 1 : counter - 1].location
+    titles.current.children[0].children[0].textContent = data[counter - 1 === -1 ? data.length - 1 : counter - 1].first_title
+    titles.current.children[1].children[0].textContent = data[counter - 1 === -1 ? data.length - 1 : counter - 1].second_title
+    titles.current.children[2].children[0].textContent = data[counter - 1 === -1 ? data.length - 1 : counter - 1].desc
 
 
     subtitle.current.children[0].style.transition = "none";
