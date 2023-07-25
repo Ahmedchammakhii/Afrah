@@ -115,7 +115,9 @@ export default function header({ dark }) {
           }
         }
       } else {
+
         if (window.scrollY >= ((innerHeight * 0.75) - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "transparent") {
+          document.querySelector('.header_nav').style.transition = 'none'
           document.querySelector('.header_nav').style.background = "black"
           document.querySelector('.header_nav').style.zIndex = "100000"
           document.querySelector('.header_nav').style.position = "fixed"
@@ -130,11 +132,13 @@ export default function header({ dark }) {
             }
           }
         } else if (window.scrollY < ((innerHeight * 0.75) - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "black") {
+
           if (!dark) {
             if (pathname.length < 2) {
 
               document.querySelector('.three-container').style.display = "none"
-            } document.querySelector('.header_nav').style.background = "transparent"
+            }
+            document.querySelector('.header_nav').style.background = "transparent"
             document.querySelector('.header_nav').style.position = "absolute"
             document.querySelector('.header_nav').style.zIndex = "100002"
 

@@ -214,7 +214,6 @@ export default function App() {
     <Canvas
       style={{ position: 'absolute', background: 'transparent', height: "60vh", filter: " brightness(90%)" }}
       onCreated={({ gl }) => {
-        console.log("aze")
         gl.setClearColor('black');
         gl.setSize([resolution[0]], resolution[1]);
       }}

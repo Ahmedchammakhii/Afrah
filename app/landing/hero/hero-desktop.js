@@ -53,19 +53,15 @@ export default function Hero() {
             <div onAnimationIteration={() => {
                 iteration(container, record, wrapper);
                 // animation: loading 5s linear infinite;
-            }}
-                ref={loader} className="loading" />
+            }} ref={loader} className="loading" />
 
             <div className='left-wrapper' style={{ display: "flex", flexDirection: "column", justifyContent: "center", zIndex: 2, textShadow: "0px 0px 15px rgba(0,0,0,0.5)", marginTop: "2vw" }}>
                 <Content refs={[matta, titles, subtitle]} />
             </div>
             <div className='right-wrapper' >
-
                 <div className='right-container' >
-
                     <Slides container={container} wrapper={wrapper} record={record} titles={titles} subtitle={subtitle} matta={matta} />
                     <Record record={record} />
-
                 </div>
             </div>
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import { onMouseEnter, onMouseLeave } from './button_functions'
 export default function button({ children, color, clicked, duration }) {
     return (

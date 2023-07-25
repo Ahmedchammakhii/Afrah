@@ -156,6 +156,12 @@ export function animEnd(wrapper, container, data, record, titles, subtitle, matt
                 container.current.children[i + 1].style.background = data[i].background;
                 container.current.children[i + 1].style.backgroundPosition = "30% center"
                 container.current.children[i + 1].style.backgroundSize = "cover"
+
+
+                container.current.children[i + 1].children[0].children[0].children[1].textContent = data[i].location
+                container.current.children[i + 1].children[0].children[0].children[2].textContent = data[i].first_title
+                container.current.children[i + 1].children[0].children[0].children[3].textContent = data[i].second_title
+
             }
             ; i++
         };
@@ -163,22 +169,22 @@ export function animEnd(wrapper, container, data, record, titles, subtitle, matt
     else if (counter === 1) {
         while (container.current.children.length > i) {
             if (i <= data.length - 1) {
-                arr.push(data[i].background)
+                arr.push(data[i])
             }
             ; i++
         };
         for (let i = 0; i <= counter - 1; i++) {
-            arr.push(data[i].background)
+            arr.push(data[i])
         }
     } else {
         while (container.current.children.length > i) {
             if (i <= data.length - 1) {
-                arr.push(data[i].background)
+                arr.push(data[i])
             }
             ; i++
         }
         for (let i = 0; i <= counter - 1; i++) {
-            arr.push(data[i].background)
+            arr.push(data[i])
         }
     }
 
@@ -186,9 +192,14 @@ export function animEnd(wrapper, container, data, record, titles, subtitle, matt
     arr.forEach((element, index) => {
         container.current.children[index + 1].style.transition = "none";
         container.current.children[index + 1].style.transform = "none";
-        container.current.children[index + 1].style.background = element;
+        container.current.children[index + 1].style.background = element.background;
         container.current.children[index + 1].style.backgroundPosition = "30% center";
         container.current.children[index + 1].style.backgroundSize = "cover";
+
+        container.current.children[index + 1].children[0].children[0].children[1].textContent = element.location
+        container.current.children[index + 1].children[0].children[0].children[2].textContent = element.first_title
+        container.current.children[index + 1].children[0].children[0].children[3].textContent = element.second_title
+
     });
 
 
