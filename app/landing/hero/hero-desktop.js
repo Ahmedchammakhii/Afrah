@@ -6,73 +6,76 @@ import { iteration, counter } from '@/functions/landing/hero_functions';
 import { Expletus_Sans } from 'next/font/google';
 import Record from './record';
 import Content from './content';
+import { threeIsActive } from '@/functions/layout/layout_functions';
 const font = Expletus_Sans({ subsets: ['latin'], weight: '400' })
 
 export default function Hero() {
-    const container = useRef(null);
-    const wrapper = useRef(null);
-    const veil = useRef(null);
-    const loader = useRef(null);
-    const subtitle = useRef(null);
-    const titles = useRef(null);
-    const record = useRef(null);
-    const matta = useRef(null);
+  const container = useRef(null);
+  const wrapper = useRef(null);
+  const veil = useRef(null);
+  const loader = useRef(null);
+  const subtitle = useRef(null);
+  const titles = useRef(null);
+  const record = useRef(null);
+  const matta = useRef(null);
 
 
 
 
 
-    useEffect(() => {
-        if (innerWidth > 1200) {
-          subtitle.current.children[0].style.transform = "none";
-          for (let i = 0; titles.current.children.length > i; i++) {
-            setTimeout(() => {
-              titles.current.children[i].children[0].style.transform = "none";
-            }, Number(i + 1 + "00"));
-          }
-        }
-    
-        const intervalId = setInterval(() => {
-            iteration(container, record, wrapper);
-        }, 10000); 
-    
-        return () => {
-          clearInterval(intervalId); // Cleanup to avoid memory leaks
-        };
-      }, []);
+  useEffect(() => {
+    if (innerWidth > 1200) {
+      subtitle.current.children[0].style.transform = "none";
+      for (let i = 0; titles.current.children.length > i; i++) {
+        setTimeout(() => {
+          titles.current.children[i].children[0].style.transform = "none";
+        }, Number(i + 1 + "00"));
+      }
+    }
+
+    const intervalId = setInterval(() => {
+      if (!threeIsActive) {
+        iteration(container, record, wrapper);
+      }
+    }, 10000);
+
+    return () => {
+      clearInterval(intervalId); // Cleanup to avoid memory leaks
+    };
+  }, []);
 
 
-    return (
-        <div className={'d-hero-content-wrapper ' + font.className}>
-            <div ref={wrapper} style={{
-                transition: "scale 1s cubic-bezier(.69,.26,0,1), filter 1s",
-                width: "100%", height: "100vh", position: "absolute", zIndex: 0,
-                background: data[data.length - 1].background,
-                backgroundRepeat: "no-repeat", backgroundSize: "cover"
-            }} />
+  return (
+    <div className={'d-hero-content-wrapper ' + font.className}>
+      <div ref={wrapper} style={{
+        transition: "scale 1s cubic-bezier(.69,.26,0,1), filter 1s",
+        width: "100%", height: "100vh", position: "absolute", zIndex: 0,
+        background: data[data.length - 1].background,
+        backgroundRepeat: "no-repeat", backgroundSize: "cover"
+      }} />
 
-            <div onTransitionEnd={() =>
-                //  loader.current.style.animation = "loading 5s linear infinite"
-                ""
-            } ref={veil} className='veil'
-                style={{ transition: "1s cubic-bezier(.69,.26,0,1)", position: "absolute", background: "white", width: "0", height: "100vh", zIndex: 9999999999, right: 0 }} />
-            <div onAnimationIteration={() => {
-                // iteration(container, record, wrapper);
-                // animation: loading 5s linear infinite;
-            }} ref={loader} className="loading" />
+      <div onTransitionEnd={() =>
+        //  loader.current.style.animation = "loading 5s linear infinite"
+        ""
+      } ref={veil} className='veil'
+        style={{ transition: "1s cubic-bezier(.69,.26,0,1)", position: "absolute", background: "white", width: "0", height: "100vh", zIndex: 9999999999, right: 0 }} />
+      <div onAnimationIteration={() => {
+        // iteration(container, record, wrapper);
+        // animation: loading 5s linear infinite;
+      }} ref={loader} className="loading" />
 
-            <div className='left-wrapper' style={{ display: "flex", flexDirection: "column", justifyContent: "center", zIndex: 2, textShadow: "0px 0px 15px rgba(0,0,0,0.5)", marginTop: "2vw" }}>
-                <Content refs={[matta, titles, subtitle]} data={data} />
-            </div>
-            <div className='right-wrapper' >
-                <div className='right-container' >
-                    <Slides container={container} wrapper={wrapper} record={record} titles={titles} subtitle={subtitle} matta={matta} />
-                    <Record record={record} />
-                </div>
-            </div>
+      <div className='left-wrapper' style={{ display: "flex", flexDirection: "column", justifyContent: "center", zIndex: 2, textShadow: "0px 0px 15px rgba(0,0,0,0.5)", marginTop: "2vw" }}>
+        <Content refs={[matta, titles, subtitle]} data={data} />
+      </div>
+      <div className='right-wrapper' >
+        <div className='right-container' >
+          <Slides container={container} wrapper={wrapper} record={record} titles={titles} subtitle={subtitle} matta={matta} />
+          <Record record={record} />
+        </div>
+      </div>
 
 
-            <style>{`
+      <style>{`
 
                 .d-hero-content-wrapper {z-index: 100001; width: 100%; height: 100vh; overflow: hidden; position: relative; display: flex; background-position: center; background-size: cover;  background : black }
                 .loading { height: 1%; width: 0; background: transparent; position: absolute; border-radius: 50px; margin-left: -50px;  }
@@ -116,7 +119,7 @@ export default function Hero() {
               }
               
             `}</style>
-        </div >
-    );
+    </div >
+  );
 }
 

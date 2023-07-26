@@ -6,7 +6,7 @@ export default function button({ children, color, clicked, duration }) {
         <>
             <div className='reusable-button_content-wrapper' >
                 <div onMouseEnter={(event) => onMouseEnter(event, clicked)} onMouseLeave={(event) => onMouseLeave(event, clicked)}
-                    className='reusable-button_wrapper' style={{ transition: `transform ${duration ? duration : 0.3}s;` }} >
+                    className='reusable-button_wrapper' style={{ transition: `transform ${duration ? duration : 0.3}s` }} >
                     <div className='reusable-button_light-veil' style={{ background: Array.isArray(color) ? color[0] : 'transparent' }} />
                     <div className='reusable-button_dark-veil' style={{ background: Array.isArray(color) ? color[1] : color, transition: `border-radius ${duration ? duration * 0.7 : 0.3}s, top ${duration ? duration * 0.7 : 0.3}s` }} />
 

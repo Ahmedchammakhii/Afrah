@@ -45,7 +45,7 @@ export default function Form() {
 
   return (
     <>
-      <Layout>
+      <Layout dark={true}>
 
         <div style={{
           display: "flex",

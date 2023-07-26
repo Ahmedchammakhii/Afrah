@@ -1,217 +1,20 @@
-"use client";
 
-import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation'
-
-export const scrollTrigger = (ref, f, values, customStart, customEnd) => {
-  return () => {
-    let start = customStart || ref.current.offsetTop - window.innerHeight
-    let end = customEnd || start + window.innerHeight + ref.current.clientHeight;
-    const percentages = []
-
-
-    if (start > window.scrollY && ref.current.store) {
-      for (let i = 0; values.length > i; i++) {
-        percentages.push(values[i][0])
-      }
-      f(percentages, ref.current)
-      ref.current.store = false
-    } else if (window.scrollY > end && ref.current.store) {
-      for (let i = 0; values.length > i; i++) {
-        percentages.push(values[i][1])
-      }
-      f(percentages, ref.current);
-      ref.current.store = false
-    }
-    if (window.scrollY <= end && start <= window.scrollY) {
-      for (let i = 0; values.length > i; i++) {
-        percentages.push((((window.scrollY - start) / (end - start)) * ((values[i][1]) - (values[i][0]))) + (values[i][0]))
-      }
-      f(percentages, ref.current)
-      if (!ref.current.store) {
-        ref.current.store = true
-      }
-    }
-  }
-};
-
-export const scrollEvent = (f) => {
-
-  return () => {
-    window.addEventListener('scroll', () => {
-      if (Array.isArray(f)) {
-        for (let i = 0; f.length > i; i++) {
-          f[i]()
-        }
-      } else {
-        f()
-      }
-    });
-  }
-}
-
-const myFont = localFont({ src: "../../pages/planyourwedding/BonVivant-Regular.otf" });
 import localFont from "next/font/local";
 import { Jost } from 'next/font/google'
 
 const font = Jost({ subsets: ['latin'], weight: '600' })
+const myFont = localFont({ src: "../../pages/planyourwedding/BonVivant-Regular.otf" });
 
 
-export default function header({ dark }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0)
-  const afrah = useRef(null)
-  const menu_container = useRef(null)
-  const pathname = usePathname()
-
-  useEffect(scrollEvent(() => setScrollY(window.scrollY)))
-
-  useEffect(() => {
-    if (!isOpen) {
-      if (innerWidth > 1200) {
-
-        if (window.scrollY >= (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "transparent") {
-          document.querySelector('.header_nav').style.zIndex = "100000"
-          setTimeout(() => {
-            document.querySelector('.header_nav').style.background = "black"
-            document.querySelector('.header_nav').style.position = "fixed"  
-            if (!dark) {
-              if (pathname.length < 2) {
-                document.querySelector('.three-container').style.display = "block"
-              }
-            } else {
-              afrah.current.style.color = 'white'
-              document.querySelector('.header_connect').style.color = "white"
-              document.querySelector('.header_connect').children[0].style.color = "white"
-
-              for (let i = 0; document.querySelector('.header_links-container').children.length > i; i++) {
-                document.querySelector('.header_links-container').children[i].children[0].style.color = "white"
-              }
-            }
-          }, 100);
-        } else if (window.scrollY < (innerHeight - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "black") {
-          if (!dark) {
-            if (pathname.length < 2) {
-              document.querySelector('.three-container').style.display = "none"
-            }
-            document.querySelector('.header_nav').style.background = "transparent"
-            document.querySelector('.header_nav').style.position = "absolute"
-            document.querySelector('.header_nav').style.zIndex = "100002"
-
-          } else {
-            afrah.current.style.color = 'black'
-            document.querySelector('.header_connect').style.color = "black"
-            document.querySelector('.header_connect').children[0].style.color = "black"
-            for (let i = 0; document.querySelector('.header_links-container').children.length > i; i++) {
-              document.querySelector('.header_links-container').children[i].children[0].style.color = "black"
-            }
-            document.querySelector('.header_nav').style.background = "transparent"
-            document.querySelector('.header_nav').style.opacity = "0"
-            setTimeout(() => {
-              document.querySelector('.header_nav').style.opacity = "1"
-              document.querySelector('.header_nav').style.position = "absolute"
-              document.querySelector('.header_nav').style.zIndex = "100002"
-            }, 400);
-          }
-        }
-      } else {
-
-        if (window.scrollY >= ((innerHeight * 0.75) - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "transparent") {
-          document.querySelector('.header_nav').style.transition = 'none'
-          document.querySelector('.header_nav').style.background = "black"
-          document.querySelector('.header_nav').style.zIndex = "100000"
-          document.querySelector('.header_nav').style.position = "fixed"
-          if (!dark) {
-            if (pathname.length < 2) {
-              document.querySelector('.three-container').style.display = "block"
-            }
-          } else {
-            afrah.current.style.color = 'white'
-            for (let i = 0; menu_container.current.children.length > i; i++) {
-              menu_container.current.children[i].style.background = "white"
-            }
-          }
-        } else if (window.scrollY < ((innerHeight * 0.75) - (innerHeight * 0.08)) && document.querySelector('.header_nav').style.background === "black") {
-
-          if (!dark) {
-            if (pathname.length < 2) {
-
-              document.querySelector('.three-container').style.display = "none"
-            }
-            document.querySelector('.header_nav').style.background = "transparent"
-            document.querySelector('.header_nav').style.position = "absolute"
-            document.querySelector('.header_nav').style.zIndex = "100002"
-
-          } else {
-            afrah.current.style.color = 'black'
-            for (let i = 0; menu_container.current.children.length > i; i++) {
-              menu_container.current.children[i].style.background = "black"
-            }
-
-            document.querySelector('.header_nav').style.background = "transparent"
-            document.querySelector('.header_nav').style.opacity = "0"
-            setTimeout(() => {
-              document.querySelector('.header_nav').style.opacity = "1"
-              document.querySelector('.header_nav').style.position = "absolute"
-              document.querySelector('.header_nav').style.zIndex = "100002"
-            }, 400);
-          }
-        }
-
-      }
-    }
-  }, [scrollY])
-
-  useEffect(() => {
-    if (isOpen) {
-      document.querySelector('.header_nav').style.transition = 'none'
-      document.querySelector('.header_nav').style.background = "black"
-      document.querySelector('.header_nav').style.zIndex = "100002"
-      document.querySelector('.header_nav').style.position = "fixed"
-
-      if (dark) {
-        afrah.current.style.color = 'white'
-        for (let i = 0; menu_container.current.children.length > i; i++) {
-          menu_container.current.children[i].style.background = "white"
-        }
-      }
-
-    } else {
-      document.querySelector('.header_nav').style.transition = '0.4s ease 0s'
-
-      if (window.scrollY >= ((innerHeight * 0.75) - (innerHeight * 0.08))) {
-        document.querySelector('.header_nav').style.background = "black"
-        document.querySelector('.header_nav').style.zIndex = "100000"
-        document.querySelector('.header_nav').style.position = "fixed"
-        if (dark) {
-          afrah.current.style.color = 'white'
-          for (let i = 0; menu_container.current.children.length > i; i++) {
-            menu_container.current.children[i].style.background = "white"
-          }
-
-        }
-      } else {
-        document.querySelector('.header_nav').style.background = "transparent"
-        document.querySelector('.header_nav').style.position = "absolute"
-        document.querySelector('.header_nav').style.zIndex = "100002"
-        if (dark) {
-          afrah.current.style.color = 'black'
-          for (let i = 0; menu_container.current.children.length > i; i++) {
-            menu_container.current.children[i].style.background = "black"
-          }
-        }
-      }
-
-    }
-  }, [isOpen])
+export default function header({ dark, isOpen, setIsOpen }) {
 
   return (
     <>
       <div className='header_nav' >
         <div className={myFont.className + ' header_afrah'} style={{ fontWeight: "600", letterSpacing: "0.3em", marginLeft: "5vw", textShadow: "0px 0px 4px black", }}>
-          <Link ref={afrah} style={{ textDecoration: "none", color: !dark ? 'white' : 'black' }} href="/" >AFRAH</Link>
+          <Link style={{ textDecoration: "none", color: !dark ? 'white' : 'black' }} href="/" >AFRAH</Link>
         </div>
         <div className='header_links-wrapper' style={{}} >
           <ul className={font.className + ' header_links-container'} style={{ display: "flex", whiteSpace: "nowrap", width: "100%", justifyContent: "center", gap: "10%" }}>
@@ -226,7 +29,7 @@ export default function header({ dark }) {
         <div className={myFont.className + ' header_connect'}><Link href="/contact" >connect</Link></div>
         <div onClick={() => { setIsOpen(!isOpen) }}
           className='header_menu-clickable' >
-          <div ref={menu_container} className='header_menu-container' >
+          <div className='header_menu-container' >
             <div className='header_menu-lines' />
             <div className='header_menu-lines' />
             <div className='header_menu-lines' />
