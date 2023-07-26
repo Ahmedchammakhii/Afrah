@@ -24,16 +24,22 @@ export default function Hero() {
 
     useEffect(() => {
         if (innerWidth > 1200) {
-            loader.current.style.animation = "loading 10s linear infinite"
-            subtitle.current.children[0].style.transform = "none"
-            for (let i = 0; titles.current.children.length > i; i++) {
-                setTimeout(() => {
-                    titles.current.children[i].children[0].style.transform = "none"
-                }, Number(i + 1 + "00"));
-            }
+          subtitle.current.children[0].style.transform = "none";
+          for (let i = 0; titles.current.children.length > i; i++) {
+            setTimeout(() => {
+              titles.current.children[i].children[0].style.transform = "none";
+            }, Number(i + 1 + "00"));
+          }
         }
-        // // veil.current.style.width = 0
-    }, [])
+    
+        const intervalId = setInterval(() => {
+            iteration(container, record, wrapper);
+        }, 10000); 
+    
+        return () => {
+          clearInterval(intervalId); // Cleanup to avoid memory leaks
+        };
+      }, []);
 
 
     return (
@@ -51,7 +57,7 @@ export default function Hero() {
             } ref={veil} className='veil'
                 style={{ transition: "1s cubic-bezier(.69,.26,0,1)", position: "absolute", background: "white", width: "0", height: "100vh", zIndex: 9999999999, right: 0 }} />
             <div onAnimationIteration={() => {
-                iteration(container, record, wrapper);
+                // iteration(container, record, wrapper);
                 // animation: loading 5s linear infinite;
             }} ref={loader} className="loading" />
 
@@ -76,7 +82,6 @@ export default function Hero() {
                             
                 @media (max-width: 1200px) { 
                     .d-hero-content-wrapper { display: none; }
-
                 }
 
 
@@ -93,20 +98,17 @@ export default function Hero() {
                     width:100%;
                     left :0;
                     right : auto;  
-
                 }
                 50%{
                     width:100%;
                     left :auto;
                     right : 0;  
                     margin-right: -50px
-
                 }
                 60% {
                     width: 0%;
                     left :auto;
                     right : 0;  
-
                   } 
                 100% {
                     width: 0%;
