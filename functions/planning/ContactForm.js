@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './contactForm.module.css';
 import Link from 'next/link';
-
+import {Button} from '../../sharedComponents/button/button'
 export default function ContactForm({ saveData }) {
   const [step, setStep] = useState(1);
 
@@ -238,13 +238,15 @@ DIDO@Afrah.com</p></div>
            We may use your information to correspond with you and send you email marketing communications. For more information, please refer to the Aisle Planner Privacy Policy. This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
         </div>
 
-        {step < 3 ? (
+      <div id="button">
+      {step < 3 ? (
           <button type="button" onClick={handleNext}>
-            Next
+            {/* <Button>Next</Button> */}
           </button>
         ) : (
           <button type="button" onClick={handleSubmit}>SEND</button>
         )}
+      </div>
       </form>
     </div>
   );
