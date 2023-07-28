@@ -1,5 +1,5 @@
 import { Jost, Playfair_Display } from 'next/font/google';
-import Button from '@/sharedComponents/button/button';
+import { Button } from '@/sharedComponents/vawzen';
 const font = Jost({ subsets: ['latin'], weight: '500' });
 
 export default function instagram() {

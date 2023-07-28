@@ -5,6 +5,7 @@ import { DoubleSide, ShaderMaterial, Vector3, Color } from 'three';
 import { Suspense } from 'react'
 import { Environment } from '@react-three/drei'
 import AudioPlayer from './AudioPlayer';
+import { threeIsActive } from '@/functions/layout/layout_functions';
 
 const textureArray = [
   '/night.jpg',
@@ -178,7 +179,7 @@ export default function App() {
     setCurrentTextureIndex((prevIndex) => (prevIndex + 1) % textureArray.length);
   };
 
-  
+
 
 
 
@@ -214,7 +215,6 @@ export default function App() {
     <Canvas
       style={{ position: 'absolute', background: 'transparent', height: "60vh", filter: " brightness(90%)" }}
       onCreated={({ gl }) => {
-        console.log("aze")
         gl.setClearColor('black');
         gl.setSize([resolution[0]], resolution[1]);
       }}
@@ -272,7 +272,7 @@ export default function App() {
         fade
       /> */}
 
-      <OrbitControls enableDamping dampingFactor={1} rotateSpeed={0.5} maxPolarAngle={Math.PI} maxDistance={720} enableZoom={false} autoRotate={true} autoRotateSpeed={0.2} />
+      <OrbitControls enableDamping dampingFactor={1} rotateSpeed={0.5} maxPolarAngle={Math.PI} maxDistance={720} enableZoom={false} autoRotate={threeIsActive === undefined ? true : threeIsActive} autoRotateSpeed={0.2} />
       {/* <AudioPlayer src="/static/sounds/slight.mp3" /> */}
 
     </Canvas>

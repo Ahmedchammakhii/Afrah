@@ -7,7 +7,7 @@ import Portfolio from "./landing/portfolio/portfolio";
 import Partners from "./landing/testimony/testimony";
 import Connect from "./landing/connect/connect";
 import Blogs from "./landing/blogs/blogs";
-import Instagram from "./landing/instagram/instagram";
+import Instagram from "@/sharedComponents/instagram/instagram";
 import Hero from "./landing/hero/hero"
 
 const myFont = localFont({ src: "../pages/planyourwedding/BonVivant-Regular.otf" });

@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import localFont from "next/font/local";
-import Layout from './layout/layout';
+import Layout from '@/sharedComponents/layout/layout';
 const inter = Inter({ subsets: ['latin'] })
 const myFont = localFont({ src: "../pages/planyourwedding/BonVivant-Regular.otf" });
 

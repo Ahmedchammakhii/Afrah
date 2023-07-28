@@ -10,7 +10,7 @@ export function onMouseEnter(event, clicked) {
 }
 export function onMouseLeave(event, clicked) {
     if (!clicked) {
-        if (random) {
+        if (!random) {
             event.currentTarget.children[1].style.top = '50%'
             event.currentTarget.children[1].style.borderRadius = '50%'
         } else {

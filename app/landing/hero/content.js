@@ -3,7 +3,7 @@ import { Kalam } from 'next/font/google';
 
 const font2 = Kalam({ subsets: ['latin'], weight: '300' });
 
-export default function Content({ refs }) {
+export default function Content({ refs, data }) {
     const [matta, titles, subtitle] = refs
     return (
         <>
@@ -11,24 +11,25 @@ export default function Content({ refs }) {
                 <div className='line' style={{ width: "6%", height: "9px", marginLeft: "10%", background: "white" }} />
             </div>
             <h2 ref={subtitle} className={'subtitle ' + font2.className} style={{ marginLeft: "10%", marginTop: "2%", overflow: "hidden" }}>
-                <div style={{ transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)" }} >
-                    Sahara Desert - Morocco
+                <div style={{ transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)", textShadow: "0px 0px 15px rgba(0,0,0,0.5)" }} >
+                    {data[0].location}
                 </div>
             </h2>
             <div ref={titles} style={{ transform: "translateX(-80%)", marginLeft: "50%" }} >
                 <div className='bigTitle' style={{ overflow: "hidden", width: "40vw" }}>
-                    <h1 style={{ fontSize: "5vw", transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)" }} >
-                        MARRAKECH
+                    <h1 style={{ fontSize: "5vw", transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)", textShadow: "0px 0px 15px rgba(0,0,0,0.5)" }} >
+                        {data[0].first_title}
                     </h1>
                 </div>
                 <div className='bigTitle' style={{ overflow: "hidden", width: "40vw" }}>
-                    <h1 style={{ fontSize: "5vw", transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)" }} >
-                        MERZOUGA
+                    <h1 style={{ fontSize: "5vw", transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)", textShadow: "0px 0px 15px rgba(0,0,0,0.5)" }} >
+                        {data[0].second_title}
                     </h1>
                 </div>
-                <div className='bigTitle' style={{ fontSize: "0.8vw", overflow: "hidden", width: "30vw" }}>
-                    <p style={{ transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)" }} >
-                        Hello, my name is Ahmed and im gay, my name is Ahmed and im gay, my name is Ahmed and im gay, my name is Ahmed and im gay,
+                <div className='bigTitle' style={{ fontSize: "0.8vw", overflow: "hidden", width: "30vw", position: "relative" }}>
+                    {/* <div style={{ background: "rgba(255, 255, 255, 0.2)", width: '100%', height: '100%', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)', backdropFilter: 'blur(5px)', position: "absolute" }} /> */}
+                    <p style={{ transform: "translateY(100%)", transition: "transform 0.6s cubic-bezier(.69,.26,0,1)", textShadow: "0px 0px 15px rgba(0,0,0,0.5)" }} >
+                        {data[0].desc}
                     </p>
                 </div>
                 <div className='bigTitle' style={{ fontSize: "0.8vw", width: "30vw", marginTop: "10%" }}>

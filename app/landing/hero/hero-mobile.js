@@ -47,7 +47,7 @@ export default function heroMobile() {
                 </div>
             </div>
             <style>{`
-            .mhero_wrapper { width: 100%; height: 75vh; background: black; z-index: 3; position: relative; display: none }
+            .mhero_wrapper { width: 100%; height: 75vh; background: black; z-index: 100001; position: relative; display: none }
             .mhero_container { width: 100%; height: 100%; position: absolute;  transition: 4s;  }
             .mhero_img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(50%);  }
             .mhero_text-container { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; position: absolute; color: white;  }

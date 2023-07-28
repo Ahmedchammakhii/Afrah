@@ -57,7 +57,7 @@ export default function Details() {
                     
                     .details_right { width: 55%; height: 100%; position: relative;  }
                     .details_image { width: 100%; height: 100%; object-fit: cover; object-position: center 0%;  }
-                    .details_ready-container { font-size: 100px; position: absolute; left: 45%; display: flex; top: -15%; color: #d9e4e3; transform: rotate(-10deg);  }
+                    .details_ready-container {pointer-events: none; font-size: 100px; position: absolute; left: 45%; display: flex; top: -15%; color: #d9e4e3; transform: rotate(-10deg);  }
                     .details_ready { margin-top: -5px; margin-left: 20px;  }
 
                     @media (max-width: 1220px) { 

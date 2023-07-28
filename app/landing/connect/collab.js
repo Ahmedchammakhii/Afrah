@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Jost, Playfair_Display } from 'next/font/google'
-
+import Button from '@/sharedComponents/vawzen/button/button';
+import Link from 'next/link';
 const font = Playfair_Display({ subsets: ['latin'], weight: '400' });
 
 
@@ -38,13 +39,25 @@ export default function Collab() {
                     <div className='collab_right' >
                         <div className='collab_right-container' >
                             <div className='collab_right-links' >
-                                let's collab!
+                                <Link href='/contact' >
+                                    <Button color={['white', 'black']} >
+                                        let's collab!
+                                    </Button>
+                                </Link>
                             </div>
                             <div className='collab_right-links' >
-                                follow us on instagram
+                                <Link href='https://www.instagram.com/afrah_group/' >
+                                    <Button color={['white', 'black']} >
+                                        follow us on instagram
+                                    </Button>
+                                </Link>
                             </div>
                             <div className='collab_right-links' >
-                                plan your wedding
+                                <Link href='/contact' >
+                                    <Button color={['white', 'black']} >
+                                        plan your wedding
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -55,6 +68,7 @@ export default function Collab() {
 
 
             <style>{`
+                .collab_content-wrapper a {text-decoration : none; width : 100%; height: 100%}
                 .collab_content-wrapper { width: 100vw; height: 32vh; display: flex; justify-content: center; background: linear-gradient(to bottom, #f3f5f8, #fdfdfe)  }
                 .collab_wrapper { width: 100%; max-width: 1220px; display: flex;  }
                 .collab_left { width: 50%;  }

@@ -27,11 +27,12 @@ export default function Connect() {
     <div style={{ width: "100%", overflow: "hidden" }}>
 
       <div style={{ width: "100%", height: "60vh", background: "black", overflow: "hidden", position: "relative" }}>
-      <div ref={container} style={{ width: "100%", height: "100%",  position: "absolute" }}/>
+        <div ref={container} style={{ width: "100%", height: "100%", position: "absolute" }} />
 
         <div className='three-container' style={{ width: "100%", height: "100%", display: "none", position: "relative" }}>
           <Component />
         </div>
+
 
       </div>
 
