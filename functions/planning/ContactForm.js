@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './contactForm.module.css';
 import Link from 'next/link';
-import {Button} from '../../sharedComponents/button/button'
+import Button from '@/sharedComponents/vawzen/button/button';
 export default function ContactForm({ saveData }) {
   const [step, setStep] = useState(1);
 
@@ -241,10 +241,11 @@ DIDO@Afrah.com</p></div>
       <div id="button">
       {step < 3 ? (
           <button type="button" onClick={handleNext}>
-            {/* <Button>Next</Button> */}
+            {/* <Button color={['white', 'red']}>Next</Button> */}
+            <Button color={['black', 'white']} > Next </Button>
           </button>
         ) : (
-          <button type="button" onClick={handleSubmit}>SEND</button>
+          <button type="button" onClick={handleSubmit}><Button color={['black', 'white']}> SEND </Button></button>
         )}
       </div>
       </form>
