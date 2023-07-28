@@ -46,10 +46,10 @@ export default function Fix() {
 }} /><style>{`
 @media (max-width:390px){
   #parallax1{
-   
+    // transform:scale(1.1) !important;
   }
   #toto{
-    height: 100vh !important ;
+    height: 150vh !important ;
   }
 }`}</style>
         </div>

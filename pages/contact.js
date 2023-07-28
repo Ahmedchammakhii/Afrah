@@ -157,7 +157,7 @@ export default function Form() {
         
           #father{
            
-            height:300vh !important;  
+            height:320vh !important;  
           }
           #gallery{
             display: flex !important;
@@ -177,7 +177,7 @@ export default function Form() {
        
           #father{
          
-            height:250vh !important;  
+            height:280vh !important;  
           }
           #gallery{
             padding-top:0 important;
