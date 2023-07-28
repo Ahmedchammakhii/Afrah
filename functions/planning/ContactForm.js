@@ -242,10 +242,10 @@ DIDO@Afrah.com</p></div>
       {step < 3 ? (
           <button type="button" onClick={handleNext}>
             {/* <Button color={['white', 'red']}>Next</Button> */}
-            <Button color={['black', 'white']} > Next </Button>
+            <Button color={['black', '#d7e3e2']} > Next </Button>
           </button>
         ) : (
-          <button type="button" onClick={handleSubmit}><Button color={['black', 'white']}> SEND </Button></button>
+          <button type="button" onClick={handleSubmit}><Button color={['black', '#d7e3e2']}> SEND </Button></button>
         )}
       </div>
       </form>

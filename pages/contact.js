@@ -4,7 +4,7 @@ import ContactForm from '../functions/planning/ContactForm';
 import Gallery from '../functions/planning/2nd_section';
 import Image from 'next/image';
 import Fix from '../functions/planning/3rd_section';
-
+import Button from '../sharedComponents/vawzen/button/button'
 import '../app/globals.css'
 import Layout from '@/sharedComponents/layout/layout';
 import Instagram from '@/sharedComponents/instagram/instagram';
@@ -113,12 +113,12 @@ export default function Form() {
               <div className="child" style={{ backgroundImage: "url('/1b.jpg')", backgroundPosition: "center 0;", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100%- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
                 <div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px" }}>
                   <p style={{ fontSize: "20px", textAlign: "center", lineHeight: "1.5", letterSpacing: "0.09em", fontStyle: "normal" }}>top 5 tips for budgeting your wedding</p>
-                  <button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button></div></div>
+                  <button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}><Button color={["black","#d7e3e2"]}>read more</Button></button></div></div>
               <div className="child" style={{ backgroundImage: "url('/2b.jpg')", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "500px", width: "calc(100%- 250px / 3)", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
                 <div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px" }}>
                   <p style={{ fontSize: "20px", lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal" }}> pro wedding day timeline made by..  </p>
-                <button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button ></div></div>
-              <div className="child" style={{ backgroundImage: "url('/3b.jpg')", height: "500px", width: "calc(100%- 250px / 3)", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}><div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px"}}><p style={{ fontSize: "20px", lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal" }}> wedding planner VS venue manager  </p><button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}>read more</button></div></div>
+                <button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}><Button color={["black","#d7e3e2"]}>read more</Button></button ></div></div>
+              <div className="child" style={{ backgroundImage: "url('/3b.jpg')", height: "500px", width: "calc(100%- 250px / 3)", backgroundPosition: "center 0", backgroundSize: "cover", backgroundRepeat: "no-repeat", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}><div className='ch' style={{ marginTop: 800, maxWidth: "350px", marginBottom: "150px"}}><p style={{ fontSize: "20px", lineHeight: "1.5", letterSpacing: "0.1em", fontStyle: "normal" }}> wedding planner VS venue manager  </p><button style={{ width: "150px", height: "50px", background: "black", color: "#fff", marginTop: "20px", fontStyle: "italic", fontSize: "16px" }}><Button color={["black","#d7e3e2"]}>read more</Button></button></div></div>
             </div>
 
           </div>
